@@ -84,7 +84,10 @@ class Logger():
                 if showErrorDialog:
                     ErrorDialog('Exception', message)
             # Flush now
-            sys.stdout.flush()
+            try:
+                sys.stdout.flush()
+            except:
+                pass
 
     # Return messge to given object
     def rtobjectWrite(self, message):

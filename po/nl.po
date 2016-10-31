@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: usb-creator\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-03-27 09:37+0200\n"
+"POT-Creation-Date: 2016-10-31 16:55+0100\n"
 "PO-Revision-Date: 2016-02-22 17:58+0000\n"
 "Last-Translator: Arjen Balfoort <schoelje@solydxk.com>\n"
 "Language-Team: Dutch (http://www.transifex.com/solydxk/usb-creator/language/"
@@ -19,6 +19,201 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#: ../usr/lib/usb-creator/usbcreator.py:67
+#: ../usr/share/applications/usb-creator.desktop.in.h:1
+msgid "USB Creator"
+msgstr "USB Creator"
+
+#: ../usr/lib/usb-creator/usbcreator.py:68
+msgid "Device"
+msgstr "Apparaat"
+
+#: ../usr/lib/usb-creator/usbcreator.py:69
+msgid "USB"
+msgstr "USB"
+
+#: ../usr/lib/usb-creator/usbcreator.py:70
+msgid "Available"
+msgstr "Beschikbaar:"
+
+#: ../usr/lib/usb-creator/usbcreator.py:71
+msgid "Required"
+msgstr "Nodig:"
+
+#: ../usr/lib/usb-creator/usbcreator.py:72
+msgid "Format device"
+msgstr "Formatteer het apparaat"
+
+#: ../usr/lib/usb-creator/usbcreator.py:73
+msgid "Warning: all data will be lost"
+msgstr "Waarschuwing: all data zal verloren gaan"
+
+#: ../usr/lib/usb-creator/usbcreator.py:74
+msgid "Repair device"
+msgstr "Apparaat repareren"
+
+#: ../usr/lib/usb-creator/usbcreator.py:75
+msgid "Tries to repair an unbootable USB"
+msgstr "Probeert een unbootable USB te repareren"
+
+#: ../usr/lib/usb-creator/usbcreator.py:76
+msgid "Execute"
+msgstr "Uitvoeren"
+
+#: ../usr/lib/usb-creator/usbcreator.py:77
+msgid "ISO"
+msgstr "ISO"
+
+#: ../usr/lib/usb-creator/usbcreator.py:78
+msgid "Delete"
+msgstr "Verwijderen"
+
+#: ../usr/lib/usb-creator/usbcreator.py:79
+msgid "Refresh device list"
+msgstr "Ververs apparaatlijst"
+
+#: ../usr/lib/usb-creator/usbcreator.py:80
+msgid "Unmount device"
+msgstr "Ontkoppel apparaat"
+
+#: ../usr/lib/usb-creator/usbcreator.py:81
+msgid "Browse for ISO file"
+msgstr "ISO bestand zoeken"
+
+#: ../usr/lib/usb-creator/usbcreator.py:82
+msgid "Clear the ISO field"
+msgstr "Maak het ISO veld schoon"
+
+#: ../usr/lib/usb-creator/usbcreator.py:86
+msgid "Partitioning USB..."
+msgstr "USB partitioneren..."
+
+#: ../usr/lib/usb-creator/usbcreator.py:87
+msgid "Searching for bad block"
+msgstr "Zoeken naar slecht blok"
+
+#: ../usr/lib/usb-creator/usbcreator.py:88
+msgid "Installing Grub..."
+msgstr "Grub installeren..."
+
+#: ../usr/lib/usb-creator/usbcreator.py:89
+msgid "Start copying ISO..."
+msgstr "Start kopiëren van ISO..."
+
+#: ../usr/lib/usb-creator/usbcreator.py:90
+msgid "kB left to copy:"
+msgstr "kB nog te kopiëren:"
+
+#: ../usr/lib/usb-creator/usbcreator.py:91
+msgid "Check hash of ISO..."
+msgstr "Controleer hash van ISO..."
+
+#: ../usr/lib/usb-creator/usbcreator.py:127
+msgid "Version"
+msgstr "Versie"
+
+#: ../usr/lib/usb-creator/usbcreator.py:146
+msgid ""
+"Cannot add ISO from path: {}.\n"
+"Please, remove the ISO path or browse for an existing ISO."
+msgstr ""
+"Kan de ISO niet toevoegen van pad: {}.\n"
+"Verwijder het ISO pad of zoek naar een bestaand ISO bestand."
+
+#: ../usr/lib/usb-creator/usbcreator.py:156
+msgid ""
+"There is not enough space available on the pen drive.\n"
+"Please, remove unneeded files before continuing."
+msgstr ""
+"Er is onvoldoende ruimte over op de USB stick.\n"
+"Verwijder onnodige bestanden voordat u verder gaat."
+
+#: ../usr/lib/usb-creator/usbcreator.py:181
+msgid "Are you sure you want to remove the selected ISO from the device?"
+msgstr ""
+"Weet u zeker dat u het geselecteerde ISO bestand van het apparaat wilt "
+"verwijderen?"
+
+#: ../usr/lib/usb-creator/usbcreator.py:203
+msgid "Select ISO"
+msgstr "Selecteer ISO"
+
+#: ../usr/lib/usb-creator/usbcreator.py:261
+msgid "Unmount"
+msgstr "Ontkoppel"
+
+#: ../usr/lib/usb-creator/usbcreator.py:266
+msgid "You can now safely remove the device."
+msgstr "U kunt het apparaat nu veilig verwijderen."
+
+#: ../usr/lib/usb-creator/usbcreator.py:268
+msgid ""
+"Could not unmount the device.\n"
+"Please unmount the device manually."
+msgstr ""
+"Kon het apparaat niet ontkoppelen.\n"
+"Ontkoppel het apparaat handmatig."
+
+#: ../usr/lib/usb-creator/usbcreator.py:511
+msgid "Run this application with root permission."
+msgstr "Start de applicatie met root permissie."
+
+#: ../usr/lib/usb-creator/usbcreator.py:513
+msgid "Wrong arguments were passed to usb-creator."
+msgstr "Er zijn verkeerde argumenten voor usb-creator gebruikt."
+
+#: ../usr/lib/usb-creator/usbcreator.py:515
+msgid "The device was not found or no device was given."
+msgstr "Het apparaat was niet gevonden of er was geen apparaat opgegeven."
+
+#: ../usr/lib/usb-creator/usbcreator.py:517
+msgid "Given ISO path was not found."
+msgstr "Gegeven ISO pad was niet gevonden."
+
+#: ../usr/lib/usb-creator/usbcreator.py:519
+msgid "Device is in use by another application."
+msgstr "Het apparaat wordt door een andere applicatie gebruikt"
+
+#: ../usr/lib/usb-creator/usbcreator.py:521
+msgid "Unable to mount the device."
+msgstr "Kan het apparaat niet koppelen."
+
+#: ../usr/lib/usb-creator/usbcreator.py:523
+msgid "Hash mismatch."
+msgstr "Hash komt niet overeen."
+
+#: ../usr/lib/usb-creator/usbcreator.py:525
+msgid "The device has no fat32 partition."
+msgstr "Het apparaat heeft geen fat32 partitie."
+
+#: ../usr/lib/usb-creator/usbcreator.py:527
+msgid "The device has no bootloader installed."
+msgstr "Het apparaat heeft geen bootloader geïnstalleerd."
+
+#: ../usr/lib/usb-creator/usbcreator.py:529
+msgid "There is not enough space available on the device."
+msgstr "Er is op het apparaat onvoldoende ruimte beschikbaar."
+
+#: ../usr/lib/usb-creator/usbcreator.py:531
+msgid ""
+"Unable to guess distribution from ISO name.\n"
+"Make sure you have the distribution name in the ISO name."
+msgstr ""
+"Kan de distributie a.h.v. de ISO naam niet raden.\n"
+"Zorg ervoor dat ISO naam de distributienaam bevat."
+
+#: ../usr/lib/usb-creator/usbcreator.py:534
+msgid ""
+"An unknown error accured.\n"
+"Please, visit our forum for support: http://forums.solydxk.com"
+msgstr ""
+"Een onbekende fout is opgetreden.\n"
+"Bezoek ons forum: http://forums.solydxk.com"
+
+#: ../usr/lib/usb-creator/usbcreator.py:538
+msgid "The USB was successfully written."
+msgstr "De USB is succesvol geschreven."
 
 #: ../usr/lib/usb-creator/main.py:42
 msgid "Unexpected error"
@@ -31,201 +226,6 @@ msgid ""
 msgstr ""
 "USB Creator is mislukt met de volgende onverwachte fout.\n"
 "A.u.b., dien een bug verslag in."
-
-#: ../usr/lib/usb-creator/usbcreator.py:65
-#: ../usr/share/applications/usb-creator.desktop.in.h:1
-msgid "USB Creator"
-msgstr "USB Creator"
-
-#: ../usr/lib/usb-creator/usbcreator.py:66
-msgid "Device"
-msgstr "Apparaat"
-
-#: ../usr/lib/usb-creator/usbcreator.py:67
-msgid "USB"
-msgstr "USB"
-
-#: ../usr/lib/usb-creator/usbcreator.py:68
-msgid "Available"
-msgstr "Beschikbaar:"
-
-#: ../usr/lib/usb-creator/usbcreator.py:69
-msgid "Required"
-msgstr "Nodig:"
-
-#: ../usr/lib/usb-creator/usbcreator.py:70
-msgid "Format device"
-msgstr "Formatteer het apparaat"
-
-#: ../usr/lib/usb-creator/usbcreator.py:71
-msgid "Warning: all data will be lost"
-msgstr "Waarschuwing: all data zal verloren gaan"
-
-#: ../usr/lib/usb-creator/usbcreator.py:72
-msgid "Repair device"
-msgstr "Apparaat repareren"
-
-#: ../usr/lib/usb-creator/usbcreator.py:73
-msgid "Tries to repair an unbootable USB"
-msgstr "Probeert een unbootable USB te repareren"
-
-#: ../usr/lib/usb-creator/usbcreator.py:74
-msgid "Execute"
-msgstr "Uitvoeren"
-
-#: ../usr/lib/usb-creator/usbcreator.py:75
-msgid "ISO"
-msgstr "ISO"
-
-#: ../usr/lib/usb-creator/usbcreator.py:76
-msgid "Delete"
-msgstr "Verwijderen"
-
-#: ../usr/lib/usb-creator/usbcreator.py:77
-msgid "Refresh device list"
-msgstr "Ververs apparaatlijst"
-
-#: ../usr/lib/usb-creator/usbcreator.py:78
-msgid "Unmount device"
-msgstr "Ontkoppel apparaat"
-
-#: ../usr/lib/usb-creator/usbcreator.py:79
-msgid "Browse for ISO file"
-msgstr "ISO bestand zoeken"
-
-#: ../usr/lib/usb-creator/usbcreator.py:80
-msgid "Clear the ISO field"
-msgstr "Maak het ISO veld schoon"
-
-#: ../usr/lib/usb-creator/usbcreator.py:84
-msgid "Partitioning USB..."
-msgstr "USB partitioneren..."
-
-#: ../usr/lib/usb-creator/usbcreator.py:85
-msgid "Searching for bad block"
-msgstr "Zoeken naar slecht blok"
-
-#: ../usr/lib/usb-creator/usbcreator.py:86
-msgid "Installing Grub..."
-msgstr "Grub installeren..."
-
-#: ../usr/lib/usb-creator/usbcreator.py:87
-msgid "Start copying ISO..."
-msgstr "Start kopiëren van ISO..."
-
-#: ../usr/lib/usb-creator/usbcreator.py:88
-msgid "kB left to copy:"
-msgstr "kB nog te kopiëren:"
-
-#: ../usr/lib/usb-creator/usbcreator.py:89
-msgid "Check hash of ISO..."
-msgstr "Controleer hash van ISO..."
-
-#: ../usr/lib/usb-creator/usbcreator.py:126
-msgid "Version"
-msgstr "Versie"
-
-#: ../usr/lib/usb-creator/usbcreator.py:145
-msgid ""
-"Cannot add ISO from path: {}.\n"
-"Please, remove the ISO path or browse for an existing ISO."
-msgstr ""
-"Kan de ISO niet toevoegen van pad: {}.\n"
-"Verwijder het ISO pad of zoek naar een bestaand ISO bestand."
-
-#: ../usr/lib/usb-creator/usbcreator.py:155
-msgid ""
-"There is not enough space available on the pen drive.\n"
-"Please, remove unneeded files before continuing."
-msgstr ""
-"Er is onvoldoende ruimte over op de USB stick.\n"
-"Verwijder onnodige bestanden voordat u verder gaat."
-
-#: ../usr/lib/usb-creator/usbcreator.py:180
-msgid "Are you sure you want to remove the selected ISO from the device?"
-msgstr ""
-"Weet u zeker dat u het geselecteerde ISO bestand van het apparaat wilt "
-"verwijderen?"
-
-#: ../usr/lib/usb-creator/usbcreator.py:202
-msgid "Select ISO"
-msgstr "Selecteer ISO"
-
-#: ../usr/lib/usb-creator/usbcreator.py:259
-msgid "Unmount"
-msgstr "Ontkoppel"
-
-#: ../usr/lib/usb-creator/usbcreator.py:264
-msgid ""
-"Could not unmount the device.\n"
-"Please unmount the device manually."
-msgstr ""
-"Kon het apparaat niet ontkoppelen.\n"
-"Ontkoppel het apparaat handmatig."
-
-#: ../usr/lib/usb-creator/usbcreator.py:267
-msgid "You can now safely remove the device."
-msgstr "U kunt het apparaat nu veilig verwijderen."
-
-#: ../usr/lib/usb-creator/usbcreator.py:531
-msgid "Run this application with root permission."
-msgstr "Start de applicatie met root permissie."
-
-#: ../usr/lib/usb-creator/usbcreator.py:533
-msgid "Wrong arguments were passed to usb-creator."
-msgstr "Er zijn verkeerde argumenten voor usb-creator gebruikt."
-
-#: ../usr/lib/usb-creator/usbcreator.py:535
-msgid "The device was not found or no device was given."
-msgstr "Het apparaat was niet gevonden of er was geen apparaat opgegeven."
-
-#: ../usr/lib/usb-creator/usbcreator.py:537
-msgid "Given ISO path was not found."
-msgstr "Gegeven ISO pad was niet gevonden."
-
-#: ../usr/lib/usb-creator/usbcreator.py:539
-msgid "Device is in use by another application."
-msgstr "Het apparaat wordt door een andere applicatie gebruikt"
-
-#: ../usr/lib/usb-creator/usbcreator.py:541
-msgid "Unable to mount the device."
-msgstr "Kan het apparaat niet koppelen."
-
-#: ../usr/lib/usb-creator/usbcreator.py:543
-msgid "Hash mismatch."
-msgstr "Hash komt niet overeen."
-
-#: ../usr/lib/usb-creator/usbcreator.py:545
-msgid "The device has no fat32 partition."
-msgstr "Het apparaat heeft geen fat32 partitie."
-
-#: ../usr/lib/usb-creator/usbcreator.py:547
-msgid "The device has no bootloader installed."
-msgstr "Het apparaat heeft geen bootloader geïnstalleerd."
-
-#: ../usr/lib/usb-creator/usbcreator.py:549
-msgid "There is not enough space available on the device."
-msgstr "Er is op het apparaat onvoldoende ruimte beschikbaar."
-
-#: ../usr/lib/usb-creator/usbcreator.py:551
-msgid ""
-"Unable to guess distribution from ISO name.\n"
-"Make sure you have the distribution name in the ISO name."
-msgstr ""
-"Kan de distributie a.h.v. de ISO naam niet raden.\n"
-"Zorg ervoor dat ISO naam de distributienaam bevat."
-
-#: ../usr/lib/usb-creator/usbcreator.py:554
-msgid ""
-"An unknown error accured.\n"
-"Please, visit our forum for support: http://forums.solydxk.com"
-msgstr ""
-"Een onbekende fout is opgetreden.\n"
-"Bezoek ons forum: http://forums.solydxk.com"
-
-#: ../usr/lib/usb-creator/usbcreator.py:558
-msgid "The USB was successfully written."
-msgstr "De USB is succesvol geschreven."
 
 #: ../usr/share/kde4/apps/solid/actions/usb-constructor-openusb.desktop.in.h:1
 msgid "Create a multi-boot USB with the USB Creator"

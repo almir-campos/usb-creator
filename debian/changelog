@@ -1,3 +1,21 @@
+usb-creator (0.3.0) solydxk; urgency=low
+
+  * Upgrade to udisks2
+
+ -- Arjen Balfoort <arjenbalfoort@solydxk.com>  Thu, 20 Oct 2016 12:22:02 +0200
+
+usb-creator (0.2.9) solydxk; urgency=low
+
+  * Added Lithuanian language
+
+ -- Arjen Balfoort <arjenbalfoort@solydxk.com>  Wed, 27 Jul 2016 10:11:14 +0200
+
+usb-creator (0.2.8) solydxk; urgency=low
+
+  * Use open-as-user to open browser as real user
+
+ -- Arjen Balfoort <arjenbalfoort@solydxk.com>  Wed, 01 Jun 2016 19:40:47 +0200
+
 usb-creator (0.2.7) solydxk; urgency=low
 
   * Updated SolydXK logos to new flat logos

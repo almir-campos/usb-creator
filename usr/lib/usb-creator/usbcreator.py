@@ -1,5 +1,6 @@
 #! /usr/bin/env python3
 
+
 # Make sure the right Gtk version is loaded
 import gi
 gi.require_version('Gtk', '3.0')
@@ -19,6 +20,7 @@ from combobox import ComboBoxHandler
 from treeview import TreeViewHandler
 from queue import Queue
 from logger import Logger
+from udisks2 import Udisks2
 
 # i18n: http://docs.python.org/3/library/gettext.html
 import gettext
@@ -89,12 +91,10 @@ class USBCreator(object):
         self.log_lines.append(["check hash", 85, _("Check hash of ISO...")])
 
         # Initiate variables
-        self.devices = []
         self.device = {}
         self.device['path'] = ''
-        self.device['size'] = 0
-        self.device['has_partition'] = False
         self.device['mount'] = ''
+        self.device['size'] = 0
         self.device['available'] = 0
         self.device["new_iso"] = ''
         self.device["new_iso_required"] = 0
@@ -107,6 +107,7 @@ class USBCreator(object):
         self.log_file = log[0]
         self.log = Logger(self.log_file, addLogTime=False, maxSizeKB=5120)
         self.tvUsbIsosHandler = TreeViewHandler(self.tvUsbIsos)
+        self.udisks2 = Udisks2()
 
         self.lblAvailable.set_label('')
         self.lblRequired.set_label('')
@@ -151,7 +152,7 @@ class USBCreator(object):
             available = self.device["available"]
             if self.chkFormatDevice.get_active():
                 available = self.device["size"]
-            if available - self.device["new_iso_required"] < 0:
+            if (available) - self.device["new_iso_required"] < 0:
                 msg = _("There is not enough space available on the pen drive.\n"
                         "Please, remove unneeded files before continuing.")
                 WarningDialog(self.btnExecute.get_label(), msg)
@@ -186,7 +187,7 @@ class USBCreator(object):
                         os.remove(iso_path)
                         self.log.write("Remove ISO: {}".format(iso_path))
                 shell_exec("usb-creator -d {} -g".format(self.device["path"]))
-                self.on_cmbDevice_changed()
+                self.on_btnRefresh_clicked()
                 self.fill_treeview_usbcreator(self.device["mount"])
 
     def on_btnBrowseIso_clicked(self, widget):
@@ -252,49 +253,67 @@ class USBCreator(object):
             self.lblRequired.set_text('')
 
     def on_btnRefresh_clicked(self, widget=None):
-        self.devices = self.get_devices()
-        self.cmbDeviceHandler.fillComboBox(self.devices, 0)
+        self.udisks2.fill_devices()
+        drives = self.udisks2.get_drives()
+        self.cmbDeviceHandler.fillComboBox(drives, 0)
 
     def on_btnUnmount_clicked(self, widget):
         unmount_text = _("Unmount")
         device = self.device["path"]
-        self.unmount_device(device)
-        self.on_btnRefresh_clicked()
-        if device in self.devices:
+        try:
+            self.udisks2.unmount_drive(device)
+            self.on_btnRefresh_clicked()
+            msg = _("You can now safely remove the device.")
+        except Exception as e:
             msg = _("Could not unmount the device.\n"
                     "Please unmount the device manually.")
-        else:
-            msg = _("You can now safely remove the device.")
+            self.log.write("ERROR: %s" % str(e))
         MessageDialog(unmount_text, msg)
 
     def on_cmbDevice_changed(self, widget=None):
-        device = self.cmbDeviceHandler.getValue()
-        if device is not None:
+        drive_path = self.cmbDeviceHandler.getValue()
+        print((">> drive_path = %s" % str(drive_path)))
+        device_paths = []
+        if drive_path is not None:
+            drive = self.udisks2.devices[drive_path]
+            print((">> drive = %s" % str(drive)))
+            device_paths = self.udisks2.get_drive_device_paths(drive_path)
+            print((">> device_paths = %s" % str(device_paths)))
+            device = ''
+            if device_paths:
+                device = device_paths[0]
+            print((">> device = %s" % str(device)))
             mount = ''
             size = 0
             available = 0
 
-            # Get the size of the USB
-            usb_size = getoutput("env LANG=C udisks --show-info {} | grep size".format(device))
-            if usb_size:
-                # udisks returns bytes, while df returns kbs
-                size = int(int(usb_size[0].split(":")[1].strip()) / 1024)
-
-            # Assume that the USB is empty (will check later)
-            available = size
-
             # Get free size on USB
-            has_partition = self.device_has_partition(device)
-            if has_partition:
-                mount = self.get_device_mount(device)
+            size = drive['total_size']
+            available = drive['free_size']
+            if self.chkFormatDevice.get_active():
+                available = size
+
+            if device != '':
+                mount = drive[device]['mount_point']
+                if not exists(mount):
+                    print((">> mount the device %s" % device))
+                    # Mount if not already mounted
+                    try:
+                        mount = self.udisks2.mount_device(device)
+                    except Exception as e:
+                        self.show_message(6)
+                        self.log.write("ERROR: %s" % str(e))
+                print((">> mount = %s" % mount))
+                if exists(mount) and not self.chkFormatDevice.get_active():
+                    size = drive[device]['total_size']
+                    available = drive[device]['free_size']
+                    print((">> available = %s" % str(available)))
                 # This function can be called from on_chkFormatDevice_toggled
                 if widget != self.chkFormatDevice:
                     self.chkFormatDevice.set_sensitive(True)
                     self.chkFormatDevice.set_active(False)
-                    free_size = getoutput("df --output=avail {}1 | awk 'NR==2'".format(device))
-                    if free_size:
-                        available = int(free_size[0])
             else:
+                # No partition: always format the device
                 self.chkFormatDevice.set_active(True)
                 self.chkFormatDevice.set_sensitive(False)
 
@@ -303,10 +322,9 @@ class USBCreator(object):
             self.lblAvailable.set_label("{}: {} MB".format(self.available_text, int(available / 1024)))
 
             # Save the info
-            self.device['path'] = device
-            self.device['size'] = size
-            self.device['has_partition'] = has_partition
+            self.device['path'] = drive_path
             self.device['mount'] = mount
+            self.device['size'] = size
             self.device['available'] = available
             self.log.write("Selected device info: {}".format(self.device))
 
@@ -320,9 +338,8 @@ class USBCreator(object):
             self.lblRequired.set_label('')
             self.txtIso.set_text('')
             self.device['path'] = ''
-            self.device['size'] = 0
-            self.device['has_partition'] = False
             self.device['mount'] = ''
+            self.device['size'] = 0
             self.device['available'] = 0
             self.device["new_iso"] = ''
             self.device["new_iso_required"] = 0
@@ -333,13 +350,7 @@ class USBCreator(object):
 
     def on_btnHelp_clicked(self, widget):
         # Open the help file as the real user (not root)
-        logname = getoutput('logname')[0]
-        try:
-            ff = getoutput('which firefox')[0]
-            os.system("su {} -c \"{} {}\" &".format(logname, ff, self.helpFile))
-        except:
-            # If Firefox was removed, this might work
-            os.system("su {} -c \"xdg-open {}\" &".format(logname, self.helpFile))
+        shell_exec("%s/open-as-user \"%s\"" % (self.scriptDir, self.helpFile))
 
     def fill_treeview_usbcreator(self, mount=''):
         isos_list = []
@@ -393,15 +404,16 @@ class USBCreator(object):
 
         # Thread is done
         self.log.write(">> Thread is done", 'check_thread')
+        ret = 0
         if not self.queue.empty():
             ret = self.queue.get()
             self.queue.task_done()
-            self.show_message(ret)
         del self.threads[name]
         self.set_buttons_state(True)
-        self.on_cmbDevice_changed()
+        self.on_btnRefresh_clicked()
         self.fill_treeview_usbcreator(self.device["mount"])
         self.set_statusbar_message("{}: {}".format(self.version_text, self.pck_version))
+        self.show_message(ret)
         return False
 
     def set_buttons_state(self, enable):
@@ -471,54 +483,22 @@ class USBCreator(object):
             context = self.statusbar.get_context_id('message')
             self.statusbar.push(context, message)
 
-    def get_devices(self):
-        devices = []
-        my_devices = getoutput("udisks --enumerate-device-files | egrep '/dev/sd[a-z]$'")
-        for device in my_devices:
-            info = getoutput("env LANG=C udisks --show-info {}".format(device))
-            detachable = False
-            has_partition = False
-            for line in info:
-                if "detachable" in line and "1" in line:
-                    detachable = True
-                elif "partition" in line:
-                    has_partition = True
-                if detachable and has_partition:
-                    devices.append(device)
-                    break
-        devices.sort()
-        return devices
-
-    def device_has_partition(self, device):
-        part_count = getoutput("udisks --show-info {} | grep count | grep -v block".format(device))
-        if part_count:
-            if "1" in part_count[0]:
-                return True
-        return False
-
-    def get_device_mount(self, device):
-        shell_exec("udisks --mount {}1".format(device))
-        mount = getoutput("grep %s1 /etc/mtab | awk '{print $2}' | sed 's/\\040/ /g'" % device)
-        if mount:
-            return mount[0]
-        return ''
-
     def get_iso_size(self, iso):
-        iso_size = getoutput("du -Lk \"%s\" | awk '{print $1}'" % iso)
-        if iso_size:
-            return int(iso_size[0])
+        # Returns kilobytes
+        iso_info = os.stat(iso)
+        if iso_info:
+            return int(iso_info.st_size / 1024)
         return 0
-
-    def unmount_device(self, device):
-        shell_exec("udisks --unmount {}1".format(device))
-        shell_exec("udisks --detach {}".format(device))
 
     # Close the gui
     def on_usbcreator_destroy(self, widget):
-        # Unmount devices
-        for device in self.devices:
-            if self.get_device_mount(device) != "":
-                self.unmount_device(device)
+        # Unmount devices of drive and power-off drive
+        try:
+            self.udisks2.unmount_drive(self.device['path'])
+            self.udisks2.poweroff_drive(self.device['path'])
+        except Exception as e:
+            self.show_message(5)
+            self.log.write("ERROR: %s" % str(e))
         # Close the app
         Gtk.main_quit()
 

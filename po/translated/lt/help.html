@@ -1,0 +1,55 @@
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <link href="../link/general.css" rel="stylesheet" type="text/css" />
+  </head>
+  <body>
+    <div id="background"></div>
+	<h1>USB kūrėjo pagalba</h1>
+	<div class="main">
+		<h2>Aprašas</h2>
+		<p>USB kūrėjas yra įrankis, skirtas padėti naudotojams sukurti paleidžiamą USB
+atmintuką su keliomis Linux operacinėmis sistemomis.</p>
+
+		<h2>Svarbu</h2>
+		<p>Prieš pradėdami, įsitikinkite, kad padarėte visų savo svarbių duomenų, iš
+USB atmintuko, atsarginę kopiją.</p>
+
+		<h2>Komandos</h2>
+		<p>Jūs taip pat galite naudotis USB kūrėju terminale. Štai yra keli pavyzdžiai:</p>
+
+		<h3># usb-creator -f -i /kelias/į/mano.iso -m</h3>
+		<p>Tai formatuos USB atmintuką, nukopijuos į atmintuką ISO failą ir palygins
+nukopijuoto ir pradinio ISO failo maišą.</p>
+
+		<h3># usb-creator -b -g -r</h3>
+		<p>Tai pabandys pataisyti nepasileidžiantį atmintuką, kuriame jau yra ISO
+failas.</p>
+		
+		<h3># usb-creator -h</h3>
+		<p>Tai parodys visas prieinamas parinktis ir jų naudojimą.</p>
+
+		<h2>Paslėptos ypatybės</h2>
+		<p>Jei pašalinsite ISO failo pavadinimą iš ISO lauko, USB kūrėjas apskaičiuos
+visiems, tame kataloge esantiems failams, reikiamą laisvą vietą.</p>
+		<p>Jūs galite keisti tvarką, kuria meniu yra rodomi ISO failai, pridėdami ISO
+failo pavadinimo pradžioje skaičių, pvz., "01-ManoDistribucija-amd64.iso".</p>
+		<p>Simbolinių nuorodų yra paisoma, tačiau tam, kad veiktų, simbolinės nuorodos
+privalo turėti ".iso" plėtinį.</p>
+		
+		<h2>Jūsų ISO nepasileidžia?</h2>
+		<p>Mūsų <a href="https://github.com/SolydXK/usb-creator"
+target="_blank">GitHub</a> puslapyje galite matyti išbandytų distribucijų
+sąrašą, tačiau jos ne visos gali būti paleidžiamos tiesiogiai iš ISO
+failo. Išsamiau, žiūrėkite distribucijos forume, kad sužinotumėte ar
+distribucija gali būti paleista tiesiogiai iš ISO failo.</p>
+		<p>Meniu yra sukonfigūruotas faile, kurį rasite savo atmintuke:
+/boot/grub/grub.cfg</p>
+		<p>Prašome padėti mums tobulinti šią programą, pritaikant grub.cfg iki to, kai
+pasileidžia ISO ir paskelbiant pakeitimus puslapyje GitHub arba mūsų <a
+href="http://forums.solydxk.com" target="_blank">forume</a>.</p>
+		<p>Paskelbdami mūsų forume apie problemą, nepamirškite pridėti žurnalo failą:
+/var/log/usb-creator.log</p>
+    </div>
+  </body>
+</html>

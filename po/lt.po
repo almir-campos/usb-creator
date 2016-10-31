@@ -3,31 +3,31 @@
 # This file is distributed under the same license as the PACKAGE package.
 #
 # Translators:
-# Arjen Balfoort <schoelje@solydxk.com>, 2016
-# Davide Favaro <belzebu87@gmail.com>, 2015
+# Moo, 2016
 msgid ""
 msgstr ""
 "Project-Id-Version: usb-creator\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2016-10-31 16:55+0100\n"
-"PO-Revision-Date: 2016-02-22 18:02+0000\n"
-"Last-Translator: Arjen Balfoort <schoelje@solydxk.com>\n"
-"Language-Team: Italian (http://www.transifex.com/solydxk/usb-creator/"
-"language/it/)\n"
-"Language: it\n"
+"PO-Revision-Date: 2016-07-15 09:30+0000\n"
+"Last-Translator: Moo\n"
+"Language-Team: Lithuanian (http://www.transifex.com/solydxk/usb-creator/"
+"language/lt/)\n"
+"Language: lt\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && (n"
+"%100<10 || n%100>=20) ? 1 : 2);\n"
 
 #: ../usr/lib/usb-creator/usbcreator.py:67
 #: ../usr/share/applications/usb-creator.desktop.in.h:1
 msgid "USB Creator"
-msgstr "SolydXK USB Creator"
+msgstr "USB kūrėjas"
 
 #: ../usr/lib/usb-creator/usbcreator.py:68
 msgid "Device"
-msgstr "Dispositivi"
+msgstr "Įrenginys"
 
 #: ../usr/lib/usb-creator/usbcreator.py:69
 msgid "USB"
@@ -35,31 +35,31 @@ msgstr "USB"
 
 #: ../usr/lib/usb-creator/usbcreator.py:70
 msgid "Available"
-msgstr "Disponibile:"
+msgstr "Prieinama"
 
 #: ../usr/lib/usb-creator/usbcreator.py:71
 msgid "Required"
-msgstr "Spazio richiesto:"
+msgstr "Reikalinga"
 
 #: ../usr/lib/usb-creator/usbcreator.py:72
 msgid "Format device"
-msgstr "Formatta dispositivo"
+msgstr "Formatuoti įrenginį"
 
 #: ../usr/lib/usb-creator/usbcreator.py:73
 msgid "Warning: all data will be lost"
-msgstr "Attenzione: tutti i dati verranno cancellati"
+msgstr "Įspėjimas: visi duomenys bus prarasti"
 
 #: ../usr/lib/usb-creator/usbcreator.py:74
 msgid "Repair device"
-msgstr "Ripara dispositivo"
+msgstr "Pataisyti įrenginį"
 
 #: ../usr/lib/usb-creator/usbcreator.py:75
 msgid "Tries to repair an unbootable USB"
-msgstr "Tenta di riparare un dispositivo USB non avviabile"
+msgstr "Bando pataisyti nepaleidžiamą USB"
 
 #: ../usr/lib/usb-creator/usbcreator.py:76
 msgid "Execute"
-msgstr "Esegui"
+msgstr "Vykdyti"
 
 #: ../usr/lib/usb-creator/usbcreator.py:77
 msgid "ISO"
@@ -67,226 +67,222 @@ msgstr "ISO"
 
 #: ../usr/lib/usb-creator/usbcreator.py:78
 msgid "Delete"
-msgstr "Cancella"
+msgstr "Ištrinti"
 
 #: ../usr/lib/usb-creator/usbcreator.py:79
 msgid "Refresh device list"
-msgstr "Aggiorna lista dispositivi"
+msgstr "Iš naujo įkelti įrenginių sąrašą"
 
 #: ../usr/lib/usb-creator/usbcreator.py:80
 msgid "Unmount device"
-msgstr "Smonta dispositivo"
+msgstr "Atjungti įrenginį"
 
 #: ../usr/lib/usb-creator/usbcreator.py:81
 msgid "Browse for ISO file"
-msgstr "Sfoglia per inserire un file ISO"
+msgstr "Naršyti ISO failą"
 
 #: ../usr/lib/usb-creator/usbcreator.py:82
 msgid "Clear the ISO field"
-msgstr "Azzera campo ISO"
+msgstr "Išvalyti ISO lauką"
 
 #: ../usr/lib/usb-creator/usbcreator.py:86
 msgid "Partitioning USB..."
-msgstr "Partizionamento USB..."
+msgstr "Skaidomas USB..."
 
 #: ../usr/lib/usb-creator/usbcreator.py:87
 msgid "Searching for bad block"
-msgstr "Ricerca di blocchi danneggiati"
+msgstr "Ieškoma blogų blokų"
 
 #: ../usr/lib/usb-creator/usbcreator.py:88
 msgid "Installing Grub..."
-msgstr "Installazione di Grub..."
+msgstr "Įdiegiama Grub..."
 
 #: ../usr/lib/usb-creator/usbcreator.py:89
 msgid "Start copying ISO..."
-msgstr "Avvio copia ISO..."
+msgstr "Pradedamas ISO kopijavimas..."
 
 #: ../usr/lib/usb-creator/usbcreator.py:90
 msgid "kB left to copy:"
-msgstr "kB da copiare rimanenti:"
+msgstr "Liko nukopijuoti kB:"
 
 #: ../usr/lib/usb-creator/usbcreator.py:91
 msgid "Check hash of ISO..."
-msgstr "Controllo hash dell'immagine ISO"
+msgstr "Tikrinama ISO maiša..."
 
 #: ../usr/lib/usb-creator/usbcreator.py:127
 msgid "Version"
-msgstr "Verisone"
+msgstr "Versija"
 
 #: ../usr/lib/usb-creator/usbcreator.py:146
 msgid ""
 "Cannot add ISO from path: {}.\n"
 "Please, remove the ISO path or browse for an existing ISO."
 msgstr ""
-"Impossibile aggiungere il file ISO dal percorso: {}.\n"
-"Si prega di rimuovere il percorso inserito o di sfogliare per trovare un ISO "
-"esistente."
+"Nepavyksta pridėti ISO iš kelio: {}.\n"
+"Prašome pašalinti ISO kelią arba naršyti esamą ISO."
 
 #: ../usr/lib/usb-creator/usbcreator.py:156
 msgid ""
 "There is not enough space available on the pen drive.\n"
 "Please, remove unneeded files before continuing."
 msgstr ""
-"Spazio disponibile sul dispositivo USB non sufficiente.\n"
-"Si prega di liberare spazio cancellando file non necessari prima di "
-"continuare."
+"Atmintuke nėra pakankamai prieinamos vietos.\n"
+"Prieš tęsiant, prašome pašalinti nereikalingus failus."
 
 #: ../usr/lib/usb-creator/usbcreator.py:181
 msgid "Are you sure you want to remove the selected ISO from the device?"
-msgstr ""
-"Procedere con la rimozione dell'immagine ISO selezionata dal dispositivo?"
+msgstr "Ar tikrai norite pašalinti pasirinktą ISO iš įrenginio?"
 
 #: ../usr/lib/usb-creator/usbcreator.py:203
 msgid "Select ISO"
-msgstr "Selezionare ISO"
+msgstr "Pasirinkite ISO"
 
 #: ../usr/lib/usb-creator/usbcreator.py:261
 msgid "Unmount"
-msgstr "Smonta"
+msgstr "Atjungti"
 
 #: ../usr/lib/usb-creator/usbcreator.py:266
 msgid "You can now safely remove the device."
-msgstr "È ora possibile rimuovere il dispositivo."
+msgstr "Dabar, galite saugiai pašalinti įrenginį."
 
 #: ../usr/lib/usb-creator/usbcreator.py:268
 msgid ""
 "Could not unmount the device.\n"
 "Please unmount the device manually."
 msgstr ""
-"Impossibile smontare il dispositivo.\n"
-"Si prega di smontare il dispositivo manualmente."
+"Nepavyko atjungti įrenginio.\n"
+"Prašome atjungti įrenginį rankiniu būdu."
 
 #: ../usr/lib/usb-creator/usbcreator.py:511
 msgid "Run this application with root permission."
-msgstr "Avvia questa applicazione con i permessi di amministratore"
+msgstr "Vykdykite šią programą pagrindinio naudotojo (root) teisėmis."
 
 #: ../usr/lib/usb-creator/usbcreator.py:513
 msgid "Wrong arguments were passed to usb-creator."
-msgstr "Sono stati passati argomenti errati a usb-creator."
+msgstr "Programai usb-creator buvo perduoti neteisingi argumentai."
 
 #: ../usr/lib/usb-creator/usbcreator.py:515
 msgid "The device was not found or no device was given."
-msgstr "Periferica non trovata o nessuna periferica selezionata."
+msgstr "Įrenginys buvo nerastas arba nebuvo nurodytas."
 
 #: ../usr/lib/usb-creator/usbcreator.py:517
 msgid "Given ISO path was not found."
-msgstr "Il percorso fornito per l'immagine ISO non è stato trovato."
+msgstr "Nurodytas ISO kelias nebuvo rastas."
 
 #: ../usr/lib/usb-creator/usbcreator.py:519
 msgid "Device is in use by another application."
-msgstr "La periferica è in uso da un'altra applicazione."
+msgstr "Įrenginys yra naudojamas kitos programos."
 
 #: ../usr/lib/usb-creator/usbcreator.py:521
 msgid "Unable to mount the device."
-msgstr "Impossibile montare il dispositivo."
+msgstr "Nepavyko prijungti įrenginio."
 
 #: ../usr/lib/usb-creator/usbcreator.py:523
 msgid "Hash mismatch."
-msgstr "Hash non corrispondente."
+msgstr "Maišų neatitikimas."
 
 #: ../usr/lib/usb-creator/usbcreator.py:525
 msgid "The device has no fat32 partition."
-msgstr "Nessuna partizione fat32"
+msgstr "Įrenginyje nėra fat32 skaidinio."
 
 #: ../usr/lib/usb-creator/usbcreator.py:527
 msgid "The device has no bootloader installed."
-msgstr "Nessun bootloader installato sul dispositivo."
+msgstr "Įrenginyje nėra paleidyklės."
 
 #: ../usr/lib/usb-creator/usbcreator.py:529
 msgid "There is not enough space available on the device."
-msgstr "Spazio disponibile non sufficiente sulla periferica."
+msgstr "Įrenginyje nėra pakankamai prieinamos vietos."
 
 #: ../usr/lib/usb-creator/usbcreator.py:531
 msgid ""
 "Unable to guess distribution from ISO name.\n"
 "Make sure you have the distribution name in the ISO name."
 msgstr ""
-"Impossibile determinare la distribuzione dal nome dell'immagine ISO.\n"
-"Assicurarsi che il nome della distribuzione compaia nel nome dell'imagine "
-"ISO."
+"Nepavyko atspėti distribuciją iš ISO pavadinimo.\n"
+"Įsitikinkite, kad ISO pavadinime yra distribucijos pavadinimas."
 
 #: ../usr/lib/usb-creator/usbcreator.py:534
 msgid ""
 "An unknown error accured.\n"
 "Please, visit our forum for support: http://forums.solydxk.com"
 msgstr ""
-"Errore inatteso.\n"
-"Si prega di visitare il forum di supporto: http://forums.solydxk.com"
+"Įvyko nežinoma klaida.\n"
+"Norėdami gauti palaikymą, apsilankykite mūsų forume: http://forums.solydxk."
+"com"
 
 #: ../usr/lib/usb-creator/usbcreator.py:538
 msgid "The USB was successfully written."
-msgstr "Scrittura USB completata con successo."
+msgstr "USB buvo sėkmingai įrašytas."
 
 #: ../usr/lib/usb-creator/main.py:42
 msgid "Unexpected error"
-msgstr "Errore inatteso"
+msgstr "Netikėta klaida"
 
 #: ../usr/lib/usb-creator/main.py:43
 msgid ""
 "USB Creator has failed with the following unexpected error. Please submit a "
 "bug report!"
 msgstr ""
-"SolydXK USB Creator ha fallito con il seguente errore inatteso.\n"
-"Si consiglia di inviare una segnalazione di bug!"
+"USB kūrėjas patyrė nesėkmę su šia netikėta klaida. Prašome pranešti apie "
+"klaidą!"
 
 #: ../usr/share/kde4/apps/solid/actions/usb-constructor-openusb.desktop.in.h:1
 msgid "Create a multi-boot USB with the USB Creator"
-msgstr "Crea USB multi-boot con USB Creator"
+msgstr "Sukurti keleriopo paleidimo USB, naudojant USB kūrėją"
 
 #: ../usr/share/applications/usb-creator.desktop.in.h:2
 msgid "Create a multi-boot USB"
-msgstr "Creare un USB multi-boot"
+msgstr "Sukurti keleriopo paleidimo USB"
 
 #: en/help.html+html.body.h1:8
 msgid "USB Creator Help"
-msgstr "USB Creator Help"
+msgstr "USB kūrėjo pagalba"
 
 #: en/help.html+html.body.div.h2:10
 msgid "Description"
-msgstr "Descrizione"
+msgstr "Aprašas"
 
 #: en/help.html+html.body.div.p:11
 msgid ""
 "The USB Creator is a tool to help users to create a bootable flash drive "
 "with multiple Linux operating systems."
 msgstr ""
-"USB Creator è uno strumento per facilitare la creazione di dispositivi "
-"avviabili con più sistemi operativi Linux."
+"USB kūrėjas yra įrankis, skirtas padėti naudotojams sukurti paleidžiamą USB "
+"atmintuką su keliomis Linux operacinėmis sistemomis."
 
 #: en/help.html+html.body.div.h2:13
 msgid "Important"
-msgstr "Importante"
+msgstr "Svarbu"
 
 #: en/help.html+html.body.div.p:14
 msgid ""
 "Make sure you backed up all important data from the flash drive before you "
 "start."
 msgstr ""
-"Assicurarsi di aver salvato tutti i dati importanti dalla periferica perima "
-"di incominciare."
+"Prieš pradėdami, įsitikinkite, kad padarėte visų savo svarbių duomenų, iš "
+"USB atmintuko, atsarginę kopiją."
 
 #: en/help.html+html.body.div.h2:16
 msgid "Commands"
-msgstr "Comandi"
+msgstr "Komandos"
 
 #: en/help.html+html.body.div.p:17
 msgid ""
 "You can also use the USB Creator from the terminal. Here are some examples:"
 msgstr ""
-"È anche possibile utilizzare USB Creator dal terminale. Di seguito alcuni "
-"esempi:"
+"Jūs taip pat galite naudotis USB kūrėju terminale. Štai yra keli pavyzdžiai:"
 
 #: en/help.html+html.body.div.h3:19
 msgid "# usb-creator -f -i /path/to/my.iso -m"
-msgstr "# usb-creator -f -i /path/to/my.iso -m"
+msgstr "# usb-creator -f -i /kelias/į/mano.iso -m"
 
 #: en/help.html+html.body.div.p:20
 msgid ""
 "This will format the flash drive, copy the ISO file to the flash drive and "
 "check the hash of the copied ISO file with the original ISO file."
 msgstr ""
-"Questa azione formatterà il dispositivo, copierà l'immagine ISO e "
-"controllerà l'hash dell'immagine ISO copiata con l'immagine originale."
+"Tai formatuos USB atmintuką, nukopijuos į atmintuką ISO failą ir palygins "
+"nukopijuoto ir pradinio ISO failo maišą."
 
 #: en/help.html+html.body.div.h3:22
 msgid "# usb-creator -b -g -r"
@@ -297,8 +293,8 @@ msgid ""
 "This will try to repair an unbootable flash drive that already contains ISO "
 "files."
 msgstr ""
-"Questa azione proverà a riparare un dispositivo non avviabile con immagini "
-"ISO preesistenti."
+"Tai pabandys pataisyti nepasileidžiantį atmintuką, kuriame jau yra ISO "
+"failas."
 
 #: en/help.html+html.body.div.h3:25
 msgid "# usb-creator -h"
@@ -306,19 +302,19 @@ msgstr "# usb-creator -h"
 
 #: en/help.html+html.body.div.p:26
 msgid "This will show all available options and their usage."
-msgstr "Mostra ogni opzione disponibile e le relative modalità d'uso."
+msgstr "Tai parodys visas prieinamas parinktis ir jų naudojimą."
 
 #: en/help.html+html.body.div.h2:28
 msgid "Hidden features"
-msgstr "Opzioni nascoste"
+msgstr "Paslėptos ypatybės"
 
 #: en/help.html+html.body.div.p:29
 msgid ""
 "When you remove the ISO file name from the ISO field, USB Creator will "
 "calculate the space needed for all ISO files in that directory."
 msgstr ""
-"Rimuovendo il nome del file ISO dal campo ISO, USB Creator calcolerà lo "
-"spazio necessario alle immagini ISO in tale cartella."
+"Jei pašalinsite ISO failo pavadinimą iš ISO lauko, USB kūrėjas apskaičiuos "
+"visiems, tame kataloge esantiems failams, reikiamą laisvą vietą."
 
 #: en/help.html+html.body.div.p:30
 msgid ""
@@ -326,21 +322,20 @@ msgid ""
 "adding a number in front of the ISO file name, e.g.: \"01-MyDistro-amd64.iso"
 "\"."
 msgstr ""
-"È possibile modificare l'odine in cui i file ISO sono mostrati nel menu "
-"aggiungendo un numero prima del nome del file ISO, ad es.: \"01-LaMiaDistro-"
-"amd64.iso\"."
+"Jūs galite keisti tvarką, kuria meniu yra rodomi ISO failai, pridėdami ISO "
+"failo pavadinimo pradžioje skaičių, pvz., \"01-ManoDistribucija-amd64.iso\"."
 
 #: en/help.html+html.body.div.p:31
 msgid ""
 "Symbolic links are followed but the symbolic links must have the \".iso\" "
 "extension to make it work."
 msgstr ""
-"I collegamenti simbolici verrano seguiti ma devono avere l'estensione \".iso"
-"\" per funzionare correttamente."
+"Simbolinių nuorodų yra paisoma, tačiau tam, kad veiktų, simbolinės nuorodos "
+"privalo turėti \".iso\" plėtinį."
 
 #: en/help.html+html.body.div.h2:33
 msgid "Your ISO is not booting?"
-msgstr "L'immagine ISO non si avvia?"
+msgstr "Jūsų ISO nepasileidžia?"
 
 #: en/help.html+html.body.div.p:34
 msgid ""
@@ -349,19 +344,19 @@ msgid ""
 "can be booted directly from the ISO file. Check the distribution's forum if "
 "it can be booted directly from the ISO file."
 msgstr ""
-"Sulla nostra pagina di  <a href=\"https://github.com/SolydXK/usb-creator\" "
-"target=\"_blank\">GitHub</a> è pubblicata una lista di distribuzioni testate "
-"ma non tutte possono essere avviate direttamente dall'immagine ISO. "
-"Controllare il forum della distribuzione per accertarsi che sia direttamente "
-"avviabile da immagine ISO."
+"Mūsų <a href=\"https://github.com/SolydXK/usb-creator\" target=\"_blank"
+"\">GitHub</a> puslapyje galite matyti išbandytų distribucijų sąrašą, tačiau "
+"jos ne visos gali būti paleidžiamos tiesiogiai iš ISO failo. Išsamiau, "
+"žiūrėkite distribucijos forume, kad sužinotumėte ar distribucija gali būti "
+"paleista tiesiogiai iš ISO failo."
 
 #: en/help.html+html.body.div.p:35
 msgid ""
 "The menu is configured in a file which you can find on your flash drive: /"
 "boot/grub/grub.cfg"
 msgstr ""
-"Menu configurato grazie ad un file disponibile sul dispositivo: /boot/grub/"
-"grub.cfg"
+"Meniu yra sukonfigūruotas faile, kurį rasite savo atmintuke: /boot/grub/grub."
+"cfg"
 
 #: en/help.html+html.body.div.p:36
 msgid ""
@@ -369,15 +364,14 @@ msgid ""
 "boots and post your changes on GitHub or our <a href=\"http://forums.solydxk."
 "com\" target=\"_blank\">forum</a>."
 msgstr ""
-"Si prega di migliorare questa applicazione adattando il contenuto di grub."
-"cgf fino a che l'immagine ISO sia correttamente avviabile e quindi di "
-"condividere le modifiche necessarie su GitHub o sul nostro <a href=\"http://"
-"forums.solydxk.com\" target=\"_blank\">forum</a>."
+"Prašome padėti mums tobulinti šią programą, pritaikant grub.cfg iki to, kai "
+"pasileidžia ISO ir paskelbiant pakeitimus puslapyje GitHub arba mūsų <a href="
+"\"http://forums.solydxk.com\" target=\"_blank\">forume</a>."
 
 #: en/help.html+html.body.div.p:37
 msgid ""
 "Don't forget to attach the log file when you post an issue on our forum: /"
 "var/log/usb-creator.log"
 msgstr ""
-"Ricordarsi di allegare il file di log quando si intende chiedere supporto "
-"sul nostro forum: /var/log/usb-creator.log"
+"Paskelbdami mūsų forume apie problemą, nepamirškite pridėti žurnalo failą: /"
+"var/log/usb-creator.log"
