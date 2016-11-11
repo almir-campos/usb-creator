@@ -234,8 +234,8 @@ function check_distros() {
 function write_grub_menu() {
   GRUBDIR=$1
   ISO=$2
-  ISONAME=$(basename $ISO)
-  LOWERISONAME=$(basename $ISO | tr '[:upper:]' '[:lower:]')
+  ISONAME=$(basename "$ISO")
+  LOWERISONAME=$(basename "$ISO" | tr '[:upper:]' '[:lower:]')
   
   # Pure distro USB check
   if [[ "$LOWERISONAME" =~ "solyd" ]]; then
@@ -321,7 +321,7 @@ function write_grub_menu() {
     FAMILY=""
   fi
   
-  echo "Family/distro of $ISONAME = $FAMILY/$DISTRO" | tee -a $LOG
+  echo "Family/distro of $ISONAME = $FAMILY/$DISTRO" | tee -a "$LOG"
   
   case $FAMILY in
       ubuntu)
@@ -503,7 +503,7 @@ function write_grub_menu() {
 	;;
 	
       *)
-	echo "Could not guess distribution from ISO name: $ISONAME." | tee -a $LOG
+	echo "Could not guess distribution from ISO name: $ISONAME." | tee -a "$LOG"
 	exit 11
 	;;
   esac
@@ -669,10 +669,10 @@ else
   LOG_SIZE_KB=0
   LOG=/var/log/usb-creator.log
   LOG2=/var/log/usb-creator.log.1
-  if [ -f $LOG ]; then
-    LOG_SIZE_KB=$(ls -s $LOG | awk '{print $1}')
+  if [ -f "$LOG" ]; then
+    LOG_SIZE_KB=$(ls -s "$LOG" | awk '{print $1}')
     if [ $LOG_SIZE_KB -gt $MAX_SIZE_KB ]; then
-      mv -f $LOG $LOG2
+      mv -f "$LOG" "$LOG2"
     fi
   fi
   
@@ -757,9 +757,9 @@ else
     esac
   done
   
-  echo "===========================================================" | tee -a $LOG
-  echo "===============>>>>> Log session start <<<<<===============" | tee -a $LOG
-  echo "===========================================================" | tee -a $LOG
+  echo "===========================================================" | tee -a "$LOG"
+  echo "===============>>>>> Log session start <<<<<===============" | tee -a "$LOG"
+  echo "===========================================================" | tee -a "$LOG"
   
   # Check for passed device
   if [ "$DEVICE" == "" ]; then
@@ -804,34 +804,35 @@ else
   MOUNT=$(grep $DEVICE'1' /etc/mtab | awk '{print $2}' | sed 's/\\040/ /g')
   if [ "$MOUNT" != "" ]; then
     # Is it in use?
-    FUSER=$(fuser -m $MOUNT)
+    FUSER=$(fuser -m "$MOUNT")
     if [ "$FUSER" != "" ]; then
-      echo "$DEVICE is in use. Close any programs using the device." | tee -a $LOG
+      echo "$DEVICE is in use. Close any programs using the device." | tee -a "$LOG"
       exit 5
     else
       # Make sure the USB is not mounted
-      udisksctl unmount -b $DEVICE'1' | tee -a $LOG
+      udisksctl unmount -b $DEVICE'1' | tee -a "$LOG"
     fi
   fi
   
   # Set the label
   if ! $COPY; then
     if [ "$LABEL" == "" ]; then
+      DEFLABEL='MULTIUSB'
       # Get the device's current label
       LABEL=$(blkid -s LABEL -o value $DEVICE'1')
       LABEL=$(trim $LABEL)
       # If not set: set default label name
-      if [ "$LABEL" == "" ]; then
-	LABEL='MULTIUSB'
+      if [ "$LABEL" != "$DEFLABEL" ]; then
+	LABEL=$DEFLABEL
 	if ! $FORMAT; then
 	  # Make sure you set the label
 	  FATSTR=$(udisksctl info -b $DEVICE'1' | grep IdType | grep fat)
 	  if [ "$FATSTR" != "" ]; then
 	    echo "mtools_skip_check=1" > ~/.mtoolsrc
-	    mlabel ::"$LABEL" -i $DEVICE'1' | tee -a $LOG
+	    mlabel ::"$LABEL" -i $DEVICE'1' | tee -a "$LOG"
 	    rm ~/.mtoolsrc
 	  else
-	    e2label $DEVICE'1' $LABEL | tee -a $LOG
+	    e2label $DEVICE'1' $LABEL | tee -a "$LOG"
 	  fi
 	fi
       fi
@@ -840,16 +841,15 @@ else
     # Clean the device
     if $FORMAT; then
       # Clean USB
-      echo "Clean USB..." | tee -a $LOG
-      #dd if=/dev/zero of=$DEVICE bs=1 seek=446 count=64 && sync | tee -a $LOG
-      dd if=/dev/zero of=$DEVICE bs=1k count=2048 && sync | tee -a $LOG
+      echo "Clean USB..." | tee -a "$LOG"
+      dd if=/dev/zero of=$DEVICE bs=1k count=2048 && sync | tee -a "$LOG"
 
       # Partition USB
-      echo "Partitioning USB..." | tee -a $LOG
-      parted -s $DEVICE mklabel msdos | tee -a $LOG
-      parted -s $DEVICE mkpart primary fat32 0% 100% | tee -a $LOG
-      parted -s $DEVICE align-check optimal 1 | tee -a $LOG
-      parted -s $DEVICE toggle 1 boot | tee -a $LOG
+      echo "Partitioning USB..." | tee -a "$LOG"
+      parted -s $DEVICE mklabel msdos | tee -a "$LOG"
+      parted -s $DEVICE mkpart primary fat32 0% 100% | tee -a "$LOG"
+      parted -s $DEVICE align-check optimal 1 | tee -a "$LOG"
+      parted -s $DEVICE toggle 1 boot | tee -a "$LOG"
       sleep 5
       udisksctl unmount -b $DEVICE'1' >/dev/null
       
@@ -858,27 +858,27 @@ else
       if $REPAIR; then
 	BADBLOCKS='-c'
       fi
-      mkfs.vfat -F 32 -v -I $BADBLOCKS -n $LABEL $DEVICE'1' | tee -a $LOG
+      mkfs.vfat -F 32 -v -I $BADBLOCKS -n "$LABEL" $DEVICE'1' | tee -a "$LOG"
 
       # Repair the partition
       if $REPAIR; then
-	fsck.vfat -Vavt $DEVICE'1' | tee -a $LOG
+	fsck.vfat -Vavt $DEVICE'1' | tee -a "$LOG"
 	REPAIR=false
       fi
       
       echo
-      echo "==================== Device Info ====================" | tee -a $LOG
-      parted -s $DEVICE print | tee -a $LOG
-      echo "=====================================================" | tee -a $LOG
-      fsck.vfat $DEVICE'1' | tee -a $LOG
-      echo "=====================================================" | tee -a $LOG
+      echo "==================== Device Info ====================" | tee -a "$LOG"
+      parted -s $DEVICE print | tee -a "$LOG"
+      echo "=====================================================" | tee -a "$LOG"
+      fsck.vfat $DEVICE'1' | tee -a "$LOG"
+      echo "=====================================================" | tee -a "$LOG"
       echo
     fi
 
     # Is it a fat partition?
     FATSTR=$(udisksctl info -b  $DEVICE'1' | grep IdType | grep fat)
     if [ "$FATSTR" == "" ]; then
-      echo "$DEVICE has no fat partition. Run with the -f parameter to format the device" | tee -a $LOG
+      echo "$DEVICE has no fat partition. Run with the -f parameter to format the device" | tee -a "$LOG"
       exit 8
     fi
   fi
@@ -886,12 +886,12 @@ else
   # Check if the ISO exists
   for ISO in $ISOS; do
     ISO=$(trim $ISO)
-    if [ -d $ISO ]; then
-      ISO=$(echo $ISO | sed 's/\/$//')
-      ISOS=$(ls $ISO/*.iso)
+    if [ -d "$ISO" ]; then
+      ISO=$(echo "$ISO" | sed 's/\/$//')
+      ISOS=$(ls "$ISO/"*.iso)
       break
     elif [ ! -e "$ISO" ]; then
-      echo "$ISO does not exist." | tee -a $LOG
+      echo "$ISO does not exist." | tee -a "$LOG"
       exit 4
     fi
   done
@@ -899,52 +899,52 @@ else
   if $COPY; then
     echo "Copy the contents of the ISO to the device..."
     for ISO in $ISOS; do
-      dd if=$ISO of=$DEVICE bs=4M && sync
+      dd if="$ISO" of=$DEVICE bs=4M && sync
       # Only dd first ISO
       break
     done
   else
     # Repair the device
     if $REPAIR; then
-      fsck.vfat -a $DEVICE'1' | tee -a $LOG
+      fsck.vfat -a $DEVICE'1' | tee -a "$LOG"
     fi
     
     # Get the mount point
     MOUNT=$(grep $DEVICE'1' /etc/mtab | awk '{print $2}' | sed 's/\\040/ /g')
     if [ "$MOUNT" == "" ]; then
-      echo "Mount $DEVICE" | tee -a $LOG
-      udisksctl mount -b $DEVICE'1' | tee -a $LOG
+      echo "Mount $DEVICE" | tee -a "$LOG"
+      udisksctl mount -b $DEVICE'1' | tee -a "$LOG"
       MOUNT=$(grep $DEVICE'1' /etc/mtab | awk '{print $2}' | sed 's/\\040/ /g')
     fi
     if [ "$MOUNT" == "" ]; then
-      echo "$DEVICE could not be mounted. Mount it manually." | tee -a $LOG
+      echo "$DEVICE could not be mounted. Mount it manually." | tee -a "$LOG"
       exit 6
     fi
     
     if ! $BOOT; then
       # Check if we need to install the bootloaders
       GRUBCHK=$(dd bs=512 count=1 if=$DEVICE 2>/dev/null | strings | grep GRUB)
-      EFI=$(ls $MOUNT/EFI/BOOT/*.EFI 2>/dev/null)
+      EFI=$(ls "$MOUNT"/EFI/BOOT/*.EFI 2>/dev/null)
       if [ "$GRUBCHK" == "" ] || [ "$EFI" == "" ] || [ ! -d "$MOUNT/boot/grub/" ]; then
-	echo "Force bootlader installation." | tee -a $LOG
+	echo "Force bootlader installation." | tee -a "$LOG"
 	BOOT=true
       fi
     fi
     
     if $BOOT; then
       # Install BIOS and EFI Grub on device
-      echo "Installing i386 EFI..." | tee -a $LOG
-      grub-install --removable --no-nvram --no-uefi-secure-boot --efi-directory=$MOUNT --boot-directory=$MOUNT/boot --target=i386-efi
-      echo "Installing x86_64 EFI..." | tee -a $LOG
-      grub-install --removable --no-nvram --no-uefi-secure-boot --efi-directory=$MOUNT --boot-directory=$MOUNT/boot --target=x86_64-efi
-      echo "Installing legacy grub..." | tee -a $LOG
-      grub-install --removable --no-floppy --boot-directory=$MOUNT/boot --target=i386-pc $DEVICE
+      echo "Installing i386 EFI..." | tee -a "$LOG"
+      grub-install --removable --no-nvram --no-uefi-secure-boot --efi-directory="$MOUNT" --boot-directory="$MOUNT/boot" --target=i386-efi
+      echo "Installing x86_64 EFI..." | tee -a "$LOG"
+      grub-install --removable --no-nvram --no-uefi-secure-boot --efi-directory="$MOUNT" --boot-directory="$MOUNT/boot" --target=x86_64-efi
+      echo "Installing legacy grub..." | tee -a "$LOG"
+      grub-install --removable --no-floppy --boot-directory="$MOUNT/boot" --target=i386-pc $DEVICE
 
       # Check if there are ISOs on the USB
       if ! $GRUB; then
 	USBISOS=$(find "$MOUNT" -type f -name "*.iso")
 	if [ "$USBISOS" != "" ]; then
-	  echo "Force bootlader installation." | tee -a $LOG
+	  echo "Force bootlader installation." | tee -a "$LOG"
 	  GRUB=true
 	fi
       fi
@@ -955,24 +955,24 @@ else
     # watch -t -n1 'awk "{ print \$9 }" /sys/block/sdc/stat'
     # watch -t grep -e Dirty: /proc/meminfo
     for ISO in $ISOS; do
-      ISONAME=$(basename $ISO)
+      ISONAME=$(basename "$ISO")
       if [ -e "$MOUNT/$ISONAME" ]; then
-	rm -v "$MOUNT/$ISONAME" | tee -a $LOG
+	rm -v "$MOUNT/$ISONAME" | tee -a "$LOG"
       fi
       ISOSIZE=$((`stat -c%s "$ISO"` / 1024))
       FREESIZE=$(df --output=avail $DEVICE'1' | awk 'NR==2')
-      echo ">> ISOSIZE=$ISOSIZE | FREESIZE=$FREESIZE" | tee -a $LOG
+      echo ">> ISOSIZE=$ISOSIZE | FREESIZE=$FREESIZE" | tee -a "$LOG"
       if [ $ISOSIZE -gt $FREESIZE ]; then
-	echo "Not enough space on $DEVICE. Needed: $ISOSIZE, Available: $FREESIZE" | tee -a $LOG
+	echo "Not enough space on $DEVICE. Needed: $ISOSIZE, Available: $FREESIZE" | tee -a "$LOG"
 	exit 10
       fi
-      echo "Rsync $ISO to device..." | tee -a $LOG
-      echo "rsync -a --info=progress2 --modify-window=2 \"$ISO\" \"$MOUNT/\"" | tee -a $LOG
+      echo "Rsync $ISO to device..." | tee -a "$LOG"
+      echo "rsync -a --info=progress2 --modify-window=2 \"$ISO\" \"$MOUNT/\"" | tee -a "$LOG"
       SYNCING=true
-      rsync -a --info=progress2 --modify-window=2 "$ISO" "$MOUNT/" |& tee -a $LOG &
+      rsync -a --info=progress2 --modify-window=2 "$ISO" "$MOUNT/" |& tee -a "$LOG" &
       
       # Check in the log file if rsync has finished the temporary copy
-      while [[ `tail $LOG | grep '100%'` == '' ]]; do
+      while [[ `tail "$LOG" | grep '100%'` == '' ]]; do
 	sleep 1
       done
 
@@ -980,11 +980,11 @@ else
       wait_until_done $DEVICE & 
       sync
       SYNCING=false
-      echo "Rsync finished" | tee -a $LOG
+      echo "Rsync finished" | tee -a "$LOG"
 
       # Add to history file when not already in history file
       if ! grep -q $ISO "$ISOHISTORY"; then
-	echo $ISO >> $ISOHISTORY
+	echo $ISO >> "$ISOHISTORY"
       fi
       GRUB=true
     done
@@ -993,8 +993,8 @@ else
     if $GRUB; then
       GRUBDIR="$MOUNT/boot/grub"
       if [ ! -e "$GRUBDIR" ]; then
-	echo "You need to install the bootloaders before configuring Grub" | tee -a $LOG
-	echo "Run usb-creator with the -b option" | tee -a $LOG
+	echo "You need to install the bootloaders before configuring Grub" | tee -a "$LOG"
+	echo "Run usb-creator with the -b option" | tee -a "$LOG"
 	exit 9
       fi
       
@@ -1004,20 +1004,20 @@ else
       # Loop the ISOs
       USBISOS=$(find "$MOUNT" -name "*.iso")
       for ISO in $USBISOS; do
-	echo "Create Grub menu for $ISO" | tee -a $LOG
-	write_grub_menu $GRUBDIR $ISO
+	echo "Create Grub menu for $ISO" | tee -a "$LOG"
+	write_grub_menu "$GRUBDIR" "$ISO"
       done
       
-      echo "====================== Grub.cfg =====================" | tee -a $LOG
+      echo "====================== Grub.cfg =====================" | tee -a "$LOG"
       cat "$GRUBDIR/grub.cfg"
-      echo "=====================================================" | tee -a $LOG
+      echo "=====================================================" | tee -a "$LOG"
       
       # Copy Grub background image
       IMG="grubbg.png"
       if $SOLYDXK; then
 	IMG="grubbg-solydxk.png"
       fi
-      cp -vf $FILESDIR/$IMG "$GRUBDIR/grubbg.png" 2>/dev/null | tee -a $LOG
+      cp -vf $FILESDIR/$IMG "$GRUBDIR/grubbg.png" 2>/dev/null | tee -a "$LOG"
     fi
     
     # Check the sha256sum of the given ISOs
@@ -1045,20 +1045,20 @@ else
       
       # Now check the sha256sum of the ISOs
       for ISO in $ISOS; do
-	ISONAME=$(basename $ISO)
+	ISONAME=$(basename "$ISO")
 	if [ -f "$ISO" ] && [ -f "$MOUNT/$ISONAME" ]; then
-	  echo "Check sha256sum of $ISONAME..." | tee -a $LOG
-	  MD5ORG=$(sha256sum $ISO | awk '{print $1}')
+	  echo "Check sha256sum of $ISONAME..." | tee -a "$LOG"
+	  MD5ORG=$(sha256sum "$ISO" | awk '{print $1}')
 	  MD5TARGET=$(sha256sum "$MOUNT/$ISONAME" | awk '{print $1}')
 	  if [ "$MD5ORG" != "$MD5TARGET" ]; then
 	    MISMATCH=$MISMATCH"sha256sum of $ISO does NOT match original. Original: $MD5ORG, Target: $MD5TARGET\n"
 	  else
-	    echo "sha256sum of target $ISONAME matches original: $MD5ORG" | tee -a $LOG
+	    echo "sha256sum of target $ISONAME matches original: $MD5ORG" | tee -a "$LOG"
 	  fi
 	fi
       done
       if [ "$MISMATCH" != "" ]; then
-	echo -e $MISMATCH | tee -a $LOG
+	echo -e "$MISMATCH" | tee -a "$LOG"
 	exit 7
       fi
     fi
@@ -1067,13 +1067,13 @@ else
   # Safely remove the device
   if $UNMOUNT; then
     # Is it in use?
-    FUSER=$(fuser -m $MOUNT)
+    FUSER=$(fuser -m "$MOUNT")
     if [ "$FUSER" != "" ]; then
-      echo "Cannot safely unmount $DEVICE. Unmount the device manually." | tee -a $LOG
+      echo "Cannot safely unmount $DEVICE. Unmount the device manually." | tee -a "$LOG"
       exit 5
     else
-      udisksctl unmount -b $DEVICE'1' | tee -a $LOG
-      udisksctl power-off -b $DEVICE | tee -a $LOG
+      udisksctl unmount -b $DEVICE'1' | tee -a "$LOG"
+      udisksctl power-off -b $DEVICE | tee -a "$LOG"
       echo "You can now safely remove $DEVICE"
     fi
   fi

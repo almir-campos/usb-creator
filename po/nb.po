@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: usb-creator\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-10-31 16:55+0100\n"
+"POT-Creation-Date: 2016-11-01 06:51+0100\n"
 "PO-Revision-Date: 2016-02-22 18:03+0000\n"
 "Last-Translator: Arjen Balfoort <schoelje@solydxk.com>\n"
 "Language-Team: Norwegian Bokmål (http://www.transifex.com/solydxk/usb-"
@@ -153,47 +153,47 @@ msgstr ""
 "Kunne ikke avmontere enheten.\n"
 "Vennligst avmonter enheten manuelt."
 
-#: ../usr/lib/usb-creator/usbcreator.py:511
+#: ../usr/lib/usb-creator/usbcreator.py:505
 msgid "Run this application with root permission."
 msgstr "Kjør dette programmet med administratorrettigheter."
 
-#: ../usr/lib/usb-creator/usbcreator.py:513
+#: ../usr/lib/usb-creator/usbcreator.py:507
 msgid "Wrong arguments were passed to usb-creator."
 msgstr "Feil argumenter ble sendt til USB Creator"
 
-#: ../usr/lib/usb-creator/usbcreator.py:515
+#: ../usr/lib/usb-creator/usbcreator.py:509
 msgid "The device was not found or no device was given."
 msgstr "Enheten ble ikke funnet eller ingen enhet ble angitt."
 
-#: ../usr/lib/usb-creator/usbcreator.py:517
+#: ../usr/lib/usb-creator/usbcreator.py:511
 msgid "Given ISO path was not found."
 msgstr "Angitte sti til ISO ble ikke funnet."
 
-#: ../usr/lib/usb-creator/usbcreator.py:519
+#: ../usr/lib/usb-creator/usbcreator.py:513
 msgid "Device is in use by another application."
 msgstr "Enheten er i bruk av et annet program."
 
-#: ../usr/lib/usb-creator/usbcreator.py:521
+#: ../usr/lib/usb-creator/usbcreator.py:515
 msgid "Unable to mount the device."
 msgstr "Ikke i stand til å montere enheten."
 
-#: ../usr/lib/usb-creator/usbcreator.py:523
+#: ../usr/lib/usb-creator/usbcreator.py:517
 msgid "Hash mismatch."
 msgstr "Feil i hash."
 
-#: ../usr/lib/usb-creator/usbcreator.py:525
+#: ../usr/lib/usb-creator/usbcreator.py:519
 msgid "The device has no fat32 partition."
 msgstr "Enheten har ikke noen fat32 partisjon"
 
-#: ../usr/lib/usb-creator/usbcreator.py:527
+#: ../usr/lib/usb-creator/usbcreator.py:521
 msgid "The device has no bootloader installed."
 msgstr "Enheten har ikke installert noen oppstartlaster."
 
-#: ../usr/lib/usb-creator/usbcreator.py:529
+#: ../usr/lib/usb-creator/usbcreator.py:523
 msgid "There is not enough space available on the device."
 msgstr "Det er ikke nok plass tilgjengelig på enheten."
 
-#: ../usr/lib/usb-creator/usbcreator.py:531
+#: ../usr/lib/usb-creator/usbcreator.py:525
 msgid ""
 "Unable to guess distribution from ISO name.\n"
 "Make sure you have the distribution name in the ISO name."
@@ -201,7 +201,7 @@ msgstr ""
 "Ikke i stand til å gjette distribusjonen ut i fra ISO-navnet.\n"
 "Sjekk at navnet på disttribusjonen er en del av ISO-navnet."
 
-#: ../usr/lib/usb-creator/usbcreator.py:534
+#: ../usr/lib/usb-creator/usbcreator.py:528
 msgid ""
 "An unknown error accured.\n"
 "Please, visit our forum for support: http://forums.solydxk.com"
@@ -209,7 +209,7 @@ msgstr ""
 "En ukjent feil har oppstått.\n"
 "Vennligst besøk vårt forum for hjelp: http://forums.solydxk.com"
 
-#: ../usr/lib/usb-creator/usbcreator.py:538
+#: ../usr/lib/usb-creator/usbcreator.py:532
 msgid "The USB was successfully written."
 msgstr "USB-en ble skrevet uten feil."
 

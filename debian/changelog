@@ -1,3 +1,9 @@
+usb-creator (0.3.1) solydxk; urgency=low
+
+  * Solved minor bugs
+
+ -- Arjen Balfoort <arjenbalfoort@solydxk.com>  Tue, 01 Nov 2016 06:27:43 +0100
+
 usb-creator (0.3.0) solydxk; urgency=low
 
   * Upgrade to udisks2

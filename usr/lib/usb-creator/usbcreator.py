@@ -272,17 +272,13 @@ class USBCreator(object):
 
     def on_cmbDevice_changed(self, widget=None):
         drive_path = self.cmbDeviceHandler.getValue()
-        print((">> drive_path = %s" % str(drive_path)))
         device_paths = []
         if drive_path is not None:
             drive = self.udisks2.devices[drive_path]
-            print((">> drive = %s" % str(drive)))
             device_paths = self.udisks2.get_drive_device_paths(drive_path)
-            print((">> device_paths = %s" % str(device_paths)))
             device = ''
             if device_paths:
                 device = device_paths[0]
-            print((">> device = %s" % str(device)))
             mount = ''
             size = 0
             available = 0
@@ -296,18 +292,15 @@ class USBCreator(object):
             if device != '':
                 mount = drive[device]['mount_point']
                 if not exists(mount):
-                    print((">> mount the device %s" % device))
                     # Mount if not already mounted
                     try:
                         mount = self.udisks2.mount_device(device)
                     except Exception as e:
                         self.show_message(6)
                         self.log.write("ERROR: %s" % str(e))
-                print((">> mount = %s" % mount))
                 if exists(mount) and not self.chkFormatDevice.get_active():
                     size = drive[device]['total_size']
                     available = drive[device]['free_size']
-                    print((">> available = %s" % str(available)))
                 # This function can be called from on_chkFormatDevice_toggled
                 if widget != self.chkFormatDevice:
                     self.chkFormatDevice.set_sensitive(True)
@@ -494,10 +487,11 @@ class USBCreator(object):
     def on_usbcreator_destroy(self, widget):
         # Unmount devices of drive and power-off drive
         try:
-            self.udisks2.unmount_drive(self.device['path'])
-            self.udisks2.poweroff_drive(self.device['path'])
+            if exists(self.device['path']) and \
+               exists(self.device['mount']):
+                self.udisks2.unmount_drive(self.device['path'])
+                self.udisks2.poweroff_drive(self.device['path'])
         except Exception as e:
-            self.show_message(5)
             self.log.write("ERROR: %s" % str(e))
         # Close the app
         Gtk.main_quit()

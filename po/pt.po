@@ -10,7 +10,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: usb-creator\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-10-31 16:55+0100\n"
+"POT-Creation-Date: 2016-11-01 06:51+0100\n"
 "PO-Revision-Date: 2016-05-27 11:40+0000\n"
 "Last-Translator: Luis Filipe Teixeira <lufilte@gmail.com>\n"
 "Language-Team: Portuguese (http://www.transifex.com/solydxk/usb-creator/"
@@ -154,47 +154,47 @@ msgstr ""
 "Não foi possível desmontar o dispositivo.\n"
 "Por favor, desmonte o dispositivo manualmente."
 
-#: ../usr/lib/usb-creator/usbcreator.py:511
+#: ../usr/lib/usb-creator/usbcreator.py:505
 msgid "Run this application with root permission."
 msgstr "Executar esta aplicação com permissão de root."
 
-#: ../usr/lib/usb-creator/usbcreator.py:513
+#: ../usr/lib/usb-creator/usbcreator.py:507
 msgid "Wrong arguments were passed to usb-creator."
 msgstr "Argumentos errados foram passados para usb-creator."
 
-#: ../usr/lib/usb-creator/usbcreator.py:515
+#: ../usr/lib/usb-creator/usbcreator.py:509
 msgid "The device was not found or no device was given."
 msgstr "O dispositivo não foi encontrado ou não foi dado um dispositivo."
 
-#: ../usr/lib/usb-creator/usbcreator.py:517
+#: ../usr/lib/usb-creator/usbcreator.py:511
 msgid "Given ISO path was not found."
 msgstr "Não foi encontrado o caminho dado para a ISO."
 
-#: ../usr/lib/usb-creator/usbcreator.py:519
+#: ../usr/lib/usb-creator/usbcreator.py:513
 msgid "Device is in use by another application."
 msgstr "Dispositivo está em uso por outra aplicação."
 
-#: ../usr/lib/usb-creator/usbcreator.py:521
+#: ../usr/lib/usb-creator/usbcreator.py:515
 msgid "Unable to mount the device."
 msgstr "Não é possível montar o dispositivo."
 
-#: ../usr/lib/usb-creator/usbcreator.py:523
+#: ../usr/lib/usb-creator/usbcreator.py:517
 msgid "Hash mismatch."
 msgstr "A Hash não corresponde."
 
-#: ../usr/lib/usb-creator/usbcreator.py:525
+#: ../usr/lib/usb-creator/usbcreator.py:519
 msgid "The device has no fat32 partition."
 msgstr "O dispositivo não tem partição fat32."
 
-#: ../usr/lib/usb-creator/usbcreator.py:527
+#: ../usr/lib/usb-creator/usbcreator.py:521
 msgid "The device has no bootloader installed."
 msgstr "O dispositivo não tem o bootloader instalado."
 
-#: ../usr/lib/usb-creator/usbcreator.py:529
+#: ../usr/lib/usb-creator/usbcreator.py:523
 msgid "There is not enough space available on the device."
 msgstr "Não há espaço suficiente disponível no dispositivo"
 
-#: ../usr/lib/usb-creator/usbcreator.py:531
+#: ../usr/lib/usb-creator/usbcreator.py:525
 msgid ""
 "Unable to guess distribution from ISO name.\n"
 "Make sure you have the distribution name in the ISO name."
@@ -202,7 +202,7 @@ msgstr ""
 "Impossível detetar o nome da distribuição da ISO.\n"
 "Verifique se você tem o nome da distribuição no nome da ISO. "
 
-#: ../usr/lib/usb-creator/usbcreator.py:534
+#: ../usr/lib/usb-creator/usbcreator.py:528
 msgid ""
 "An unknown error accured.\n"
 "Please, visit our forum for support: http://forums.solydxk.com"
@@ -210,7 +210,7 @@ msgstr ""
 "Ocorreu um erro desconhecido.\n"
 "Por favor, visite o nosso fórum para suporte: http://forums.solydxk.com"
 
-#: ../usr/lib/usb-creator/usbcreator.py:538
+#: ../usr/lib/usb-creator/usbcreator.py:532
 msgid "The USB was successfully written."
 msgstr "O USB foi escrito com sucesso."
 

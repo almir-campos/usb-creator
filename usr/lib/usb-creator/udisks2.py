@@ -89,14 +89,16 @@ class Udisks2():
                 add_device = True
 
             if add_device:
-                print(('Device: %s' % device_path))
+
+                print(('========== Device Info of: %s ==========' % device_path))
+                print(('Drive name: %s' % drive_name))
                 print(('FS Type: %s' % fs_type))
-                print(('Drive: %s' % drive))
                 print(('Mount point: %s' % mount_point))
-                print(('Total: %s' % total_size))
-                print(('Free: %s' % free_size))
+                print(('Total size: %s' % total_size))
+                print(('Free size: %s' % free_size))
                 print(('ConnectionBus: %s' % connectionbus))
                 print(('Removable: %s' % str(removable)))
+                print(('======================================='))
 
                 if device_path == drive_path:
                     # Drive information
