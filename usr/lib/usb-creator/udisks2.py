@@ -77,7 +77,10 @@ class Udisks2():
                 free_size = total_size
 
             drive_name = block.get_cached_property('Drive').get_string()
-            drive = manager.get_object(drive_name).get_drive()
+            drive_obj = manager.get_object(drive_name)
+            if drive_obj is None:
+                continue
+            drive = drive_obj.get_drive()
             removable = drive.get_cached_property("Removable").get_boolean()
             connectionbus = drive.get_cached_property("ConnectionBus").get_string()
 

@@ -1,3 +1,9 @@
+usb-creator (0.3.2) solydxk; urgency=low
+
+  * Fix issue where udisks2 drive object can be None
+
+ -- Arjen Balfoort <arjenbalfoort@solydxk.com>  Sat, 04 Feb 2017 12:39:42 +0100
+
 usb-creator (0.3.1) solydxk; urgency=low
 
   * Solved minor bugs
