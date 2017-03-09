@@ -1,3 +1,27 @@
+usb-creator (0.3.6) solydxk; urgency=low
+
+  * Implement xksudo
+
+ -- Arjen Balfoort <arjenbalfoort@solydxk.com>  Tue, 07 Mar 2017 19:13:28 +0100
+
+usb-creator (0.3.5) solydxk; urgency=low
+
+  * Preserve environment variables
+
+ -- Arjen Balfoort <arjenbalfoort@solydxk.com>  Thu, 02 Mar 2017 11:39:29 +0100
+
+usb-creator (0.3.4) solydxk; urgency=low
+
+  * Fix GUI anamoly in dark themes
+
+ -- Arjen Balfoort <arjenbalfoort@solydxk.com>  Sat, 18 Feb 2017 15:50:23 +0100
+
+usb-creator (0.3.3) solydxk; urgency=low
+
+  * Keep first 4MiB unallocated on pen drive
+
+ -- Arjen Balfoort <arjenbalfoort@solydxk.com>  Sun, 12 Feb 2017 15:40:56 +0100
+
 usb-creator (0.3.2) solydxk; urgency=low
 
   * Fix issue where udisks2 drive object can be None
