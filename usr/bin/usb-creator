@@ -643,16 +643,19 @@ if [ -z $1 ]; then
   # Without arguments: show GUI if available, else show help
   if [ -e "$GUISTART" ]; then
     optimize='OO'; case "$*" in *--debug*) unset optimize; esac
-    MSG='Please enter your password'
-    CMD="python3 -tt${optimize} "$GUISTART" $@"
-    if [ $UID -eq 0 ]; then
-      python3 -tt${optimize} "$GUISTART" $@
+    PYTHON=$(which python3)
+    if [ "$PYTHON" == '' ]; then
+      echo "Cannot find python3 executable - exiting"
+      exit 0
+    fi
+  
+    CMD="$PYTHON -tt${optimize} "$GUISTART" $@"
+    if [ -e "/usr/bin/xksudo" ]; then
+      xksudo -i "usb-creator" -c "$CMD"
+    elif [ -e "/usr/bin/kdesudo" ]; then
+      kdesudo -d -c "$CMD"
     else
-      if [ -e "/usr/bin/kdesudo" ]; then
-	kdesudo -i "usb-creator" -d --comment "<b>$MSG</b>" "$CMD"
-      else
-	gksudo --message "<b>$MSG</b>" "$CMD"
-      fi
+      gksudo "$CMD"
     fi
   else
     usage
@@ -847,7 +850,7 @@ else
       # Partition USB
       echo "Partitioning USB..." | tee -a "$LOG"
       parted -s $DEVICE mklabel msdos | tee -a "$LOG"
-      parted -s $DEVICE mkpart primary fat32 0% 100% | tee -a "$LOG"
+      parted -s $DEVICE mkpart primary fat32 4MiB 100% | tee -a "$LOG"
       parted -s $DEVICE align-check optimal 1 | tee -a "$LOG"
       parted -s $DEVICE toggle 1 boot | tee -a "$LOG"
       sleep 5
@@ -858,6 +861,7 @@ else
       if $REPAIR; then
 	BADBLOCKS='-c'
       fi
+      echo "mkfs.vfat -F 32 -v -I $BADBLOCKS -n \"$LABEL\" $DEVICE"'1' | tee -a "$LOG"
       mkfs.vfat -F 32 -v -I $BADBLOCKS -n "$LABEL" $DEVICE'1' | tee -a "$LOG"
 
       # Repair the partition
