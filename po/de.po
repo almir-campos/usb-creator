@@ -5,13 +5,14 @@
 # Translators:
 # Arjen Balfoort <schoelje@solydxk.com>, 2016
 # ilu lu, 2015
+# Werner Jud <phissica@gmail.com>, 2017
 msgid ""
 msgstr ""
 "Project-Id-Version: usb-creator\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-03-07 19:13+0100\n"
-"PO-Revision-Date: 2016-02-22 18:00+0000\n"
-"Last-Translator: Arjen Balfoort <schoelje@solydxk.com>\n"
+"POT-Creation-Date: 2017-03-10 15:29+0100\n"
+"PO-Revision-Date: 2017-03-09 22:12+0000\n"
+"Last-Translator: Werner Jud <phissica@gmail.com>\n"
 "Language-Team: German (http://www.transifex.com/solydxk/usb-creator/language/"
 "de/)\n"
 "Language: de\n"
@@ -107,7 +108,7 @@ msgstr "noch zu kopierende KB:"
 
 #: ../usr/lib/usb-creator/usbcreator.py:91
 msgid "Check hash of ISO..."
-msgstr "Hash-Summe des ISOsi wird überprüft..."
+msgstr "Hash-Summe des ISO Abbilds wird überprüft..."
 
 #: ../usr/lib/usb-creator/usbcreator.py:127
 msgid "Version"
@@ -118,9 +119,9 @@ msgid ""
 "Cannot add ISO from path: {}.\n"
 "Please, remove the ISO path or browse for an existing ISO."
 msgstr ""
-"ISO Datei nicht hinzugefügt aus dem Pfad {}\n"
-"Bitte entfernen Sie den Pfad oder suchen Sie nach einer existierende ISO-"
-"Datei."
+"ISO-Abbild aus dem Pfad {}\n"
+"kann nicht hinzugefügt werden.\n"
+"Bitte löschen Sie den Pfad oder suchen Sie nach einer existierende ISO-Datei."
 
 #: ../usr/lib/usb-creator/usbcreator.py:156
 msgid ""
@@ -158,7 +159,7 @@ msgstr ""
 
 #: ../usr/lib/usb-creator/usbcreator.py:505
 msgid "Run this application with root permission."
-msgstr "Dieses Programm muß mit Root-Rechten ausgeführt werden"
+msgstr "Dieses Programm muss mit Root-Rechten ausgeführt werden"
 
 #: ../usr/lib/usb-creator/usbcreator.py:507
 msgid "Wrong arguments were passed to usb-creator."
@@ -182,7 +183,7 @@ msgstr "Das Gerät kann nicht eingehängt werden."
 
 #: ../usr/lib/usb-creator/usbcreator.py:517
 msgid "Hash mismatch."
-msgstr "Hash-Summe stimmt nicht überein"
+msgstr "Hash-Summe stimmt nicht überein."
 
 #: ../usr/lib/usb-creator/usbcreator.py:519
 msgid "The device has no fat32 partition."
@@ -296,8 +297,8 @@ msgid ""
 "This will try to repair an unbootable flash drive that already contains ISO "
 "files."
 msgstr ""
-"Versuch der Reparatur eines nicht startfähigen Flash-Laufwerks, auf dem sich "
-"bereit ein ISO befindet."
+"Dies versucht die Reparatur eines nicht startfähigen Flash-Laufwerks, auf "
+"dem sich bereits eine ISO-Datei befindet."
 
 #: en/help.html+html.body.div.h3:25
 msgid "# usb-creator -h"
@@ -305,7 +306,7 @@ msgstr "# usb-creator -h"
 
 #: en/help.html+html.body.div.p:26
 msgid "This will show all available options and their usage."
-msgstr "Dieser Befehl zeigt verfügbaren Optionen und Ihre Benutzung."
+msgstr "Dieser Befehl zeigt verfügbare Optionen und ihre Verwendung."
 
 #: en/help.html+html.body.div.h2:28
 msgid "Hidden features"
