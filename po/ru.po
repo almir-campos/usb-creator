@@ -10,7 +10,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: usb-creator\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-03-07 19:13+0100\n"
+"POT-Creation-Date: 2017-03-31 09:34+0200\n"
 "PO-Revision-Date: 2016-02-22 18:06+0000\n"
 "Last-Translator: Arjen Balfoort <schoelje@solydxk.com>\n"
 "Language-Team: Russian (http://www.transifex.com/solydxk/usb-creator/"
@@ -228,12 +228,12 @@ msgstr ""
 "В приложении USB Creator произошла непредвиденная ошибка. Пожалуйста, "
 "отправьте отчет об ошибке!"
 
-#: ../usr/share/kde4/apps/solid/actions/usb-constructor-openusb.desktop.in.h:1
-msgid "Create a multi-boot USB with the USB Creator"
-msgstr "Создать мульти-загрузочный USB-накопитель"
-
 #: ../usr/share/applications/usb-creator.desktop.in.h:2
 msgid "Create a multi-boot USB"
+msgstr "Создать мульти-загрузочный USB-накопитель"
+
+#: ../usr/share/solid/actions/usb-constructor-openusb.desktop.in.h:1
+msgid "Create a multi-boot USB with the USB Creator"
 msgstr "Создать мульти-загрузочный USB-накопитель"
 
 #: en/help.html+html.body.h1:8

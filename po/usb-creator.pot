@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-03-07 19:13+0100\n"
+"POT-Creation-Date: 2017-03-31 09:34+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -210,12 +210,12 @@ msgid ""
 "bug report!"
 msgstr ""
 
-#: ../usr/share/kde4/apps/solid/actions/usb-constructor-openusb.desktop.in.h:1
-msgid "Create a multi-boot USB with the USB Creator"
-msgstr ""
-
 #: ../usr/share/applications/usb-creator.desktop.in.h:2
 msgid "Create a multi-boot USB"
+msgstr ""
+
+#: ../usr/share/solid/actions/usb-constructor-openusb.desktop.in.h:1
+msgid "Create a multi-boot USB with the USB Creator"
 msgstr ""
 
 #: en/help.html+html.body.h1:8

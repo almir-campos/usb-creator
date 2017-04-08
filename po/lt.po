@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: usb-creator\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-03-07 19:13+0100\n"
+"POT-Creation-Date: 2017-03-31 09:34+0200\n"
 "PO-Revision-Date: 2016-07-15 09:30+0000\n"
 "Last-Translator: Moo\n"
 "Language-Team: Lithuanian (http://www.transifex.com/solydxk/usb-creator/"
@@ -226,13 +226,13 @@ msgstr ""
 "USB kūrėjas patyrė nesėkmę su šia netikėta klaida. Prašome pranešti apie "
 "klaidą!"
 
-#: ../usr/share/kde4/apps/solid/actions/usb-constructor-openusb.desktop.in.h:1
-msgid "Create a multi-boot USB with the USB Creator"
-msgstr "Sukurti keleriopo paleidimo USB, naudojant USB kūrėją"
-
 #: ../usr/share/applications/usb-creator.desktop.in.h:2
 msgid "Create a multi-boot USB"
 msgstr "Sukurti keleriopo paleidimo USB"
+
+#: ../usr/share/solid/actions/usb-constructor-openusb.desktop.in.h:1
+msgid "Create a multi-boot USB with the USB Creator"
+msgstr "Sukurti keleriopo paleidimo USB, naudojant USB kūrėją"
 
 #: en/help.html+html.body.h1:8
 msgid "USB Creator Help"
