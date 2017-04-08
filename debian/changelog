@@ -1,3 +1,9 @@
+usb-creator (0.3.8) solydxk; urgency=low
+
+  * Include device notifier for Plasma 5
+
+ -- Arjen Balfoort <arjenbalfoort@solydxk.com>  Thu, 30 Mar 2017 20:56:34 +0200
+
 usb-creator (0.3.7) solydxk; urgency=low
 
   * Replacement for dummy package solydxk-usb-creator
