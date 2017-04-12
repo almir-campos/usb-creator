@@ -30,5 +30,5 @@ Icon=usb-creator
 Terminal=false
 Type=Application
 Encoding=UTF-8
-Categories=Application;System;Settings;
+Categories=Application;System;Settings;X-XFCE-SettingsDialog;X-XFCE-SystemSettings;
 StartupNotify=false

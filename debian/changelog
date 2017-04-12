@@ -1,3 +1,9 @@
+usb-creator (0.3.9) solydxk; urgency=low
+
+  * Added desktop categories
+
+ -- Arjen Balfoort <arjenbalfoort@solydxk.com>  Tue, 11 Apr 2017 12:49:52 +0200
+
 usb-creator (0.3.8) solydxk; urgency=low
 
   * Include device notifier for Plasma 5
