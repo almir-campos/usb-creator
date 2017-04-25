@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: usb-creator\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-04-11 12:50+0200\n"
+"POT-Creation-Date: 2017-04-25 11:37+0200\n"
 "PO-Revision-Date: 2016-02-22 18:02+0000\n"
 "Last-Translator: Arjen Balfoort <schoelje@solydxk.com>\n"
 "Language-Team: Italian (http://www.transifex.com/solydxk/usb-creator/"
@@ -217,17 +217,27 @@ msgstr ""
 msgid "The USB was successfully written."
 msgstr "Scrittura USB completata con successo."
 
-#: ../usr/lib/usb-creator/main.py:42
+#: ../usr/lib/usb-creator/main.py:41
 msgid "Unexpected error"
 msgstr "Errore inatteso"
 
-#: ../usr/lib/usb-creator/main.py:43
+#: ../usr/lib/usb-creator/main.py:42
 msgid ""
 "USB Creator has failed with the following unexpected error. Please submit a "
 "bug report!"
 msgstr ""
 "SolydXK USB Creator ha fallito con il seguente errore inatteso.\n"
 "Si consiglia di inviare una segnalazione di bug!"
+
+#: ../usr/bin/usb-creator:664
+#, sh-format
+msgid "needs administrative privileges."
+msgstr ""
+
+#: ../usr/bin/usb-creator:665
+#, sh-format
+msgid "Please enter your password."
+msgstr ""
 
 #: ../usr/share/applications/usb-creator.desktop.in.h:2
 msgid "Create a multi-boot USB"

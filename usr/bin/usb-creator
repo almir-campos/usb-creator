@@ -642,20 +642,36 @@ function trim() {
 if [ -z $1 ]; then
   # Without arguments: show GUI if available, else show help
   if [ -e "$GUISTART" ]; then
-    optimize='OO'; case "$*" in *--debug*) unset optimize; esac
+    APP="usb-creator"
+
     PYTHON=$(which python3)
     if [ "$PYTHON" == '' ]; then
       echo "Cannot find python3 executable - exiting"
       exit 0
     fi
-  
+
+    # Prepare for translations
+    # https://www.gnu.org/software/gettext/manual/html_node/Preparing-Shell-Scripts.html
+    . gettext.sh
+
+    TEXTDOMAIN=$APP
+    export TEXTDOMAIN
+    TEXTDOMAINDIR=/usr/share/locale
+    export TEXTDOMAINDIR
+
+    # Get translations
+    # Create pot: xgettext -o $APP.pot -L Shell --keyword=eval_gettext $APP
+    MSG_ADM=$(eval_gettext "needs administrative privileges.")
+    MSG_PWD=$(eval_gettext "Please enter your password.")
+    MSG="\"<b>$APP</b> $MSG_ADM $MSG_PWD\""
+
+    optimize='OO'; case "$*" in *--debug*) unset optimize; esac
     CMD="$PYTHON -tt${optimize} "$GUISTART" $@"
-    if [ -e "/usr/bin/xksudo" ]; then
-      xksudo -i "usb-creator" -c "$CMD"
-    elif [ -e "/usr/bin/kdesudo" ]; then
-      kdesudo -d -c "$CMD"
+    if [ -e "/usr/bin/kdesudo" ]; then
+      ICON=$(get-app-theme-icon "$APP" 2>/dev/null)
+      kdesudo -d -i "$ICON" --comment "$MSG" -c "$CMD"
     else
-      gksudo "$CMD"
+      gksudo --message "$MSG" "$CMD"
     fi
   else
     usage

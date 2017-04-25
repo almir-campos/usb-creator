@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: usb-creator\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-04-11 12:50+0200\n"
+"POT-Creation-Date: 2017-04-25 11:37+0200\n"
 "PO-Revision-Date: 2016-07-15 09:30+0000\n"
 "Last-Translator: Moo\n"
 "Language-Team: Lithuanian (http://www.transifex.com/solydxk/usb-creator/"
@@ -214,17 +214,27 @@ msgstr ""
 msgid "The USB was successfully written."
 msgstr "USB buvo sėkmingai įrašytas."
 
-#: ../usr/lib/usb-creator/main.py:42
+#: ../usr/lib/usb-creator/main.py:41
 msgid "Unexpected error"
 msgstr "Netikėta klaida"
 
-#: ../usr/lib/usb-creator/main.py:43
+#: ../usr/lib/usb-creator/main.py:42
 msgid ""
 "USB Creator has failed with the following unexpected error. Please submit a "
 "bug report!"
 msgstr ""
 "USB kūrėjas patyrė nesėkmę su šia netikėta klaida. Prašome pranešti apie "
 "klaidą!"
+
+#: ../usr/bin/usb-creator:664
+#, sh-format
+msgid "needs administrative privileges."
+msgstr ""
+
+#: ../usr/bin/usb-creator:665
+#, sh-format
+msgid "Please enter your password."
+msgstr ""
 
 #: ../usr/share/applications/usb-creator.desktop.in.h:2
 msgid "Create a multi-boot USB"

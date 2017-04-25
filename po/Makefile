@@ -30,7 +30,17 @@ update:
 		--package-name=$(package) \
 		--package-version='' \
 		--from-code=UTF-8 \
-		`find .. -wholename ../debian -prune -o -name '*.py' | grep .py` && echo OK
+		`find .. -wholename ../debian -prune -o -name '*.py' -print` && echo OK
+	# get strings from package launcher (bash script)
+	@ xgettext \
+		--join-existing \
+		--keyword=eval_gettext  \
+		--language=Shell \
+		--output=$(package).pot \
+		--package-name=$(package) \
+		--package-version='' \
+		--from-code=UTF-8 \
+		../usr/bin/$(package) && echo OK
 	# get strings from the desktop file
 	@ for LAUNCHER in `find .. -name '*.desktop'`; do \
 		sed -r \

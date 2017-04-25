@@ -9,8 +9,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: usb-creator\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-04-11 12:50+0200\n"
-"PO-Revision-Date: 2017-02-20 10:52+0000\n"
+"POT-Creation-Date: 2017-04-25 11:37+0200\n"
+"PO-Revision-Date: 2017-04-13 11:44+0000\n"
 "Last-Translator: Slobodan Simić <slsimic@gmail.com>\n"
 "Language-Team: Serbian (http://www.transifex.com/solydxk/usb-creator/"
 "language/sr/)\n"
@@ -108,7 +108,7 @@ msgstr "kB преостало за копирање:"
 
 #: ../usr/lib/usb-creator/usbcreator.py:91
 msgid "Check hash of ISO..."
-msgstr "Провери хеш ИСО фајла..."
+msgstr "Провера хеша ИСО фајла..."
 
 #: ../usr/lib/usb-creator/usbcreator.py:127
 msgid "Version"
@@ -214,24 +214,34 @@ msgstr ""
 msgid "The USB was successfully written."
 msgstr "УСБ је успешно уписан."
 
-#: ../usr/lib/usb-creator/main.py:42
+#: ../usr/lib/usb-creator/main.py:41
 msgid "Unexpected error"
 msgstr "Неочекивана грешка"
 
-#: ../usr/lib/usb-creator/main.py:43
+#: ../usr/lib/usb-creator/main.py:42
 msgid ""
 "USB Creator has failed with the following unexpected error. Please submit a "
 "bug report!"
 msgstr ""
 "УСБ стваралац није успео уз следећу неочекивану грешку. Пријавите грешку!"
 
+#: ../usr/bin/usb-creator:664
+#, sh-format
+msgid "needs administrative privileges."
+msgstr ""
+
+#: ../usr/bin/usb-creator:665
+#, sh-format
+msgid "Please enter your password."
+msgstr ""
+
 #: ../usr/share/applications/usb-creator.desktop.in.h:2
 msgid "Create a multi-boot USB"
-msgstr "Направи вишесистемски УСБ"
+msgstr "Прави вишесистемски УСБ"
 
 #: ../usr/share/solid/actions/usb-constructor-openusb.desktop.in.h:1
 msgid "Create a multi-boot USB with the USB Creator"
-msgstr "Направи вишесистемски УСБ са УСБ ствараоцем"
+msgstr "Прави вишесистемски УСБ са УСБ ствараоцем"
 
 #: en/help.html+html.body.h1:8
 msgid "USB Creator Help"

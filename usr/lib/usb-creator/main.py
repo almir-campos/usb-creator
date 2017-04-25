@@ -5,7 +5,6 @@ import gi
 gi.require_version('Gtk', '3.0')
 
 import sys
-sys.path.insert(1, '/usr/lib/usb-creator')
 from dialogs import ErrorDialog
 from gi.repository import Gtk, GObject
 from usbcreator import USBCreator
