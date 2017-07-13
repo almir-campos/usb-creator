@@ -4,14 +4,14 @@
 #
 # Translators:
 # Arjen Balfoort <schoelje@solydxk.com>, 2016
-# Ilinsky Mikhail <mail@milinsky.com>, 2015
+# Михаил Ильинский <mail@milinsky.com>, 2015
 # Анатолий Валерианович <ffox909@mail.ru>, 2015
 msgid ""
 msgstr ""
 "Project-Id-Version: usb-creator\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-04-25 11:37+0200\n"
-"PO-Revision-Date: 2016-02-22 18:06+0000\n"
+"POT-Creation-Date: 2017-05-01 15:07+0200\n"
+"PO-Revision-Date: 2017-04-25 20:12+0000\n"
 "Last-Translator: Arjen Balfoort <schoelje@solydxk.com>\n"
 "Language-Team: Russian (http://www.transifex.com/solydxk/usb-creator/"
 "language/ru/)\n"

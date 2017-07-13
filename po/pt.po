@@ -4,14 +4,14 @@
 #
 # Translators:
 # Arjen Balfoort <schoelje@solydxk.com>, 2016
-# Luis Filipe Teixeira <lufilte@gmail.com>, 2015-2016
+# Luis Filipe Teixeira <lufilte@gmail.com>, 2015-2017
 # Nuno Duarte <inactive+nuno.passiano@transifex.com>, 2015
 msgid ""
 msgstr ""
 "Project-Id-Version: usb-creator\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-04-25 11:37+0200\n"
-"PO-Revision-Date: 2016-05-27 11:40+0000\n"
+"POT-Creation-Date: 2017-05-01 15:07+0200\n"
+"PO-Revision-Date: 2017-04-29 01:03+0000\n"
 "Last-Translator: Luis Filipe Teixeira <lufilte@gmail.com>\n"
 "Language-Team: Portuguese (http://www.transifex.com/solydxk/usb-creator/"
 "language/pt/)\n"
@@ -229,12 +229,12 @@ msgstr ""
 #: ../usr/bin/usb-creator:664
 #, sh-format
 msgid "needs administrative privileges."
-msgstr ""
+msgstr "necessita de privilégios administrativos"
 
 #: ../usr/bin/usb-creator:665
 #, sh-format
 msgid "Please enter your password."
-msgstr ""
+msgstr "Por favor introduza a sua palavra passe."
 
 #: ../usr/share/applications/usb-creator.desktop.in.h:2
 msgid "Create a multi-boot USB"

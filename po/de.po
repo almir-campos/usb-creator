@@ -5,14 +5,14 @@
 # Translators:
 # Arjen Balfoort <schoelje@solydxk.com>, 2016
 # ilu lu, 2015
-# Werner Jud <phissica@gmail.com>, 2017
+# me me, 2017
 msgid ""
 msgstr ""
 "Project-Id-Version: usb-creator\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-04-25 11:37+0200\n"
-"PO-Revision-Date: 2017-03-09 22:12+0000\n"
-"Last-Translator: Werner Jud <phissica@gmail.com>\n"
+"POT-Creation-Date: 2017-05-01 15:07+0200\n"
+"PO-Revision-Date: 2017-04-25 20:12+0000\n"
+"Last-Translator: Arjen Balfoort <schoelje@solydxk.com>\n"
 "Language-Team: German (http://www.transifex.com/solydxk/usb-creator/language/"
 "de/)\n"
 "Language: de\n"

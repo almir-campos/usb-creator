@@ -663,7 +663,7 @@ if [ -z $1 ]; then
     # Create pot: xgettext -o $APP.pot -L Shell --keyword=eval_gettext $APP
     MSG_ADM=$(eval_gettext "needs administrative privileges.")
     MSG_PWD=$(eval_gettext "Please enter your password.")
-    MSG="\"<b>$APP</b> $MSG_ADM $MSG_PWD\""
+    MSG="<b>$APP</b> $MSG_ADM $MSG_PWD"
 
     optimize='OO'; case "$*" in *--debug*) unset optimize; esac
     CMD="$PYTHON -tt${optimize} "$GUISTART" $@"

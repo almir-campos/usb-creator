@@ -3,13 +3,13 @@
 # This file is distributed under the same license as the PACKAGE package.
 #
 # Translators:
-# Moo, 2016
+# Moo, 2016-2017
 msgid ""
 msgstr ""
 "Project-Id-Version: usb-creator\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-04-25 11:37+0200\n"
-"PO-Revision-Date: 2016-07-15 09:30+0000\n"
+"POT-Creation-Date: 2017-05-01 15:07+0200\n"
+"PO-Revision-Date: 2017-04-26 08:33+0000\n"
 "Last-Translator: Moo\n"
 "Language-Team: Lithuanian (http://www.transifex.com/solydxk/usb-creator/"
 "language/lt/)\n"
@@ -229,12 +229,12 @@ msgstr ""
 #: ../usr/bin/usb-creator:664
 #, sh-format
 msgid "needs administrative privileges."
-msgstr ""
+msgstr "reikalauja administratoriaus teisių."
 
 #: ../usr/bin/usb-creator:665
 #, sh-format
 msgid "Please enter your password."
-msgstr ""
+msgstr "Prašome įvesti savo slaptažodį."
 
 #: ../usr/share/applications/usb-creator.desktop.in.h:2
 msgid "Create a multi-boot USB"
