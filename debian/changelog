@@ -1,3 +1,16 @@
+usb-creator (0.4.2) solydxk; urgency=low
+
+  * GUI improvements
+  * Fix MX not in Debian family
+
+ -- Arjen Balfoort <arjenbalfoort@solydxk.com>  Thu, 14 Sep 2017 12:49:38 +0200
+
+usb-creator (0.4.1) solydxk; urgency=low
+
+  * Updated translations
+
+ -- Arjen Balfoort <arjenbalfoort@solydxk.com>  Mon, 17 Jul 2017 16:16:58 +0200
+
 usb-creator (0.4.0) solydxk; urgency=low
 
   * Remove xksudo

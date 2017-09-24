@@ -27,7 +27,7 @@ FILESDIR="/usr/share/usb-creator/files"
 # Source: http://distrowatch.com/search.php   select: "Based on"
 # ================================================================
 UBUNTUDISTROS='untu,aurora,mint,asturix,backbox,bio,bodhi,deepin,peasy,sense,joli,linuxgfx,kuki,linuxmce,netrunner,peppermint,pinguy,poseidon,puredyne,qimo,startos,trisquel,uberstudent,remix,ultimate,vinux,zentyal,zeven,lxle,zorin,elementary,lite,chromixium,mangaka,watt,voyager,kylin,extix,emma,chalet,caine,symphony,superx,artisx,bella,apodio,luninux,remnux,lliurex,leeenux,kxstudio,peach,deft,salent,caelinux,madbox,nova,baltix,bardinux,lunuxfx,greenie,centrych,caixa,openlx,guadalinex,max,ulteo,karoshi,nexenta,chitwanix,track,bll,lab'
-DEBIANDISTROS='debian,mini,kali,antix,steamos,q4os,tails,robo,sparky,makulu,tanglu,zilla,handy,neptune,semplice,gparted,solyd,parsix,elive,avlinux,univention,siduction,turnkey,point,galpon,proxmox,openmedia,2xos,webconverger,finnix,blankon,linuxbbq,untangle,boss,pardus,musix,rebellin,kanotix,gnewsense,matriux,skole,exe,vyos,kwheezy,doudou,window,parrot,canaima,volumio,selks,osmc,grml,pelicanhpc,linex,omoikane,catix,lmde'
+DEBIANDISTROS='debian,mini,kali,antix,steamos,q4os,tails,robo,sparky,makulu,tanglu,zilla,handy,neptune,semplice,gparted,solyd,parsix,elive,avlinux,univention,siduction,turnkey,point,galpon,proxmox,openmedia,2xos,webconverger,finnix,blankon,linuxbbq,untangle,boss,pardus,musix,rebellin,kanotix,gnewsense,matriux,skole,exe,vyos,kwheezy,doudou,window,parrot,canaima,volumio,selks,osmc,grml,pelicanhpc,linex,omoikane,catix,lmde,mx'
 ARCHDISTROS='arch,manjaro,antergos,chakra,blackarch,bridge,parabola,poliarch,kademar,linhes,kaos'
 PUPPYDISTROS='puppy,simplicity,legacy,toutou,quirky'
 KNOPPIXDISTROS='knoppix,overclockix'
@@ -219,8 +219,8 @@ function check_distros() {
   while IFS=',' read -ra ADDR; do
     for DISTRO in "${ADDR[@]}"; do
       if [[ "$LOWERISONAME" =~ "$DISTRO" ]]; then
-	RET="$DISTRO"
-	break
+        RET="$DISTRO"
+        break
       fi
     done
     if [ "$RET" != "" ]; then
@@ -325,187 +325,187 @@ function write_grub_menu() {
   
   case $FAMILY in
       ubuntu)
-	# Ubuntu distributions
-	LINUX_LINE=$UBUNTU_LINUX
-	INITRD_LINE=$UBUNTU_INITRD
-	if [ "$DISTRO" == "lite" ] ||
-	  [ "$DISTRO" == "chromixium" ]; then
-	  INITRD_LINE=$LITE_INITRD
-	elif [ "$DISTRO" == "bll" ] ||
-	    [ "$DISTRO" == "lab" ] ||
-	    [ "$DISTRO" == "watt" ] ||
-	    [ "$DISTRO" == "mangaka" ]; then
-	    LINUX_LINE=$(echo $UBUNTU_LINUX | sed 's/vmlinuz.efi/vmlinuz/')
-	    INITRD_LINE=$LITE_INITRD
-	elif [ "$DISTRO" == "ultimate" ]; then
-	    LINUX_LINE=$(echo $UBUNTU_LINUX | sed 's/vmlinuz.efi/vmlinuz/')
-	elif [ "$DISTRO" == "netrunner" ] && [[ "$LOWERISONAME" =~ "roll" ]]; then
-	  MISOLABEL=$(env LANG=C isoinfo -d -i $ISO | grep 'Volume id:' | awk '{print $3}')
-	  LINUX_LINE=$(echo $NETRUNNER_LINUX | sed "s/misolabel/misolabel=$MISOLABEL/")
-	  INITRD_LINE=$NETRUNNER_INITRD
-	fi
-	create_32_bit_lines $LOWERISONAME 'i686'
-  	;;
+        # Ubuntu distributions
+        LINUX_LINE=$UBUNTU_LINUX
+        INITRD_LINE=$UBUNTU_INITRD
+        if [ "$DISTRO" == "lite" ] ||
+          [ "$DISTRO" == "chromixium" ]; then
+          INITRD_LINE=$LITE_INITRD
+        elif [ "$DISTRO" == "bll" ] ||
+            [ "$DISTRO" == "lab" ] ||
+            [ "$DISTRO" == "watt" ] ||
+            [ "$DISTRO" == "mangaka" ]; then
+            LINUX_LINE=$(echo $UBUNTU_LINUX | sed 's/vmlinuz.efi/vmlinuz/')
+            INITRD_LINE=$LITE_INITRD
+        elif [ "$DISTRO" == "ultimate" ]; then
+            LINUX_LINE=$(echo $UBUNTU_LINUX | sed 's/vmlinuz.efi/vmlinuz/')
+        elif [ "$DISTRO" == "netrunner" ] && [[ "$LOWERISONAME" =~ "roll" ]]; then
+          MISOLABEL=$(env LANG=C isoinfo -d -i $ISO | grep 'Volume id:' | awk '{print $3}')
+          LINUX_LINE=$(echo $NETRUNNER_LINUX | sed "s/misolabel/misolabel=$MISOLABEL/")
+          INITRD_LINE=$NETRUNNER_INITRD
+        fi
+        create_32_bit_lines $LOWERISONAME 'i686'
+        ;;
   
       debian)
-	# Debian distributions
-	LINUX_LINE=$DEBIAN_LINUX
-	INITRD_LINE=$DEBIAN_INITRD
-	if [ "$DISTRO" == "debian" ] && [[ ! "$LOWERISONAME" =~ "live" ]]; then
-	  wget "https://mirrors.kernel.org/debian/dists/stable/main/installer-amd64/current/images/hd-media/initrd.gz" -O $ISO.initrd.gz
-	  LINUX_LINE=$DEBIANREG_LINUX
-	  INITRD_LINE=$DEBIANREG_INITRD
-	elif [ "$DISTRO" == "mini" ]; then
-	  LINUX_LINE=$DEBIANMINI_LINUX
-	  INITRD_LINE=$DEBIANMINI_INITRD
-	elif [ "$DISTRO" == "lmde" ]; then
-	  INITRD_LINE=$(echo $INITRD_LINE | sed 's/img/lz/')
-	elif [ "$DISTRO" == "antix" ] || [[ "$LOWERISONAME" =~ "mx" ]]; then
-	  LINUX_LINE=$ANTIX_LINUX
-	  INITRD_LINE=$ANTIX_INITRD
-	elif [ "$DISTRO" == "kali" ]; then
-	  LINUX_LINE=$KALI_LINUX
-	elif [ "$DISTRO" == "zilla" ]; then
-	  LINUX_LINE=$CLONEZILLA_LINUX
-	elif [ "$DISTRO" == "gparted" ]; then
-	  LINUX_LINE=$GPARTED_LINUX
-	fi
-	;;
+        # Debian distributions
+        LINUX_LINE=$DEBIAN_LINUX
+        INITRD_LINE=$DEBIAN_INITRD
+        if [ "$DISTRO" == "debian" ] && [[ ! "$LOWERISONAME" =~ "live" ]]; then
+          wget "https://mirrors.kernel.org/debian/dists/stable/main/installer-amd64/current/images/hd-media/initrd.gz" -O $ISO.initrd.gz
+          LINUX_LINE=$DEBIANREG_LINUX
+          INITRD_LINE=$DEBIANREG_INITRD
+        elif [ "$DISTRO" == "mini" ]; then
+          LINUX_LINE=$DEBIANMINI_LINUX
+          INITRD_LINE=$DEBIANMINI_INITRD
+        elif [ "$DISTRO" == "lmde" ]; then
+          INITRD_LINE=$(echo $INITRD_LINE | sed 's/img/lz/')
+        elif [ "$DISTRO" == "antix" ] || [[ "$LOWERISONAME" =~ "mx" ]]; then
+          LINUX_LINE=$ANTIX_LINUX
+          INITRD_LINE=$ANTIX_INITRD
+        elif [ "$DISTRO" == "kali" ]; then
+          LINUX_LINE=$KALI_LINUX
+        elif [ "$DISTRO" == "zilla" ]; then
+          LINUX_LINE=$CLONEZILLA_LINUX
+        elif [ "$DISTRO" == "gparted" ]; then
+          LINUX_LINE=$GPARTED_LINUX
+        fi
+        ;;
   
       arch)
-	# Arch distributions
-	LINUX_LINE=$ARCHDUAL_LINUX
-	INITRD_LINE=$ARCHDUAL_INITRD
-	if [[ "$LOWERISONAME" =~ "archboot" ]]; then
-	  LINUX_LINE=$ARCHBOOT_LINUX
-	  INITRD_LINE=$ARCHBOOT_INITRD
-	elif [ "$DISTRO" == "kaos" ]; then
-	  LINUX_LINE=$KAOS_LINUX
-	  INITRD_LINE=$KAOS_INITRD
-	  create_32_bit_lines $LOWERISONAME 'i686'
-	elif [ "$DISTRO" == "manjaro" ]; then
-	  MISOLABEL=$(env LANG=C isoinfo -d -i $ISO | grep 'Volume id:' | awk '{print $3}')
-	  LINUX_LINE=$(echo $MANJARO_LINUX | sed "s/misolabel/misolabel=$MISOLABEL/")
-	  INITRD_LINE=$MANJARO_INITRD
-	  create_32_bit_lines $LOWERISONAME 'i686'
-	elif [ "$DISTRO" == "antergos" ]; then
-	  ARCHISOLABEL=$(env LANG=C isoinfo -d -i $ISO | grep 'Volume id:' | awk '{print $3}')
-	  LINUX_LINE=$(echo $ANTERGOS_LINUX | sed "s/archisolabel/archisolabel=$ARCHISOLABEL/")
-	  INITRD_LINE=$ANTERGOS_INITRD
-	fi
-	;;
+        # Arch distributions
+        LINUX_LINE=$ARCHDUAL_LINUX
+        INITRD_LINE=$ARCHDUAL_INITRD
+        if [[ "$LOWERISONAME" =~ "archboot" ]]; then
+          LINUX_LINE=$ARCHBOOT_LINUX
+          INITRD_LINE=$ARCHBOOT_INITRD
+        elif [ "$DISTRO" == "kaos" ]; then
+          LINUX_LINE=$KAOS_LINUX
+          INITRD_LINE=$KAOS_INITRD
+          create_32_bit_lines $LOWERISONAME 'i686'
+        elif [ "$DISTRO" == "manjaro" ]; then
+          MISOLABEL=$(env LANG=C isoinfo -d -i $ISO | grep 'Volume id:' | awk '{print $3}')
+          LINUX_LINE=$(echo $MANJARO_LINUX | sed "s/misolabel/misolabel=$MISOLABEL/")
+          INITRD_LINE=$MANJARO_INITRD
+          create_32_bit_lines $LOWERISONAME 'i686'
+        elif [ "$DISTRO" == "antergos" ]; then
+          ARCHISOLABEL=$(env LANG=C isoinfo -d -i $ISO | grep 'Volume id:' | awk '{print $3}')
+          LINUX_LINE=$(echo $ANTERGOS_LINUX | sed "s/archisolabel/archisolabel=$ARCHISOLABEL/")
+          INITRD_LINE=$ANTERGOS_INITRD
+        fi
+        ;;
   
       puppy)
-	# Puppy distributions
-	LINUX_LINE=$PUPPY_LINUX
-	INITRD_LINE=$PUPPY_INITRD
-	if [ "$DISTRO" == "simplicity" ]; then
-	  INITRD_LINE=$SIMPLICITY_INITRD
-	fi
-	;;
+        # Puppy distributions
+        LINUX_LINE=$PUPPY_LINUX
+        INITRD_LINE=$PUPPY_INITRD
+        if [ "$DISTRO" == "simplicity" ]; then
+          INITRD_LINE=$SIMPLICITY_INITRD
+        fi
+        ;;
       
       knoppix)
-	# Knoppix distributions
-	LINUX_LINE=$KNOPPIX_LINUX
-	INITRD_LINE=$KNOPPIX_INITRD
-	;;
+        # Knoppix distributions
+        LINUX_LINE=$KNOPPIX_LINUX
+        INITRD_LINE=$KNOPPIX_INITRD
+        ;;
       
       centos)
-	# Centos distributions
-	LINUX_LINE=$CENTOS_LINUX
-	INITRD_LINE=$CENTOS_INITRD
-	if [[ "$LOWERISONAME" =~ "live" ]]; then
-	  LINUX_LINE=$CENTOSLIVE_LINUX
-	  INITRD_LINE=$CENTOSLIVE_INITRD
-	fi
-	;;
+        # Centos distributions
+        LINUX_LINE=$CENTOS_LINUX
+        INITRD_LINE=$CENTOS_INITRD
+        if [[ "$LOWERISONAME" =~ "live" ]]; then
+          LINUX_LINE=$CENTOSLIVE_LINUX
+          INITRD_LINE=$CENTOSLIVE_INITRD
+        fi
+        ;;
       
       fedora)
-	# Fedora distributions
-	LINUX_LINE=$FEDORA_LINUX
-	INITRD_LINE=$FEDORA_INITRD
-	if [[ "$LOWERISONAME" =~ "live" ]]; then
-	  LINUX_LINE=$FEDORALIVE_LINUX
-	  INITRD_LINE=$FEDORALIVE_INITRD
-	fi
-	;;
+        # Fedora distributions
+        LINUX_LINE=$FEDORA_LINUX
+        INITRD_LINE=$FEDORA_INITRD
+        if [[ "$LOWERISONAME" =~ "live" ]]; then
+          LINUX_LINE=$FEDORALIVE_LINUX
+          INITRD_LINE=$FEDORALIVE_INITRD
+        fi
+        ;;
       
       suse)
-	# openSuse distributions
-	LINUX_LINE=$SUSE_LINUX
-	INITRD_LINE=$SUSE_INITRD
-	if [[ "$LOWERISONAME" =~ "live" ]]; then
-	  LINUX_LINE=$SUSELIVE_LINUX
-	fi
-	create_32_bit_lines $LOWERISONAME 'i386'
-	;;
+        # openSuse distributions
+        LINUX_LINE=$SUSE_LINUX
+        INITRD_LINE=$SUSE_INITRD
+        if [[ "$LOWERISONAME" =~ "live" ]]; then
+          LINUX_LINE=$SUSELIVE_LINUX
+        fi
+        create_32_bit_lines $LOWERISONAME 'i386'
+        ;;
       
       gentoo)
-	# Gentoo distributions 
-	LINUX_LINE=$GENTOO_LINUX
-	INITRD_LINE=$GENTOO_INITRD
-	if [ "$DISTRO" == "rescue" ]; then
-	  LINUX_LINE=$SYSRESCUE_LINUX
-	  INITRD_LINE=$SYSRESCUE_INITRD
-	elif [ "$DISTRO" == "sabayon" ]; then
-	  LINUX_LINE=$SABAYON_LINUX
-	  INITRD_LINE=$SABAYON_INITRD
-	fi
-	;;
+        # Gentoo distributions 
+        LINUX_LINE=$GENTOO_LINUX
+        INITRD_LINE=$GENTOO_INITRD
+        if [ "$DISTRO" == "rescue" ]; then
+          LINUX_LINE=$SYSRESCUE_LINUX
+          INITRD_LINE=$SYSRESCUE_INITRD
+        elif [ "$DISTRO" == "sabayon" ]; then
+          LINUX_LINE=$SABAYON_LINUX
+          INITRD_LINE=$SABAYON_INITRD
+        fi
+        ;;
       
       slack)
-	# SlackWare distributions 
-	LINUX_LINE=$SLACK_LINUX
-	INITRD_LINE=$SLACK_INITRD
-	if [ "$DISTRO" == "vector" ] || [ "$DISTRO" == "vl" ]; then
-	  LINUX_LINE=$VECTOR_LINUX
-	  INITRD_LINE=$VECTOR_INITRD
-	fi
-	;;
+        # SlackWare distributions 
+        LINUX_LINE=$SLACK_LINUX
+        INITRD_LINE=$SLACK_INITRD
+        if [ "$DISTRO" == "vector" ] || [ "$DISTRO" == "vl" ]; then
+          LINUX_LINE=$VECTOR_LINUX
+          INITRD_LINE=$VECTOR_INITRD
+        fi
+        ;;
       
       mandriva)
-	# Mandriva distributions 
-	LINUX_LINE=$MAGEIA_LINUX
-	INITRD_LINE=$MAGEIA_INITRD
-	if [ "$DISTRO" == "mageia" ]; then
-	  if [[ "$LOWERISONAME" =~ "live" ]]; then
-	    #MAGEIA_LABEL=$(env LANG=C isoinfo -d -i $ISO | grep 'Volume id:' | awk '{print $3}')
-	    LINUX_LINE=$(echo $LINUX_LINE | sed "s/mgalive/mgalive:LABEL=$LABEL/")
-	    LINUX_LINE=$MAGEIALIVE_LINUX
-	    INITRD_LINE=$MAGEIALIVE_INITRD
-	  fi
-	  create_32_bit_lines $LOWERISONAME 'i586'
-	fi
-	;;
+        # Mandriva distributions 
+        LINUX_LINE=$MAGEIA_LINUX
+        INITRD_LINE=$MAGEIA_INITRD
+        if [ "$DISTRO" == "mageia" ]; then
+          if [[ "$LOWERISONAME" =~ "live" ]]; then
+            #MAGEIA_LABEL=$(env LANG=C isoinfo -d -i $ISO | grep 'Volume id:' | awk '{print $3}')
+            LINUX_LINE=$(echo $LINUX_LINE | sed "s/mgalive/mgalive:LABEL=$LABEL/")
+            LINUX_LINE=$MAGEIALIVE_LINUX
+            INITRD_LINE=$MAGEIALIVE_INITRD
+          fi
+          create_32_bit_lines $LOWERISONAME 'i586'
+        fi
+        ;;
       
       independent)
-	# Independent distributions 
-	# PClinuxOS
-	if [ "$DISTRO" == "pclinux" ]; then
-	  LINUX_LINE=$PCLINUX_LINUX
-	  INITRD_LINE=$PCLINUX_INITRD
-	  
-	# SolusOS
-	elif [ "$DISTRO" == "solus" ]; then
-	  LINUX_LINE=$SOLUS_LINUX
-	  INITRD_LINE=$SOLUS_INITRD
-	  
-	# 4MLinux
-	elif [ "$DISTRO" == "4mlinux" ]; then
-	  LINUX_LINE=$FOURMLINUX_LINUX
-	  INITRD_LINE=$FOURMLINUX_INITRD
-	
-	# Parted magic
-	elif [ "$DISTRO" == "magic" ]; then
-	  LINUX_LINE=$PMAGIC_LINUX
-	  INITRD_LINE=$PMAGIC_INITRD
-	fi
-	;;
-	
+        # Independent distributions 
+        # PClinuxOS
+        if [ "$DISTRO" == "pclinux" ]; then
+          LINUX_LINE=$PCLINUX_LINUX
+          INITRD_LINE=$PCLINUX_INITRD
+          
+        # SolusOS
+        elif [ "$DISTRO" == "solus" ]; then
+          LINUX_LINE=$SOLUS_LINUX
+          INITRD_LINE=$SOLUS_INITRD
+          
+        # 4MLinux
+        elif [ "$DISTRO" == "4mlinux" ]; then
+          LINUX_LINE=$FOURMLINUX_LINUX
+          INITRD_LINE=$FOURMLINUX_INITRD
+        
+        # Parted magic
+        elif [ "$DISTRO" == "magic" ]; then
+          LINUX_LINE=$PMAGIC_LINUX
+          INITRD_LINE=$PMAGIC_INITRD
+        fi
+        ;;
+        
       *)
-	echo "Could not guess distribution from ISO name: $ISONAME." | tee -a "$LOG"
-	exit 11
-	;;
+        echo "Could not guess distribution from ISO name: $ISONAME." | tee -a "$LOG"
+        exit 11
+        ;;
   esac
   
   # ================================================================
@@ -618,7 +618,7 @@ function wait_until_done() {
       # Need the extra spaces to make sure the previous output is totally overwritten
       KB=$(grep -e Dirty: /proc/meminfo | awk '{print $2}')
       if [ -t 1 ]; then
-	echo -ne "kB left to copy: $KB                     \\r"
+        echo -ne "kB left to copy: $KB                     \\r"
       fi
       echo "kB left to copy: $KB" >> $LOG
       sleep 5
@@ -670,6 +670,9 @@ if [ -z $1 ]; then
     if [ -e "/usr/bin/kdesudo" ]; then
       ICON=$(get-app-theme-icon "$APP" 2>/dev/null)
       kdesudo -d -i "$ICON" --comment "$MSG" -c "$CMD"
+    elif [ -e "/usr/bin/kdesu" ]; then
+      ICON=$(get-app-theme-icon "$APP" 2>/dev/null)
+      kdesu -i "$ICON" -c "$CMD"
     else
       gksudo --message "$MSG" "$CMD"
     fi
@@ -712,67 +715,67 @@ else
   while getopts ":bcd:fghi:l:mrsu" opt; do
     case $opt in
       b)
-	# Bootloader
-	BOOT=true
-	;;
+        # Bootloader
+        BOOT=true
+        ;;
       c)
-	# Bootloader
-	COPY=true
-	;;
+        # Bootloader
+        COPY=true
+        ;;
       d)
-	# Device (remove trailing digits)
-	DEVICE=$OPTARG
-	;;
+        # Device (remove trailing digits)
+        DEVICE=$OPTARG
+        ;;
       f)
-	# Format
-	FORMAT=true
-	;;
+        # Format
+        FORMAT=true
+        ;;
       g)
-	# Grub
-	GRUB=true
-	;;
+        # Grub
+        GRUB=true
+        ;;
       h)
-	# Help
-	usage
-	exit 0
-	;;
+        # Help
+        usage
+        exit 0
+        ;;
       i)
-	# ISOs
-	ISOS=$OPTARG
-	;;
+        # ISOs
+        ISOS=$OPTARG
+        ;;
       l)
-	# Label to upper case and without spaces
-	LABEL=$(echo $OPTARG | tr '[:lower:]' '[:upper:]' | tr -d '[[:space:]]')
-	;;
+        # Label to upper case and without spaces
+        LABEL=$(echo $OPTARG | tr '[:lower:]' '[:upper:]' | tr -d '[[:space:]]')
+        ;;
       m)
-	# SHA256SUM - backward compatibility
-	SHA256SUM=true
-	;;
+        # SHA256SUM - backward compatibility
+        SHA256SUM=true
+        ;;
       r)
-	# Repair
-	REPAIR=true
-	;;
+        # Repair
+        REPAIR=true
+        ;;
       s)
-	# SHA256SUM
-	SHA256SUM=true
-	;;
+        # SHA256SUM
+        SHA256SUM=true
+        ;;
       u)
-	# Unmount
-	UNMOUNT=true
-	;;
+        # Unmount
+        UNMOUNT=true
+        ;;
       \?)
-	echo "Invalid option: -$OPTARG"
-	exit 2
-	;;
+        echo "Invalid option: -$OPTARG"
+        exit 2
+        ;;
       :)
-	echo "Option -$OPTARG requires an argument."
-	exit 2
-	;;
+        echo "Option -$OPTARG requires an argument."
+        exit 2
+        ;;
       *)
-	echo "Unknown error."
-	usage
-	exit 2
-	;;
+        echo "Unknown error."
+        usage
+        exit 2
+        ;;
     esac
   done
   
@@ -786,11 +789,11 @@ else
     if [ -t 1 ]; then
       DEVICES=$(ls /dev | egrep 'sd[a-z]$')
       for DEVNM in $DEVICES; do
-	DETACHABLE=$(grep -h . /sys/block/$DEVNM/removable)
-	if [ "$DETACHABLE" == "1" ]; then
-	  read -e -p "Confirm USB device: " -i /dev/$DEVNM DEVICE
-	  break
-	fi
+        DETACHABLE=$(grep -h . /sys/block/$DEVNM/removable)
+        if [ "$DETACHABLE" == "1" ]; then
+          read -e -p "Confirm USB device: " -i /dev/$DEVNM DEVICE
+          break
+        fi
       done
     fi
   fi
@@ -842,18 +845,18 @@ else
       LABEL=$(trim $LABEL)
       # If not set: set default label name
       if [ "$LABEL" != "$DEFLABEL" ]; then
-	LABEL=$DEFLABEL
-	if ! $FORMAT; then
-	  # Make sure you set the label
-	  FATSTR=$(udisksctl info -b $DEVICE'1' | grep IdType | grep fat)
-	  if [ "$FATSTR" != "" ]; then
-	    echo "mtools_skip_check=1" > ~/.mtoolsrc
-	    mlabel ::"$LABEL" -i $DEVICE'1' | tee -a "$LOG"
-	    rm ~/.mtoolsrc
-	  else
-	    e2label $DEVICE'1' $LABEL | tee -a "$LOG"
-	  fi
-	fi
+        LABEL=$DEFLABEL
+        if ! $FORMAT; then
+          # Make sure you set the label
+          FATSTR=$(udisksctl info -b $DEVICE'1' | grep IdType | grep fat)
+          if [ "$FATSTR" != "" ]; then
+            echo "mtools_skip_check=1" > ~/.mtoolsrc
+            mlabel ::"$LABEL" -i $DEVICE'1' | tee -a "$LOG"
+            rm ~/.mtoolsrc
+          else
+            e2label $DEVICE'1' $LABEL | tee -a "$LOG"
+          fi
+        fi
       fi
     fi
     
@@ -875,15 +878,15 @@ else
       # Format the device
       BADBLOCKS=''
       if $REPAIR; then
-	BADBLOCKS='-c'
+        BADBLOCKS='-c'
       fi
       echo "mkfs.vfat -F 32 -v -I $BADBLOCKS -n \"$LABEL\" $DEVICE"'1' | tee -a "$LOG"
       mkfs.vfat -F 32 -v -I $BADBLOCKS -n "$LABEL" $DEVICE'1' | tee -a "$LOG"
 
       # Repair the partition
       if $REPAIR; then
-	fsck.vfat -Vavt $DEVICE'1' | tee -a "$LOG"
-	REPAIR=false
+        fsck.vfat -Vavt $DEVICE'1' | tee -a "$LOG"
+        REPAIR=false
       fi
       
       echo
@@ -946,8 +949,8 @@ else
       GRUBCHK=$(dd bs=512 count=1 if=$DEVICE 2>/dev/null | strings | grep GRUB)
       EFI=$(ls "$MOUNT"/EFI/BOOT/*.EFI 2>/dev/null)
       if [ "$GRUBCHK" == "" ] || [ "$EFI" == "" ] || [ ! -d "$MOUNT/boot/grub/" ]; then
-	echo "Force bootlader installation." | tee -a "$LOG"
-	BOOT=true
+        echo "Force bootlader installation." | tee -a "$LOG"
+        BOOT=true
       fi
     fi
     
@@ -962,11 +965,11 @@ else
 
       # Check if there are ISOs on the USB
       if ! $GRUB; then
-	USBISOS=$(find "$MOUNT" -type f -name "*.iso")
-	if [ "$USBISOS" != "" ]; then
-	  echo "Force bootlader installation." | tee -a "$LOG"
-	  GRUB=true
-	fi
+        USBISOS=$(find "$MOUNT" -type f -name "*.iso")
+        if [ "$USBISOS" != "" ]; then
+          echo "Force bootlader installation." | tee -a "$LOG"
+          GRUB=true
+        fi
       fi
     fi
     
@@ -977,14 +980,14 @@ else
     for ISO in $ISOS; do
       ISONAME=$(basename "$ISO")
       if [ -e "$MOUNT/$ISONAME" ]; then
-	rm -v "$MOUNT/$ISONAME" | tee -a "$LOG"
+        rm -v "$MOUNT/$ISONAME" | tee -a "$LOG"
       fi
       ISOSIZE=$((`stat -c%s "$ISO"` / 1024))
       FREESIZE=$(df --output=avail $DEVICE'1' | awk 'NR==2')
       echo ">> ISOSIZE=$ISOSIZE | FREESIZE=$FREESIZE" | tee -a "$LOG"
       if [ $ISOSIZE -gt $FREESIZE ]; then
-	echo "Not enough space on $DEVICE. Needed: $ISOSIZE, Available: $FREESIZE" | tee -a "$LOG"
-	exit 10
+        echo "Not enough space on $DEVICE. Needed: $ISOSIZE, Available: $FREESIZE" | tee -a "$LOG"
+        exit 10
       fi
       echo "Rsync $ISO to device..." | tee -a "$LOG"
       echo "rsync -a --info=progress2 --modify-window=2 \"$ISO\" \"$MOUNT/\"" | tee -a "$LOG"
@@ -993,7 +996,7 @@ else
       
       # Check in the log file if rsync has finished the temporary copy
       while [[ `tail "$LOG" | grep '100%'` == '' ]]; do
-	sleep 1
+        sleep 1
       done
 
       # Check progress from sync
@@ -1004,7 +1007,7 @@ else
 
       # Add to history file when not already in history file
       if ! grep -q $ISO "$ISOHISTORY"; then
-	echo $ISO >> "$ISOHISTORY"
+        echo $ISO >> "$ISOHISTORY"
       fi
       GRUB=true
     done
@@ -1013,19 +1016,19 @@ else
     if $GRUB; then
       GRUBDIR="$MOUNT/boot/grub"
       if [ ! -e "$GRUBDIR" ]; then
-	echo "You need to install the bootloaders before configuring Grub" | tee -a "$LOG"
-	echo "Run usb-creator with the -b option" | tee -a "$LOG"
-	exit 9
+        echo "You need to install the bootloaders before configuring Grub" | tee -a "$LOG"
+        echo "Run usb-creator with the -b option" | tee -a "$LOG"
+        exit 9
       fi
       
       # Init grub.cfg
       init_grub $GRUBDIR
-	
+        
       # Loop the ISOs
       USBISOS=$(find "$MOUNT" -name "*.iso")
       for ISO in $USBISOS; do
-	echo "Create Grub menu for $ISO" | tee -a "$LOG"
-	write_grub_menu "$GRUBDIR" "$ISO"
+        echo "Create Grub menu for $ISO" | tee -a "$LOG"
+        write_grub_menu "$GRUBDIR" "$ISO"
       done
       
       echo "====================== Grub.cfg =====================" | tee -a "$LOG"
@@ -1035,7 +1038,7 @@ else
       # Copy Grub background image
       IMG="grubbg.png"
       if $SOLYDXK; then
-	IMG="grubbg-solydxk.png"
+        IMG="grubbg-solydxk.png"
       fi
       cp -vf $FILESDIR/$IMG "$GRUBDIR/grubbg.png" 2>/dev/null | tee -a "$LOG"
     fi
@@ -1047,39 +1050,39 @@ else
       # If -i is not provided, use the history file
       UPDATEHIST=false
       if [ "$ISOS" == "" ] && [ -f "$ISOHISTORY" ]; then
-	UPDATEHIST=true
-	while IFS='' read -r ISO || [[ -n "$ISO" ]]; do
-	  # Trim the line
-	  ISO=$(trim $ISO)
-	  if [ "$ISO" != "" ] && [ -f "$ISO" ]; then
-	    # Including a new line in a bash variable looks really odd...
-	    ISOS="$ISO
+        UPDATEHIST=true
+        while IFS='' read -r ISO || [[ -n "$ISO" ]]; do
+          # Trim the line
+          ISO=$(trim $ISO)
+          if [ "$ISO" != "" ] && [ -f "$ISO" ]; then
+            # Including a new line in a bash variable looks really odd...
+            ISOS="$ISO
   $ISOS"
-	  fi
-	done < "$ISOHISTORY"
+          fi
+        done < "$ISOHISTORY"
       fi
       if $UPDATEHIST; then
-	# Only save existing ISOs in the history file
-	echo "$ISOS" > $ISOHISTORY
+        # Only save existing ISOs in the history file
+        echo "$ISOS" > $ISOHISTORY
       fi
       
       # Now check the sha256sum of the ISOs
       for ISO in $ISOS; do
-	ISONAME=$(basename "$ISO")
-	if [ -f "$ISO" ] && [ -f "$MOUNT/$ISONAME" ]; then
-	  echo "Check sha256sum of $ISONAME..." | tee -a "$LOG"
-	  MD5ORG=$(sha256sum "$ISO" | awk '{print $1}')
-	  MD5TARGET=$(sha256sum "$MOUNT/$ISONAME" | awk '{print $1}')
-	  if [ "$MD5ORG" != "$MD5TARGET" ]; then
-	    MISMATCH=$MISMATCH"sha256sum of $ISO does NOT match original. Original: $MD5ORG, Target: $MD5TARGET\n"
-	  else
-	    echo "sha256sum of target $ISONAME matches original: $MD5ORG" | tee -a "$LOG"
-	  fi
-	fi
+        ISONAME=$(basename "$ISO")
+        if [ -f "$ISO" ] && [ -f "$MOUNT/$ISONAME" ]; then
+          echo "Check sha256sum of $ISONAME..." | tee -a "$LOG"
+          MD5ORG=$(sha256sum "$ISO" | awk '{print $1}')
+          MD5TARGET=$(sha256sum "$MOUNT/$ISONAME" | awk '{print $1}')
+          if [ "$MD5ORG" != "$MD5TARGET" ]; then
+            MISMATCH=$MISMATCH"sha256sum of $ISO does NOT match original. Original: $MD5ORG, Target: $MD5TARGET\n"
+          else
+            echo "sha256sum of target $ISONAME matches original: $MD5ORG" | tee -a "$LOG"
+          fi
+        fi
       done
       if [ "$MISMATCH" != "" ]; then
-	echo -e "$MISMATCH" | tee -a "$LOG"
-	exit 7
+        echo -e "$MISMATCH" | tee -a "$LOG"
+        exit 7
       fi
     fi
   fi
