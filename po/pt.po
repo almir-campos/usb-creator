@@ -3,15 +3,15 @@
 # This file is distributed under the same license as the PACKAGE package.
 #
 # Translators:
-# Arjen Balfoort <schoelje@solydxk.com>, 2016
+# Arjen Balfoort <arjenbalfoort@solydxk.com>, 2016
 # Luis Filipe Teixeira <lufilte@gmail.com>, 2015-2017
 # Nuno Duarte <inactive+nuno.passiano@transifex.com>, 2015
 msgid ""
 msgstr ""
 "Project-Id-Version: usb-creator\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-05-01 15:07+0200\n"
-"PO-Revision-Date: 2017-04-29 01:03+0000\n"
+"POT-Creation-Date: 2017-09-24 13:08+0200\n"
+"PO-Revision-Date: 2017-09-23 21:47+0000\n"
 "Last-Translator: Luis Filipe Teixeira <lufilte@gmail.com>\n"
 "Language-Team: Portuguese (http://www.transifex.com/solydxk/usb-creator/"
 "language/pt/)\n"
@@ -56,7 +56,7 @@ msgstr "Reparar o dispositivo"
 
 #: ../usr/lib/usb-creator/usbcreator.py:75
 msgid "Tries to repair an unbootable USB"
-msgstr "Tentar reparar a USB que não arranca"
+msgstr "Tentar reparar um USB que não inicia"
 
 #: ../usr/lib/usb-creator/usbcreator.py:76
 msgid "Execute"
@@ -72,7 +72,7 @@ msgstr "Apagar"
 
 #: ../usr/lib/usb-creator/usbcreator.py:79
 msgid "Refresh device list"
-msgstr "Atualizar a lista de dispositivos"
+msgstr "Actualizar a lista de dispositivos"
 
 #: ../usr/lib/usb-creator/usbcreator.py:80
 msgid "Unmount device"
@@ -80,7 +80,7 @@ msgstr "Desmontar o dispositivo"
 
 #: ../usr/lib/usb-creator/usbcreator.py:81
 msgid "Browse for ISO file"
-msgstr "Procure o ficheiro ISO"
+msgstr "Procurar o ficheiro ISO"
 
 #: ../usr/lib/usb-creator/usbcreator.py:82
 msgid "Clear the ISO field"
@@ -104,7 +104,7 @@ msgstr "Começar a copiar o ISO..."
 
 #: ../usr/lib/usb-creator/usbcreator.py:90
 msgid "kB left to copy:"
-msgstr "kB que faltam a copiar:"
+msgstr "kB que faltam copiar:"
 
 #: ../usr/lib/usb-creator/usbcreator.py:91
 msgid "Check hash of ISO..."
@@ -132,11 +132,11 @@ msgstr ""
 
 #: ../usr/lib/usb-creator/usbcreator.py:181
 msgid "Are you sure you want to remove the selected ISO from the device?"
-msgstr "Você tem a certeza que quer remover o ISO selecionado do dispositivo?"
+msgstr "Você tem a certeza que quer remover o ISO seleccionado do dispositivo?"
 
 #: ../usr/lib/usb-creator/usbcreator.py:203
 msgid "Select ISO"
-msgstr "Selecionar ISO"
+msgstr "Seleccionar ISO"
 
 #: ../usr/lib/usb-creator/usbcreator.py:261
 msgid "Unmount"
@@ -180,7 +180,7 @@ msgstr "Não é possível montar o dispositivo."
 
 #: ../usr/lib/usb-creator/usbcreator.py:517
 msgid "Hash mismatch."
-msgstr "A Hash não corresponde."
+msgstr "A hash não corresponde."
 
 #: ../usr/lib/usb-creator/usbcreator.py:519
 msgid "The device has no fat32 partition."
@@ -199,7 +199,7 @@ msgid ""
 "Unable to guess distribution from ISO name.\n"
 "Make sure you have the distribution name in the ISO name."
 msgstr ""
-"Impossível detetar o nome da distribuição da ISO.\n"
+"Impossível detectar o nome da distribuição da ISO.\n"
 "Verifique se você tem o nome da distribuição no nome da ISO. "
 
 #: ../usr/lib/usb-creator/usbcreator.py:528

@@ -3,16 +3,17 @@
 # This file is distributed under the same license as the PACKAGE package.
 #
 # Translators:
-# Arjen Balfoort <schoelje@solydxk.com>, 2016
+# Arjen Balfoort <arjenbalfoort@solydxk.com>, 2016
 # ilu lu, 2015
+# pitfd <pitfd@openmailbox.org>, 2017
 # me me, 2017
 msgid ""
 msgstr ""
 "Project-Id-Version: usb-creator\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-05-01 15:07+0200\n"
-"PO-Revision-Date: 2017-04-25 20:12+0000\n"
-"Last-Translator: Arjen Balfoort <schoelje@solydxk.com>\n"
+"POT-Creation-Date: 2017-09-24 13:08+0200\n"
+"PO-Revision-Date: 2017-09-23 21:47+0000\n"
+"Last-Translator: pitfd <pitfd@openmailbox.org>\n"
 "Language-Team: German (http://www.transifex.com/solydxk/usb-creator/language/"
 "de/)\n"
 "Language: de\n"
@@ -232,12 +233,12 @@ msgstr ""
 #: ../usr/bin/usb-creator:664
 #, sh-format
 msgid "needs administrative privileges."
-msgstr ""
+msgstr "benötigt Adminstratorrechte."
 
 #: ../usr/bin/usb-creator:665
 #, sh-format
 msgid "Please enter your password."
-msgstr ""
+msgstr "Bitte geben Sie Ihr Passwort ein."
 
 #: ../usr/share/applications/usb-creator.desktop.in.h:2
 msgid "Create a multi-boot USB"
