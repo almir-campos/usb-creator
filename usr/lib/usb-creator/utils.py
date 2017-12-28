@@ -5,6 +5,7 @@ import urllib.request
 import urllib.error
 import re
 import threading
+from os.path import exists
 
 
 def shell_exec_popen(command, kwargs={}):
@@ -74,9 +75,24 @@ def get_config_dict(file, key_value=re.compile(r'^\s*(\w+)\s*=\s*["\']?(.*?)["\'
 
 
 # Check for internet connection
-def hasInternetConnection(testUrl='http://google.com'):
+def has_internet_connection(test_url=None):
+    if test_url is None:
+        test_url == ''
+        src_lst = '/etc/apt/sources.list'
+        if exists(src_lst):
+            with open(src_lst, 'r') as f:
+                for line in f:
+                    line = line.strip()
+                    if not line.startswith('#'):
+                        matchObj = re.search('http[a-z0-9:\/\.]+', line)
+                        if matchObj:
+                            test_url = matchObj.group(0)
+                            break
+    if test_url == '':
+        test_url = 'http://google.com'
+    #print(("test_url = {}".format(test_url)))
     try:
-        urllib.request.urlopen(testUrl, timeout=1)
+        urllib.request.urlopen(test_url, timeout=1)
         return True
     except urllib.error.URLError:
         pass
