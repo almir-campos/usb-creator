@@ -3,282 +3,285 @@
 # This file is distributed under the same license as the PACKAGE package.
 #
 # Translators:
-# Slobodan Simić <slsimic@gmail.com>, 2017
-# Slobodan Simić <slsimic@gmail.com>, 2015
+# Butterfly <gokhanlnx@gmail.com>, 2016-2017
+# ortanca_samuray <ortanca_samuray@hotmail.com>, 2016
 msgid ""
 msgstr ""
 "Project-Id-Version: usb-creator\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2017-12-24 22:27+0100\n"
-"PO-Revision-Date: 2017-09-23 21:47+0000\n"
-"Last-Translator: Slobodan Simić <slsimic@gmail.com>\n"
-"Language-Team: Serbian (http://www.transifex.com/solydxk/usb-creator/"
-"language/sr/)\n"
-"Language: sr\n"
+"PO-Revision-Date: 2017-09-22 17:07+0000\n"
+"Last-Translator: Butterfly <gokhanlnx@gmail.com>\n"
+"Language-Team: Turkish (http://www.transifex.com/solydxk/usb-creator/"
+"language/tr/)\n"
+"Language: tr\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n"
-"%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
 
 #: ../usr/lib/usb-creator/usbcreator.py:67
 #: ../usr/share/applications/usb-creator.desktop.in.h:1
 msgid "USB Creator"
-msgstr "УСБ стваралац"
+msgstr "USB Oluşturucu"
 
 #: ../usr/lib/usb-creator/usbcreator.py:68
 msgid "Device"
-msgstr "Уређај"
+msgstr "Aygıt"
 
 #: ../usr/lib/usb-creator/usbcreator.py:69
 msgid "USB"
-msgstr "УСБ"
+msgstr "USB"
 
 #: ../usr/lib/usb-creator/usbcreator.py:70
 msgid "Available"
-msgstr "Доступно"
+msgstr "Kullanılabilir"
 
 #: ../usr/lib/usb-creator/usbcreator.py:71
 msgid "Required"
-msgstr "Потребно"
+msgstr "Gerekli"
 
 #: ../usr/lib/usb-creator/usbcreator.py:72
 msgid "Format device"
-msgstr "Форматирај уређај"
+msgstr "Aygıtı biçimlendir"
 
 #: ../usr/lib/usb-creator/usbcreator.py:73
 msgid "Warning: all data will be lost"
-msgstr "Упозорење: сви подаци биће изгубљени"
+msgstr "Uyarı: tüm veriler yok olabilir"
 
 #: ../usr/lib/usb-creator/usbcreator.py:74
 msgid "Repair device"
-msgstr "Поправи уређај"
+msgstr "Aygıtı onar"
 
 #: ../usr/lib/usb-creator/usbcreator.py:75
 msgid "Tries to repair an unbootable USB"
-msgstr "Покушај поправке не-бутабилног УСБ-а"
+msgstr "Açılış yapılamayan USB için onarım deneniyor"
 
 #: ../usr/lib/usb-creator/usbcreator.py:76
 msgid "Execute"
-msgstr "Изврши"
+msgstr "Yürüt"
 
 #: ../usr/lib/usb-creator/usbcreator.py:77
 msgid "ISO"
-msgstr "ИСО"
+msgstr "ISO"
 
 #: ../usr/lib/usb-creator/usbcreator.py:78
 msgid "Delete"
-msgstr "Обриши"
+msgstr "Sil"
 
 #: ../usr/lib/usb-creator/usbcreator.py:79
 msgid "Refresh device list"
-msgstr "Освежи листу уређаја"
+msgstr "Aygıt listesini tazele"
 
 #: ../usr/lib/usb-creator/usbcreator.py:80
 msgid "Unmount device"
-msgstr "Демонтирај уређај"
+msgstr "Aygıtı ayır"
 
 #: ../usr/lib/usb-creator/usbcreator.py:81
 msgid "Browse for ISO file"
-msgstr "Тражи ИСО фајл"
+msgstr "ISO dosyası için gözat"
 
 #: ../usr/lib/usb-creator/usbcreator.py:82
 msgid "Clear the ISO field"
-msgstr "Очисти ИСО поље"
+msgstr "ISO alanını temizle"
 
 #: ../usr/lib/usb-creator/usbcreator.py:86
 msgid "Partitioning USB..."
-msgstr "Партиционишем УСБ..."
+msgstr "USB bölümleniyor..."
 
 #: ../usr/lib/usb-creator/usbcreator.py:87
 msgid "Searching for bad block"
-msgstr "Тражим лоше блокове"
+msgstr "Kötü blok için araştırılıyor"
 
 #: ../usr/lib/usb-creator/usbcreator.py:88
 msgid "Installing Grub..."
-msgstr "Инсталирам ГРУБ"
+msgstr "Grub kuruluyor..."
 
 #: ../usr/lib/usb-creator/usbcreator.py:89
 msgid "Start copying ISO..."
-msgstr "Покрећем копирање ИСО одраза..."
+msgstr "ISO kopyalama başlatılıyor..."
 
 #: ../usr/lib/usb-creator/usbcreator.py:90
 msgid "kB left to copy:"
-msgstr "kB преостало за копирање:"
+msgstr "kalan kopyalama kB:"
 
 #: ../usr/lib/usb-creator/usbcreator.py:91
 msgid "Check hash of ISO..."
-msgstr "Провера хеша ИСО фајла..."
+msgstr "ISO'nun hash doğrulamasını yap..."
 
 #: ../usr/lib/usb-creator/usbcreator.py:127
 msgid "Version"
-msgstr "Верзија"
+msgstr "Sürüm"
 
 #: ../usr/lib/usb-creator/usbcreator.py:146
 msgid ""
 "Cannot add ISO from path: {}.\n"
 "Please, remove the ISO path or browse for an existing ISO."
 msgstr ""
-"Не могу да додам ИСО са путање: {}.\n"
-"Уклоните путању или пронађите постојећи ИСО фајл."
+"Hedeften ISO dosyası eklenemedi: {}.\n"
+"Lütfen, ISO hedefini siliniz ya da mevcut başka biri için gözatınız."
 
 #: ../usr/lib/usb-creator/usbcreator.py:156
 msgid ""
 "There is not enough space available on the pen drive.\n"
 "Please, remove unneeded files before continuing."
 msgstr ""
-"Нема довољно простора на флешу.\n"
-"Уклоните непотребне фајлове пре настављања."
+"Sürücü üstünde yeterli kullanım alanı yok.\n"
+"Lütfen, devam etmeden öne gereksiz dosyaları siliniz."
 
 #: ../usr/lib/usb-creator/usbcreator.py:181
 msgid "Are you sure you want to remove the selected ISO from the device?"
-msgstr "Заиста желите да уклоните изабрани ИСО са уређаја?"
+msgstr ""
+"Aygıttan seçilen seçilen ISO dosyasını silmek istediğinize emin misiniz?"
 
 #: ../usr/lib/usb-creator/usbcreator.py:203
 msgid "Select ISO"
-msgstr "Избор ИСО одраза"
+msgstr "ISO seç"
 
 #: ../usr/lib/usb-creator/usbcreator.py:261
 msgid "Unmount"
-msgstr "Демонтирај"
+msgstr "Ayır"
 
 #: ../usr/lib/usb-creator/usbcreator.py:266
 msgid "You can now safely remove the device."
-msgstr "Сада можете безбедно уклонити уређај."
+msgstr "Şimdi aygıtı güvenle çıkartabilirsiniz."
 
 #: ../usr/lib/usb-creator/usbcreator.py:268
 msgid ""
 "Could not unmount the device.\n"
 "Please unmount the device manually."
 msgstr ""
-"Не могу да демонтирам уређај.\n"
-"Уређај демонтирајте ручно."
+"Aygıt ayrılamadı.\n"
+"Lütfen cihazı elle ayırın."
 
 #: ../usr/lib/usb-creator/usbcreator.py:505
 msgid "Run this application with root permission."
-msgstr "Покрените овај програм за кореним дозволама."
+msgstr "Bu uygulamayı yönetici hakları ile çalıştırınız."
 
 #: ../usr/lib/usb-creator/usbcreator.py:507
 msgid "Wrong arguments were passed to usb-creator."
-msgstr "Погрешни аргументи су дати уз команду usb-creator"
+msgstr "Usb-creator'a yanlış argümanlar geçildi."
 
 #: ../usr/lib/usb-creator/usbcreator.py:509
 msgid "The device was not found or no device was given."
-msgstr "Уређај није нађен или није задат."
+msgstr "Aygıt bulunamadı veya hiçbir aygıt yok."
 
 #: ../usr/lib/usb-creator/usbcreator.py:511
 msgid "Given ISO path was not found."
-msgstr "Наведена ИСО путања није нађена."
+msgstr "Verilen ISO hedefi bulunamadı."
 
 #: ../usr/lib/usb-creator/usbcreator.py:513
 msgid "Device is in use by another application."
-msgstr "Уређај користи друга апликација."
+msgstr "Aygıtı bir başka uygulama kullanıyor"
 
 #: ../usr/lib/usb-creator/usbcreator.py:515
 msgid "Unable to mount the device."
-msgstr "Не могу да монтирам уређај."
+msgstr "Aygıt bağlanamadı."
 
 #: ../usr/lib/usb-creator/usbcreator.py:517
 msgid "Hash mismatch."
-msgstr "Хеш се не поклапа."
+msgstr "Karma uyumsuzluğu."
 
 #: ../usr/lib/usb-creator/usbcreator.py:519
 msgid "The device has no fat32 partition."
-msgstr "Уређај нема ФАТ32 партицију."
+msgstr "Aygıt fat32 bölümüne sahip değil."
 
 #: ../usr/lib/usb-creator/usbcreator.py:521
 msgid "The device has no bootloader installed."
-msgstr "Уређај нема инсталиран подизни учитавач."
+msgstr "Aygıt kurulu bir açılış yükleyicisine sahip değil."
 
 #: ../usr/lib/usb-creator/usbcreator.py:523
 msgid "There is not enough space available on the device."
-msgstr "Нема довољно простора на уређају."
+msgstr "Aygıtta kullanım için yeterli alan mevcut değil."
 
 #: ../usr/lib/usb-creator/usbcreator.py:525
 msgid ""
 "Unable to guess distribution from ISO name.\n"
 "Make sure you have the distribution name in the ISO name."
 msgstr ""
-"Не могу да погодим дистрибуцију на основу ИСО фајла.\n"
-"Проверите да ли се назив дистрибуције садржи у називу ИСО фајла."
+"ISO isminden dağıtımı tahmin edilemedi.\n"
+"ISO adında dağıtım adı olduğundan emin olunuz."
 
 #: ../usr/lib/usb-creator/usbcreator.py:528
 msgid ""
 "An unknown error accured.\n"
 "Please, visit our forum for support: http://forums.solydxk.com"
 msgstr ""
-"Десила се непозната грешка.\n"
-"Посетите наш форум ради подршке: http://forums.solydxk.com"
+"Bilinmeyen bir hata oluştu.\n"
+"Lütfen, destek için sitemizi ziyaret ediniz: http://forums.solydxk.com"
 
 #: ../usr/lib/usb-creator/usbcreator.py:532
 msgid "The USB was successfully written."
-msgstr "УСБ је успешно уписан."
+msgstr "USB başarıyla yazıldı."
 
 #: ../usr/lib/usb-creator/main.py:41
 msgid "Unexpected error"
-msgstr "Неочекивана грешка"
+msgstr "Beklenmeyen hata"
 
 #: ../usr/lib/usb-creator/main.py:42
 msgid ""
 "USB Creator has failed with the following unexpected error. Please submit a "
 "bug report!"
 msgstr ""
-"УСБ стваралац није успео уз следећу неочекивану грешку. Пријавите грешку!"
+"USB Oluşturucu aşağıdaki beklenmeyen hata sonucu başarısız oldu. Lütfen bir "
+"hata raporu gönderin!"
 
 #: ../usr/bin/usb-creator:664
 #, sh-format
 msgid "needs administrative privileges."
-msgstr "захтева администраторска овлашћења."
+msgstr "yönetici haklarına ihtiyaç duyuluyor."
 
 #: ../usr/bin/usb-creator:665
 #, sh-format
 msgid "Please enter your password."
-msgstr "Унесите своју лозинку."
+msgstr "Lütfen şifrenizi giriniz."
 
 #: ../usr/share/applications/usb-creator.desktop.in.h:2
 msgid "Create a multi-boot USB"
-msgstr "Прави вишесистемски УСБ"
+msgstr "Çoklu açılış USB'si oluştur"
 
 #: ../usr/share/solid/actions/usb-constructor-openusb.desktop.in.h:1
 msgid "Create a multi-boot USB with the USB Creator"
-msgstr "Прави вишесистемски УСБ са УСБ ствараоцем"
+msgstr "USB Creator ile çoklu açılış USB'si oluştur"
 
 #: en/help.html+html.body.h1:8
 msgid "USB Creator Help"
-msgstr "Помоћ за УСБ ствараоца"
+msgstr "USB Oluşturucu Yardım"
 
 #: en/help.html+html.body.div.h2:10
 msgid "Description"
-msgstr "Опис"
+msgstr "Açıklama"
 
 #: en/help.html+html.body.div.p:11
 msgid ""
 "The USB Creator is a tool to help users to create a bootable flash drive "
 "with multiple Linux operating systems."
 msgstr ""
-"УСБ стваралац је алат који омогућава корисницима да направе бутабилни флеш "
-"диск са више Линукс оперативних система."
+"USB Oluşturucu kullanıcıların birden fazla Linux işletim sistemini bir flash "
+"sürücüye çoklu önyüklenebilir olarak kurmaya yardımcı olan bir araçtır."
 
 #: en/help.html+html.body.div.h2:13
 msgid "Important"
-msgstr "Важно"
+msgstr "Önemli"
 
 #: en/help.html+html.body.div.p:14
 msgid ""
 "Make sure you backed up all important data from the flash drive before you "
 "start."
 msgstr ""
-"Проверите, пре него што почнете, да ли сте са флеша склонили све битне "
-"податке."
+"Başlamadan önce flash sürücüsündeki tüm önemli verileri yedeklediğinizden "
+"emin olun."
 
 #: en/help.html+html.body.div.h2:16
 msgid "Commands"
-msgstr "Команде"
+msgstr "Komutlar"
 
 #: en/help.html+html.body.div.p:17
 msgid ""
 "You can also use the USB Creator from the terminal. Here are some examples:"
-msgstr "УСБ ствараоца можете користити и из терминала. Ево неких примера:"
+msgstr ""
+"USB Oluşturucuyu uçbirimden de kullanabilirsiniz. İşte bazı kullanım "
+"örnekleri:"
 
 #: en/help.html+html.body.div.h3:19
 msgid "# usb-creator -f -i /path/to/my.iso -m"
@@ -289,8 +292,8 @@ msgid ""
 "This will format the flash drive, copy the ISO file to the flash drive and "
 "check the hash of the copied ISO file with the original ISO file."
 msgstr ""
-"Ово ће форматирати флеш диск, копирати ИСО фајл и упоредити хеш ископираног "
-"са оригиналним ИСО фајлом."
+"Bu flash sürücüyü biçimlendirir, ISO dosyasını flash sürücüye kopyalar ve "
+"kopyalanan ISO dosyasının asıl ISO dosyası ile hash kontrolünü yapar."
 
 #: en/help.html+html.body.div.h3:22
 msgid "# usb-creator -b -g -r"
@@ -301,7 +304,8 @@ msgid ""
 "This will try to repair an unbootable flash drive that already contains ISO "
 "files."
 msgstr ""
-"Ово ће покушати да поправи флеш који већ има ИСО фајлове али се не подижу."
+"Bu halihazırda ISO dosyası içeren ama açılabilir olmayan bir flash sürücünün "
+"onarımını dener."
 
 #: en/help.html+html.body.div.h3:25
 msgid "# usb-creator -h"
@@ -309,19 +313,19 @@ msgstr "# usb-creator -h"
 
 #: en/help.html+html.body.div.p:26
 msgid "This will show all available options and their usage."
-msgstr "Ово ће приказати све доступне опције и њихову употребу."
+msgstr "Bu tüm kullanılabilir seçenekleri ve onların kullanımlarını gösterir."
 
 #: en/help.html+html.body.div.h2:28
 msgid "Hidden features"
-msgstr "Скривене могућности"
+msgstr "Gizli özellikler"
 
 #: en/help.html+html.body.div.p:29
 msgid ""
 "When you remove the ISO file name from the ISO field, USB Creator will "
 "calculate the space needed for all ISO files in that directory."
 msgstr ""
-"Када уклоните ИСО фајл из ИСО поља, УСБ стваралац ће прорачунати потребан "
-"простор за све ИСО фајлове у том директоријуму."
+"ISO dosya adını ISO alanından sildiğinizde, USB Oluşturucu bu dizindeki tüm "
+"ISO dosyaları için gereken alanı hesaplar."
 
 #: en/help.html+html.body.div.p:30
 msgid ""
@@ -329,19 +333,20 @@ msgid ""
 "adding a number in front of the ISO file name, e.g.: \"01-MyDistro-amd64.iso"
 "\"."
 msgstr ""
-"Можете променити редослед по којем ће ИСО фајлови бити поређани додајући "
-"број на почетку назива ИСО фајла, нпр. „01-МојЛинукс-amd64.iso“."
+"ISO dosyalarının menüdeki gösterilme sırasını, ISO dosya adının önüne bir "
+"sayı ekleyerek değiştirebilirsiniz, örneğin: \"01-DağıtımAdı-amd64.iso\"."
 
 #: en/help.html+html.body.div.p:31
 msgid ""
 "Symbolic links are followed but the symbolic links must have the \".iso\" "
 "extension to make it work."
 msgstr ""
-"Симболичке везе се прате али морају имати .iso екстензију да би радиле."
+"Sembolik bağlantılar takip edilir, ancak sembolik bağlantılar çalışması için "
+"\".iso\" uzantısına sahip olmalıdır."
 
 #: en/help.html+html.body.div.h2:33
 msgid "Your ISO is not booting?"
-msgstr "Ваш ИСО се не подиже?"
+msgstr "ISO dosyanız açılış yapmıyor mu?"
 
 #: en/help.html+html.body.div.p:34
 msgid ""
@@ -350,17 +355,18 @@ msgid ""
 "can be booted directly from the ISO file. Check the distribution's forum if "
 "it can be booted directly from the ISO file."
 msgstr ""
-"На нашој <a href=\"https://github.com/SolydXK/usb-creator\" target=\"_blank"
-"\">Гитхаб</a> страници можете видети листу тестираних дистрибуција али не "
-"могу се све подизати директно из ИСО фајла. Погледајте на форуму или "
-"страници одређене дистрибуције ако је то случај."
+"<a href=\"https://github.com/SolydXK/usb-creator\" target=\"_blank\">GitHub</"
+"a> sayfamızda test edilmiş dağıtımların bir listesini görebilirsiniz, ancak "
+"hepsi doğrudan ISO dosyasından önyüklenemeyebilir. Doğrudan ISO dosyasından "
+"önyüklenebilir ISO dosyaları için, ilgili dağıtımın forumunu kontrol edin."
 
 #: en/help.html+html.body.div.p:35
 msgid ""
 "The menu is configured in a file which you can find on your flash drive: /"
 "boot/grub/grub.cfg"
 msgstr ""
-"Мени се подешава у фајлу који можете наћи на флешу: /boot/grub/grub.cfg"
+"Menü flash sürücünüzde bulabileceğiniz bir dosyada yapılandırılmıştır: /boot/"
+"grub/grub.cfg"
 
 #: en/help.html+html.body.div.p:36
 msgid ""
@@ -368,14 +374,15 @@ msgid ""
 "boots and post your changes on GitHub or our <a href=\"http://forums.solydxk."
 "com\" target=\"_blank\">forum</a>."
 msgstr ""
-"Помозите у побољшавању апликације прилагођавањем grub.cfg фајла док ИСО не "
-"проради и поставите ваше измене на Гитхаб или на нашем <a href=\"http://"
-"forums.solydxk.com\" target=\"_blank\">форуму</a>."
+"Lütfen ISO dosyasının açılışını sağlayacak grub.cfg dosyası uyarlamalarınız "
+"ile ilgili değişilikleri bu uygulamanın iyileştirilmesine katkıda bulunmak "
+"için Github ya da <a href=\"http://forums.solydxk.com\" target=\"_blank"
+"\">foruma</a> gönderin."
 
 #: en/help.html+html.body.div.p:37
 msgid ""
 "Don't forget to attach the log file when you post an issue on our forum: /"
 "var/log/usb-creator.log"
 msgstr ""
-"Не заборавите да приложите и фајл дневника када постављате проблем на наш "
-"форум: /var/log/usb-creator.log"
+"Forumda bir sorunla ilgili bildirim yaptığınızda, şu günlük dosyasının "
+"içeriğini eklemeyi unutmayınız: /var/log/usb-creator.log"

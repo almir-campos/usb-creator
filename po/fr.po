@@ -3,17 +3,17 @@
 # This file is distributed under the same license as the PACKAGE package.
 #
 # Translators:
-# Arjen Balfoort <schoelje@solydxk.com>, 2016
+# Arjen Balfoort <arjenbalfoort@solydxk.com>, 2016
 # Linux2TheCore <ichbin1199@gmail.com>, 2015
-# anechampenois <anechampenois@solydxk.com>, 2015
+# anechampenois <analogic@zaclys.net>, 2015
 # Kyodev <kyodev@yandex.com>, 2017
 # Yuraï K - TURBA, 2015
 msgid ""
 msgstr ""
 "Project-Id-Version: usb-creator\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-05-01 15:07+0200\n"
-"PO-Revision-Date: 2017-04-26 21:37+0000\n"
+"POT-Creation-Date: 2017-12-24 22:27+0100\n"
+"PO-Revision-Date: 2017-09-22 17:07+0000\n"
 "Last-Translator: Kyodev <kyodev@yandex.com>\n"
 "Language-Team: French (http://www.transifex.com/solydxk/usb-creator/language/"
 "fr/)\n"

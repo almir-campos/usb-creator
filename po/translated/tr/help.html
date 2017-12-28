@@ -1,0 +1,56 @@
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <link href="../link/general.css" rel="stylesheet" type="text/css" />
+  </head>
+  <body>
+    <div id="background"></div>
+	<h1>USB Oluşturucu Yardım</h1>
+	<div class="main">
+		<h2>Açıklama</h2>
+		<p>USB Oluşturucu kullanıcıların birden fazla Linux işletim sistemini bir flash
+sürücüye çoklu önyüklenebilir olarak kurmaya yardımcı olan bir araçtır.</p>
+
+		<h2>Önemli</h2>
+		<p>Başlamadan önce flash sürücüsündeki tüm önemli verileri yedeklediğinizden
+emin olun.</p>
+
+		<h2>Komutlar</h2>
+		<p>USB Oluşturucuyu uçbirimden de kullanabilirsiniz. İşte bazı kullanım
+örnekleri:</p>
+
+		<h3># usb-creator -f -i /path/to/my.iso -m</h3>
+		<p>Bu flash sürücüyü biçimlendirir, ISO dosyasını flash sürücüye kopyalar ve
+kopyalanan ISO dosyasının asıl ISO dosyası ile hash kontrolünü yapar.</p>
+
+		<h3># usb-creator -b -g -r</h3>
+		<p>Bu halihazırda ISO dosyası içeren ama açılabilir olmayan bir flash sürücünün
+onarımını dener.</p>
+		
+		<h3># usb-creator -h</h3>
+		<p>Bu tüm kullanılabilir seçenekleri ve onların kullanımlarını gösterir.</p>
+
+		<h2>Gizli özellikler</h2>
+		<p>ISO dosya adını ISO alanından sildiğinizde, USB Oluşturucu bu dizindeki tüm
+ISO dosyaları için gereken alanı hesaplar.</p>
+		<p>ISO dosyalarının menüdeki gösterilme sırasını, ISO dosya adının önüne bir
+sayı ekleyerek değiştirebilirsiniz, örneğin: "01-DağıtımAdı-amd64.iso".</p>
+		<p>Sembolik bağlantılar takip edilir, ancak sembolik bağlantılar çalışması için
+".iso" uzantısına sahip olmalıdır.</p>
+		
+		<h2>ISO dosyanız açılış yapmıyor mu?</h2>
+		<p><a href="https://github.com/SolydXK/usb-creator" target="_blank">GitHub</a>
+sayfamızda test edilmiş dağıtımların bir listesini görebilirsiniz, ancak
+hepsi doğrudan ISO dosyasından önyüklenemeyebilir. Doğrudan ISO dosyasından
+önyüklenebilir ISO dosyaları için, ilgili dağıtımın forumunu kontrol edin.</p>
+		<p>Menü flash sürücünüzde bulabileceğiniz bir dosyada yapılandırılmıştır:
+/boot/grub/grub.cfg</p>
+		<p>Lütfen ISO dosyasının açılışını sağlayacak grub.cfg dosyası uyarlamalarınız
+ile ilgili değişilikleri bu uygulamanın iyileştirilmesine katkıda bulunmak
+için Github ya da <a href="http://forums.solydxk.com"
+target="_blank">foruma</a> gönderin.</p>
+		<p>Forumda bir sorunla ilgili bildirim yaptığınızda, şu günlük dosyasının
+içeriğini eklemeyi unutmayınız: /var/log/usb-creator.log</p>
+    </div>
+  </body>
+</html>

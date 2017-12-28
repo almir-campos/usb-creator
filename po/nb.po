@@ -4,14 +4,14 @@
 #
 # Translators:
 # Anders Dalen <anders@andersdalen.no>, 2016
-# Arjen Balfoort <schoelje@solydxk.com>, 2016
+# Arjen Balfoort <arjenbalfoort@solydxk.com>, 2016
 msgid ""
 msgstr ""
 "Project-Id-Version: usb-creator\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-05-01 15:07+0200\n"
-"PO-Revision-Date: 2017-04-25 20:12+0000\n"
-"Last-Translator: Arjen Balfoort <schoelje@solydxk.com>\n"
+"POT-Creation-Date: 2017-12-24 22:27+0100\n"
+"PO-Revision-Date: 2017-09-22 19:06+0000\n"
+"Last-Translator: Arjen Balfoort <arjenbalfoort@solydxk.com>\n"
 "Language-Team: Norwegian Bokmål (http://www.transifex.com/solydxk/usb-"
 "creator/language/nb/)\n"
 "Language: nb\n"
