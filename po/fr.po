@@ -3,6 +3,7 @@
 # This file is distributed under the same license as the PACKAGE package.
 #
 # Translators:
+# anechampenois <analogic@zaclys.net>, 2018
 # Arjen Balfoort <arjenbalfoort@solydxk.com>, 2016
 # Linux2TheCore <ichbin1199@gmail.com>, 2015
 # anechampenois <analogic@zaclys.net>, 2015
@@ -12,9 +13,9 @@ msgid ""
 msgstr ""
 "Project-Id-Version: usb-creator\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-01-14 11:46+0100\n"
-"PO-Revision-Date: 2017-09-22 17:07+0000\n"
-"Last-Translator: Kyodev <kyodev@yandex.com>\n"
+"POT-Creation-Date: 2018-02-08 18:23+0100\n"
+"PO-Revision-Date: 2018-02-07 10:07+0000\n"
+"Last-Translator: anechampenois <analogic@zaclys.net>\n"
 "Language-Team: French (http://www.transifex.com/solydxk/usb-creator/language/"
 "fr/)\n"
 "Language: fr\n"
@@ -50,11 +51,11 @@ msgstr "Formater"
 
 #: ../usr/lib/usb-creator/usbcreator.py:73
 msgid "Warning: all data will be lost"
-msgstr "Attention : toutes les données seront perdues"
+msgstr "Attention: toutes les données seront perdues"
 
 #: ../usr/lib/usb-creator/usbcreator.py:74
 msgid "Repair device"
-msgstr "Reparation du périphérique"
+msgstr "Réparation du périphérique"
 
 #: ../usr/lib/usb-creator/usbcreator.py:75
 msgid "Tries to repair an unbootable USB"
@@ -74,15 +75,15 @@ msgstr "Supprimer"
 
 #: ../usr/lib/usb-creator/usbcreator.py:79
 msgid "Refresh device list"
-msgstr "Actualiser des périphériques"
+msgstr "Actualiser la liste des périphériques"
 
 #: ../usr/lib/usb-creator/usbcreator.py:80
 msgid "Unmount device"
-msgstr "Démonter périphérique"
+msgstr "Démonter le périphérique"
 
 #: ../usr/lib/usb-creator/usbcreator.py:81
 msgid "Browse for ISO file"
-msgstr "Parcourir dossier pour fichier ISO"
+msgstr "Parcourir le dossier du fichier ISO"
 
 #: ../usr/lib/usb-creator/usbcreator.py:82
 msgid "Clear the ISO field"
@@ -90,7 +91,7 @@ msgstr "Effacer le champ ISO"
 
 #: ../usr/lib/usb-creator/usbcreator.py:86
 msgid "Partitioning USB..."
-msgstr "Partitionnement USB..."
+msgstr "Partitionnement de la clé USB..."
 
 #: ../usr/lib/usb-creator/usbcreator.py:87
 msgid "Searching for bad block"
@@ -102,15 +103,15 @@ msgstr "Installation de GRUB..."
 
 #: ../usr/lib/usb-creator/usbcreator.py:89
 msgid "Start copying ISO..."
-msgstr "Début de copiage ISO..."
+msgstr "Démarrer la copie de l'ISO..."
 
 #: ../usr/lib/usb-creator/usbcreator.py:90
 msgid "kB left to copy:"
-msgstr "Kio reste à copier :"
+msgstr "Kio restant à copier:"
 
 #: ../usr/lib/usb-creator/usbcreator.py:91
 msgid "Check hash of ISO..."
-msgstr "Vérification hash de ISO"
+msgstr "Vérification de l'intégrité de l'ISO..."
 
 #: ../usr/lib/usb-creator/usbcreator.py:127
 msgid "Version"
@@ -139,7 +140,7 @@ msgstr ""
 
 #: ../usr/lib/usb-creator/usbcreator.py:203
 msgid "Select ISO"
-msgstr "Sélectionner ISO"
+msgstr "Sélectionner l'ISO"
 
 #: ../usr/lib/usb-creator/usbcreator.py:261
 msgid "Unmount"
@@ -147,7 +148,7 @@ msgstr "Démonter"
 
 #: ../usr/lib/usb-creator/usbcreator.py:266
 msgid "You can now safely remove the device."
-msgstr "Vous pouvez maintenant retirer le périphérique en toute sécurité"
+msgstr "Vous pouvez maintenant retirer le périphérique en toute sécurité."
 
 #: ../usr/lib/usb-creator/usbcreator.py:268
 msgid ""
@@ -184,7 +185,7 @@ msgstr "Impossible de monter le périphérique."
 
 #: ../usr/lib/usb-creator/usbcreator.py:517
 msgid "Hash mismatch."
-msgstr "Décalage de somme hash."
+msgstr "Erreur de somme de contrôle."
 
 #: ../usr/lib/usb-creator/usbcreator.py:519
 msgid "The device has no fat32 partition."
@@ -212,12 +213,11 @@ msgid ""
 "Please, visit our forum for support: http://forums.solydxk.com"
 msgstr ""
 "Une erreur inconnue s'est produite.\n"
-"Merci de vous rendre sur notre forum pour obtenir de l'aide: http://forums."
-"solydxk.com"
+"Rendez-vous sur notre forum pour obtenir de l'aide: http://forums.solydxk.com"
 
 #: ../usr/lib/usb-creator/usbcreator.py:532
 msgid "The USB was successfully written."
-msgstr "Le périphérique USB a été enregistré avec succès."
+msgstr "La clé USB a été créée avec succès."
 
 #: ../usr/lib/usb-creator/main.py:41
 msgid "Unexpected error"
@@ -275,7 +275,7 @@ msgid ""
 "start."
 msgstr ""
 "Assurez-vous d'avoir sauvegardé toutes vos données importantes provenant de "
-"la clé USB avant de démarrer."
+"la clé USB avant de commencer."
 
 #: en/help.html+html.body.div.h2:16
 msgid "Commands"
@@ -298,7 +298,7 @@ msgid ""
 "check the hash of the copied ISO file with the original ISO file."
 msgstr ""
 "Cela va formater la clé USB, copier l'ISO sur cette clé et vérifier la somme "
-"hash de l'ISO copiée avec l'ISO originale."
+"hash de l'ISO copiée avec celle de l'ISO originale."
 
 #: en/help.html+html.body.div.h3:22
 msgid "# usb-creator -b -g -r"
@@ -318,7 +318,7 @@ msgstr "# usb-creator -h"
 
 #: en/help.html+html.body.div.p:26
 msgid "This will show all available options and their usage."
-msgstr "Cela vous présente toutes les options disponibles et leur usage."
+msgstr "Cela vous présente toutes les options disponibles et leur utilisation."
 
 #: en/help.html+html.body.div.h2:28
 msgid "Hidden features"
@@ -330,7 +330,7 @@ msgid ""
 "calculate the space needed for all ISO files in that directory."
 msgstr ""
 "Lorsque vous enlevez le nom de l'ISO de son champ, USB Creator calculera "
-"l'espace requis pour tous les ISO du répertoire."
+"l'espace requis pour tous les ISO de ce répertoire."
 
 #: en/help.html+html.body.div.p:30
 msgid ""
@@ -338,9 +338,9 @@ msgid ""
 "adding a number in front of the ISO file name, e.g.: \"01-MyDistro-amd64.iso"
 "\"."
 msgstr ""
-"Vous pouvez modifier l'ordre dans lequel  les ISO sont affichées dans le "
-"menu en ajoutant un nombre devant le nom de l'ISO, par ex.: \"01-MaDistro-"
-"amd64.iso\"."
+"Vous pouvez modifier l'ordre dans lequel s'affichent les ISO dans le menu en "
+"ajoutant un nombre devant le nom de l'ISO, par ex.: \"01-MaDistro-amd64.iso"
+"\"."
 
 #: en/help.html+html.body.div.p:31
 msgid ""
@@ -380,9 +380,9 @@ msgid ""
 "boots and post your changes on GitHub or our <a href=\"http://forums.solydxk."
 "com\" target=\"_blank\">forum</a>."
 msgstr ""
-"Merci de nous aider à améliorer ce programme en adaptant grub.cfg jusqu'à ce "
-"que l'ISO s'amorce et postez vos modifications sur GitHub ou notre <a href="
-"\"http://forums.solydxk.com\" target=\"_blank\">forum</a>."
+"Merci de nous aider à améliorer ce programme en modifiant grub.cfg jusqu'à "
+"ce que l'ISO s'amorce et postez vos modifications sur GitHub ou notre <a "
+"href=\"http://forums.solydxk.com\" target=\"_blank\">forum</a>."
 
 #: en/help.html+html.body.div.p:37
 msgid ""
