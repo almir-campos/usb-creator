@@ -64,12 +64,23 @@ update:
 		rm $$LAUNCHER.in.h $$LAUNCHER.in ; \
 	done && echo OK
 	
-	# html
+	# temporary pot files
 	@ touch pot/dummy.pot
 	@ rm pot/*.pot
+	# get strings from policy files
+	@ for POLICY in `find ../usr/share/polkit-1/actions/ -name '*.policy'`; do \
+		itstool \
+		--out pot/"$${POLICY##*/}".pot \
+		--its=polkit/polkit.its \
+		$$POLICY; \
+	done && echo "Policy pot files created"
+	# create pot files from html files
 	@ html2po -P en pot && echo "HTML pot files created"
-	@ msgcat pot/*.pot >> usb-creator.pot
-	@ head -n50 usb-creator.pot > .tmp && tail -n+51 usb-creator.pot | sed '/fuzzy/,/X-/d' >> .tmp && mv -f .tmp usb-creator.pot && echo "Pot files merged"
+	# remove headers in generated pot files before merging
+	@ for POT in `find ./pot -name '*.pot'`; do \
+		sed -i '1,/^$$/d' $$POT; \
+	done
+	@ msgcat pot/*.pot >> $(package).pot
 	@ po4a po4a.cfg && echo "Po files and translations updated"
 	# don't ship incomplete translations
 	@ n_required=`ls en | wc -l`; \

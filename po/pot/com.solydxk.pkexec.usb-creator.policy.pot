@@ -1,0 +1,5 @@
+#. (itstool) path: action/message
+#: ../usr/share/polkit-1/actions/com.solydxk.pkexec.usb-creator.policy:8
+msgid "Authentication is required to run USB Creator"
+msgstr ""
+
