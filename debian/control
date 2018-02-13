@@ -5,6 +5,7 @@ Maintainer: Arjen Balfoort <arjenbalfoort@solydxk.com>
 Build-Depends: debhelper (>= 9)
   , python3 (>= 3.2)
   , intltool
+  , itstool
   , transifex-client
   , translate-toolkit
 X-Python3-Version: >= 3.2
