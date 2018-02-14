@@ -32,16 +32,16 @@ update:
 		--from-code=UTF-8 \
 		`find .. -wholename ../debian -prune -o -name '*.py' | grep .py` && echo "Python files scanned for translations"
 	
-	# get strings from package launcher (bash script)
-	@ xgettext \
-		--join-existing \
-		--keyword=eval_gettext  \
-		--language=Shell \
-		--output=$(package).pot \
-		--package-name=$(package) \
-		--package-version='' \
-		--from-code=UTF-8 \
-		../usr/bin/$(package) && echo "Shell launcher scanned for translations"
+	# get strings from package launcher (bash script): deprecated
+	#@ xgettext \
+	#	--join-existing \
+	#	--keyword=eval_gettext  \
+	#	--language=Shell \
+	#	--output=$(package).pot \
+	#	--package-name=$(package) \
+	#	--package-version='' \
+	#	--from-code=UTF-8 \
+	#	../usr/bin/$(package) && echo "Shell launcher scanned for translations"
 	
 	# get strings from the desktop file
 	@ for LAUNCHER in `find .. -name '*.desktop'`; do \
