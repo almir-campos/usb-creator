@@ -1,3 +1,15 @@
+usb-creator (0.4.7) solydxk; urgency=low
+
+  * Added Danish translations
+
+ -- Arjen Balfoort <arjenbalfoort@solydxk.com>  Wed, 11 Apr 2018 10:48:46 +0200
+
+usb-creator (0.4.6) solydxk; urgency=low
+
+  * Resolve unmountable partitions in udisks2
+
+ -- Arjen Balfoort <arjenbalfoort@solydxk.com>  Mon, 26 Feb 2018 09:33:12 +0100
+
 usb-creator (0.4.5) solydxk; urgency=low
 
   * Use pkexec for administrative privileges

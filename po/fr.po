@@ -13,8 +13,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: usb-creator\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-02-08 18:23+0100\n"
-"PO-Revision-Date: 2018-02-07 10:07+0000\n"
+"POT-Creation-Date: 2018-02-13 18:14+0100\n"
+"PO-Revision-Date: 2018-02-13 17:58+0000\n"
 "Last-Translator: anechampenois <analogic@zaclys.net>\n"
 "Language-Team: French (http://www.transifex.com/solydxk/usb-creator/language/"
 "fr/)\n"
@@ -231,16 +231,6 @@ msgstr ""
 "USB Creator a rencontré l'erreur inattendue suivante. Merci de soumettre un "
 "rapport de bug!"
 
-#: ../usr/bin/usb-creator:664
-#, sh-format
-msgid "needs administrative privileges."
-msgstr "Privilèges administratifs requis."
-
-#: ../usr/bin/usb-creator:665
-#, sh-format
-msgid "Please enter your password."
-msgstr "Veuillez saisir votre mot de passe."
-
 #: ../usr/share/applications/usb-creator.desktop.in.h:2
 msgid "Create a multi-boot USB"
 msgstr "Créer une clé USB multi-boot"
@@ -248,6 +238,11 @@ msgstr "Créer une clé USB multi-boot"
 #: ../usr/share/solid/actions/usb-constructor-openusb.desktop.in.h:1
 msgid "Create a multi-boot USB with the USB Creator"
 msgstr "Créer une clé USB multi-boot avec USB Creator"
+
+#. (itstool) path: action/message
+#: ../usr/share/polkit-1/actions/com.solydxk.pkexec.usb-creator.policy:8
+msgid "Authentication is required to run USB Creator"
+msgstr "l'authentification est nécessaire pour exécuter USB Creator"
 
 #: en/help.html+html.body.h1:8
 msgid "USB Creator Help"

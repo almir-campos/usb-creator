@@ -3,13 +3,13 @@
 # This file is distributed under the same license as the PACKAGE package.
 #
 # Translators:
-# Moo, 2016-2017
+# Moo, 2016-2018
 msgid ""
 msgstr ""
 "Project-Id-Version: usb-creator\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-01-14 11:46+0100\n"
-"PO-Revision-Date: 2017-09-22 17:07+0000\n"
+"POT-Creation-Date: 2018-02-26 09:33+0100\n"
+"PO-Revision-Date: 2018-02-19 19:43+0000\n"
 "Last-Translator: Moo\n"
 "Language-Team: Lithuanian (http://www.transifex.com/solydxk/usb-creator/"
 "language/lt/)\n"
@@ -226,16 +226,6 @@ msgstr ""
 "USB kūrėjas patyrė nesėkmę su šia netikėta klaida. Prašome pranešti apie "
 "klaidą!"
 
-#: ../usr/bin/usb-creator:664
-#, sh-format
-msgid "needs administrative privileges."
-msgstr "reikalauja administratoriaus teisių."
-
-#: ../usr/bin/usb-creator:665
-#, sh-format
-msgid "Please enter your password."
-msgstr "Prašome įvesti savo slaptažodį."
-
 #: ../usr/share/applications/usb-creator.desktop.in.h:2
 msgid "Create a multi-boot USB"
 msgstr "Sukurti keleriopo paleidimo USB"
@@ -243,6 +233,11 @@ msgstr "Sukurti keleriopo paleidimo USB"
 #: ../usr/share/solid/actions/usb-constructor-openusb.desktop.in.h:1
 msgid "Create a multi-boot USB with the USB Creator"
 msgstr "Sukurti keleriopo paleidimo USB, naudojant USB kūrėją"
+
+#. (itstool) path: action/message
+#: ../usr/share/polkit-1/actions/com.solydxk.pkexec.usb-creator.policy:8
+msgid "Authentication is required to run USB Creator"
+msgstr "Norint paleisti USB kūrėją, reikia nustatyti tapatybę"
 
 #: en/help.html+html.body.h1:8
 msgid "USB Creator Help"

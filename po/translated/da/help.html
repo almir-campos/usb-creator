@@ -1,0 +1,53 @@
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <link href="../link/general.css" rel="stylesheet" type="text/css" />
+  </head>
+  <body>
+    <div id="background"></div>
+	<h1>USB-skaber hjælp</h1>
+	<div class="main">
+		<h2>Beskrivelse</h2>
+		<p>USb-skaberen er et værktøj der gør det muligt for brugere at lave en USB-pen
+hvorfra man kan starte forskellige udgave af Linux.</p>
+
+		<h2>Vigtigt</h2>
+		<p>Kontrollér at du har sikkerhedskopieret alle vigtige data fra USB-pennen for
+du begynder.</p>
+
+		<h2>Kommandoer</h2>
+		<p>Du kan også køre USB-skaberen i en kommandoprompt. Her er nogle eksempler:</p>
+
+		<h3># usb-creator -f -i /path/to/my.iso -m</h3>
+		<p>Dette vil formattere USB-pennen, kopiere ISO-files derover og kontrollere at
+kontrolsummen på USB-penne svarer til den originale ISO-fil.</p>
+
+		<h3># usb-creator -b -g -r</h3>
+		<p>Dette vil forsøge at reparere en USB-pen der ikke kan startes op fra, og som
+allerede indeholder ISO-filer.</p>
+		
+		<h3># usb-creator -h</h3>
+		<p>Dette vil vise alle valgmuligheder og deres anvendelse.</p>
+
+		<h2>Gemte muligheder</h2>
+		<p>Når du fjerner ISO-filnavnet fra ISO-feltet, vil USB-skaberen udregne den
+påkrævede plads for at kunne have alle ISO-filerne i den mappe.</p>
+		<p>Du kan ændre rækkefølgen på ISO-filerne i menuen ved at tilføje et nummer i
+starten af filnavnet. F.eks. "01-MinDistribution-amd64.iso".</p>
+		<p>Symbolske links følges, men de skal have et ".iso" navn før det virker.</p>
+		
+		<h2>Kan du ikke starte op fra din ISO?</h2>
+		<p>På vores <a href="https://github.com/SolydXK/usb-creator"
+target="_blank">GitHub</a> side kan du se en liste over afprøvede
+distibutioner, men ikke alle kan startes direkte fra ISO-filen. Kig efter i
+distributionens forum om den kan startes direkte fra ISOfilen.</p>
+		<p>Menuen konfigureres gennem en fil som du kan finde på USB-pennen i:
+/boot/grub/grub.cfg</p>
+		<p>Hjælp gerne til med at forbedre dette program ved at tilpasse grub.cfg
+indtil der kan startes på ISO'en og beskriv dine ændringer på GitHub eller
+vores <a href="http://forums.solydxk.com" target="_blank">forum</a>.</p>
+		<p>Glem ikke at vedhæfte logfilen når du indberetter en fejl eller et problem
+på vores forum: /var/log/usb-creator.log</p>
+    </div>
+  </body>
+</html>

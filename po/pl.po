@@ -9,8 +9,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: usb-creator\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-01-14 11:46+0100\n"
-"PO-Revision-Date: 2017-09-22 17:07+0000\n"
+"POT-Creation-Date: 2018-02-13 18:14+0100\n"
+"PO-Revision-Date: 2018-02-12 15:19+0000\n"
 "Last-Translator: Arjen Balfoort <arjenbalfoort@solydxk.com>\n"
 "Language-Team: Polish (http://www.transifex.com/solydxk/usb-creator/language/"
 "pl/)\n"
@@ -227,16 +227,6 @@ msgstr ""
 "USB Creator został zatrzymany wskutek nieznanego błędu. Proszę wysłać raport "
 "o błędzie."
 
-#: ../usr/bin/usb-creator:664
-#, sh-format
-msgid "needs administrative privileges."
-msgstr ""
-
-#: ../usr/bin/usb-creator:665
-#, sh-format
-msgid "Please enter your password."
-msgstr ""
-
 #: ../usr/share/applications/usb-creator.desktop.in.h:2
 msgid "Create a multi-boot USB"
 msgstr "Utwórz USB wielosystemowy."
@@ -244,6 +234,11 @@ msgstr "Utwórz USB wielosystemowy."
 #: ../usr/share/solid/actions/usb-constructor-openusb.desktop.in.h:1
 msgid "Create a multi-boot USB with the USB Creator"
 msgstr "Utwórz USB wielosystemowy za pomocą kreatora USB."
+
+#. (itstool) path: action/message
+#: ../usr/share/polkit-1/actions/com.solydxk.pkexec.usb-creator.policy:8
+msgid "Authentication is required to run USB Creator"
+msgstr ""
 
 #: en/help.html+html.body.h1:8
 msgid "USB Creator Help"

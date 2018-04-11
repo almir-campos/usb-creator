@@ -9,9 +9,9 @@ msgid ""
 msgstr ""
 "Project-Id-Version: usb-creator\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-01-14 11:46+0100\n"
-"PO-Revision-Date: 2017-09-23 21:47+0000\n"
-"Last-Translator: Slobodan Simić <slsimic@gmail.com>\n"
+"POT-Creation-Date: 2018-02-13 18:14+0100\n"
+"PO-Revision-Date: 2018-02-12 15:19+0000\n"
+"Last-Translator: Arjen Balfoort <arjenbalfoort@solydxk.com>\n"
 "Language-Team: Serbian (http://www.transifex.com/solydxk/usb-creator/"
 "language/sr/)\n"
 "Language: sr\n"
@@ -225,16 +225,6 @@ msgid ""
 msgstr ""
 "УСБ стваралац није успео уз следећу неочекивану грешку. Пријавите грешку!"
 
-#: ../usr/bin/usb-creator:664
-#, sh-format
-msgid "needs administrative privileges."
-msgstr "захтева администраторска овлашћења."
-
-#: ../usr/bin/usb-creator:665
-#, sh-format
-msgid "Please enter your password."
-msgstr "Унесите своју лозинку."
-
 #: ../usr/share/applications/usb-creator.desktop.in.h:2
 msgid "Create a multi-boot USB"
 msgstr "Прави вишесистемски УСБ"
@@ -242,6 +232,11 @@ msgstr "Прави вишесистемски УСБ"
 #: ../usr/share/solid/actions/usb-constructor-openusb.desktop.in.h:1
 msgid "Create a multi-boot USB with the USB Creator"
 msgstr "Прави вишесистемски УСБ са УСБ ствараоцем"
+
+#. (itstool) path: action/message
+#: ../usr/share/polkit-1/actions/com.solydxk.pkexec.usb-creator.policy:8
+msgid "Authentication is required to run USB Creator"
+msgstr ""
 
 #: en/help.html+html.body.h1:8
 msgid "USB Creator Help"

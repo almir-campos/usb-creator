@@ -4,16 +4,16 @@
 #
 # Translators:
 # Arjen Balfoort <arjenbalfoort@solydxk.com>, 2016
-# Михаил Ильинский <mail@milinsky.com>, 2015
+# Михаил Ильинский (milinsky) <mail@milinsky.com>, 2015
 # Анатолий Валерианович <ffox909@mail.ru>, 2015
-# Михаил Ильинский <mail@milinsky.com>, 2017
+# Михаил Ильинский (milinsky) <mail@milinsky.com>, 2017
 msgid ""
 msgstr ""
 "Project-Id-Version: usb-creator\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-01-14 11:46+0100\n"
-"PO-Revision-Date: 2017-09-22 17:07+0000\n"
-"Last-Translator: Михаил Ильинский <mail@milinsky.com>\n"
+"POT-Creation-Date: 2018-02-13 18:14+0100\n"
+"PO-Revision-Date: 2018-02-12 15:19+0000\n"
+"Last-Translator: Arjen Balfoort <arjenbalfoort@solydxk.com>\n"
 "Language-Team: Russian (http://www.transifex.com/solydxk/usb-creator/"
 "language/ru/)\n"
 "Language: ru\n"
@@ -229,16 +229,6 @@ msgstr ""
 "В приложении USB Creator произошла непредвиденная ошибка. Пожалуйста, "
 "отправьте отчет об ошибке!"
 
-#: ../usr/bin/usb-creator:664
-#, sh-format
-msgid "needs administrative privileges."
-msgstr "необходимы права администратора."
-
-#: ../usr/bin/usb-creator:665
-#, sh-format
-msgid "Please enter your password."
-msgstr "Пожалуйста, введите Ваш пароль."
-
 #: ../usr/share/applications/usb-creator.desktop.in.h:2
 msgid "Create a multi-boot USB"
 msgstr "Создать мульти-загрузочный USB-накопитель"
@@ -246,6 +236,11 @@ msgstr "Создать мульти-загрузочный USB-накопите�
 #: ../usr/share/solid/actions/usb-constructor-openusb.desktop.in.h:1
 msgid "Create a multi-boot USB with the USB Creator"
 msgstr "Создать мульти-загрузочный USB-накопитель"
+
+#. (itstool) path: action/message
+#: ../usr/share/polkit-1/actions/com.solydxk.pkexec.usb-creator.policy:8
+msgid "Authentication is required to run USB Creator"
+msgstr ""
 
 #: en/help.html+html.body.h1:8
 msgid "USB Creator Help"

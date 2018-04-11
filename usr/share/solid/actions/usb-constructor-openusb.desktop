@@ -9,6 +9,7 @@ Exec=usb-creator
 Icon=usb-creator
 Name=Create a multi-boot USB with the USB Creator
 Name[ca]=Crea un USB de multi-arrencada amb l'USB Creator.
+Name[da]=Skab en multi-boot USB-pen ved hjælp af USB-skaberen
 Name[de]=Erstelle einen Multi-Boot USB Stick mit dem USB Creator
 Name[fr]=Créer une clé USB multi-boot avec USB Creator
 Name[it]=Crea USB multi-boot con USB Creator

@@ -3,14 +3,15 @@
 # This file is distributed under the same license as the PACKAGE package.
 #
 # Translators:
+# Arjen Balfoort <arjenbalfoort@solydxk.com>, 2018
 # Arjen Balfoort <arjenbalfoort@solydxk.com>, 2015-2017
 # root <arjenbalfoort@solydxk.com>, 2015
 msgid ""
 msgstr ""
 "Project-Id-Version: usb-creator\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-01-14 11:46+0100\n"
-"PO-Revision-Date: 2017-12-31 13:28+0000\n"
+"POT-Creation-Date: 2018-02-13 18:14+0100\n"
+"PO-Revision-Date: 2018-02-12 15:20+0000\n"
 "Last-Translator: Arjen Balfoort <arjenbalfoort@solydxk.com>\n"
 "Language-Team: Dutch (http://www.transifex.com/solydxk/usb-creator/language/"
 "nl/)\n"
@@ -227,16 +228,6 @@ msgstr ""
 "USB Creator is mislukt met de volgende onverwachte fout.\n"
 "A.u.b., dien een bug verslag in."
 
-#: ../usr/bin/usb-creator:664
-#, sh-format
-msgid "needs administrative privileges."
-msgstr "heeft beheerdersrechten nodig."
-
-#: ../usr/bin/usb-creator:665
-#, sh-format
-msgid "Please enter your password."
-msgstr "Vul hier uw wachtwoord in."
-
 #: ../usr/share/applications/usb-creator.desktop.in.h:2
 msgid "Create a multi-boot USB"
 msgstr "Maak een multi-boot USB"
@@ -244,6 +235,11 @@ msgstr "Maak een multi-boot USB"
 #: ../usr/share/solid/actions/usb-constructor-openusb.desktop.in.h:1
 msgid "Create a multi-boot USB with the USB Creator"
 msgstr "Maak een multi-boot USB met de USB Creator"
+
+#. (itstool) path: action/message
+#: ../usr/share/polkit-1/actions/com.solydxk.pkexec.usb-creator.policy:8
+msgid "Authentication is required to run USB Creator"
+msgstr "Verificatie is vereist om USB Creator uit te voeren"
 
 #: en/help.html+html.body.h1:8
 msgid "USB Creator Help"

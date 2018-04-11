@@ -1,6 +1,7 @@
 [Desktop Entry]
 Name=USB Creator
 Name[ca]=USB Creator 
+Name[da]=USB-pen skaber
 Name[de]=USB Creator
 Name[fr]=USB Creator
 Name[it]=SolydXK USB Creator
@@ -15,6 +16,7 @@ Name[sr]=УСБ стваралац
 Name[tr]=USB Oluşturucu
 Comment=Create a multi-boot USB
 Comment[ca]=Crea un USB de multi-arrencada. 
+Comment[da]=Skab en multi-boot USB-pen
 Comment[de]=Erstelle einen Multi-Boot USB-Stick
 Comment[fr]=Créer une clé USB multi-boot
 Comment[it]=Creare un USB multi-boot
