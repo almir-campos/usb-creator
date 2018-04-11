@@ -159,10 +159,9 @@ class Udisks2():
                 try:
                     return fs.call_mount_sync(self.no_options, None)
                 except GLib.GError as e:
-                    if 'UDisks2.Error.AlreadyMounted' in e.message:
+                    if 'UDisks2.Error.AlreadyMounted' in e.message or \
+                        not 'UDisks2.Error.DeviceBusy' in e.message:
                         break
-                    elif not 'UDisks2.Error.DeviceBusy' in e.message:
-                        raise
                     print('Busy.')
                     time.sleep(0.3)
                     timeout -= 1
